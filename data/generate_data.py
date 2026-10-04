@@ -137,7 +137,7 @@ def generate_satellite_data(num_samples: int = 450, random_seed: int = config.RA
 
 def main():
     print("=" * 60)
-    print("SatPrior - Synthetic Satellite Telemetry Dataset Generator")
+    print("LinkWise - Synthetic Satellite Telemetry Dataset Generator")
     print("=" * 60)
 
     # Ensure output directory exists

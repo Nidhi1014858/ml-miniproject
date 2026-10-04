@@ -1,6 +1,6 @@
 """
 ml/predict.py
-Inference and rule explanation module for SatPrior.
+Inference and rule explanation module for LinkWise.
 Provides reusable functions to predict transmission priority of satellite packets
 and generate human-readable decision explanations based on the trained Decision Tree.
 """
@@ -255,7 +255,7 @@ if __name__ == "__main__":
         },
     ]
 
-    print("SatPrior - predict.py Self-Test:")
+    print("LinkWise - predict.py Self-Test:")
     print("=" * 60)
     for idx, pkt in enumerate(test_packets, 1):
         p, expl = predict_and_explain(pkt)

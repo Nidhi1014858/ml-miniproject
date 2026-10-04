@@ -1,4 +1,4 @@
-# SatPrior: Autonomous Satellite Data Prioritization Using Decision Tree Classification
+# LinkWise: Autonomous Satellite Data Prioritization Using Decision Tree Classification
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Framework](https://img.shields.io/badge/Framework-Flask-black.svg)](https://flask.palletsprojects.com/)
@@ -14,7 +14,7 @@
 
 In small satellite operations such as SomaiyaSat, communication pass windows with ground stations are brief (typically 8–12 minutes per pass), and on-board electrical power and downlink bandwidth are severely constrained. Downlinking bulky non-critical payloads during low-elevation passes or low-battery states risks packet drops, frame corruption, and satellite brownout.
 
-**SatPrior** solves this scheduling challenge through transparent, interpretable machine learning:
+**LinkWise** solves this scheduling challenge through transparent, interpretable machine learning:
 - Ingests telemetry packet parameters (**Data Type**, **Urgency**, **Data Size**, **Battery Level**, and **Link Quality**).
 - Applies a pruned **Decision Tree Classifier** to classify transmission priority into **High**, **Medium**, or **Low**.
 - Traces the exact node traversal through the decision tree to generate human-readable explanations (e.g., *"High urgency flag and compact packet size guided the decision tree to assign High transmission priority"*).
@@ -47,7 +47,7 @@ In small satellite operations such as SomaiyaSat, communication pass windows wit
 ## 4. Project Directory Structure
 
 ```text
-satprior/
+linkwise/
 ├── README.md                 # Project documentation and user guide
 ├── requirements.txt          # Python dependencies
 ├── .gitignore                # Git ignore rules

@@ -38,7 +38,7 @@ import config
 
 def train_model():
     print("=" * 60)
-    print("SatPrior - Model Training Pipeline (Decision Tree Classifier)")
+    print("LinkWise - Model Training Pipeline (Decision Tree Classifier)")
     print("=" * 60)
 
     # 1. Verify dataset exists
@@ -164,7 +164,7 @@ def train_model():
         precision=2,
         fontsize=9,
     )
-    plt.title("SatPrior — Decision Tree Hierarchy (SomaiyaSat Telemetry)", fontsize=16, pad=15)
+    plt.title("LinkWise — Decision Tree Hierarchy (SomaiyaSat Telemetry)", fontsize=16, pad=15)
     plt.tight_layout()
     plt.savefig(config.TREE_PLOT_PATH, dpi=160, bbox_inches="tight")
     plt.close()
@@ -174,7 +174,7 @@ def train_model():
     fig, ax = plt.subplots(figsize=(6, 5), facecolor="#ffffff")
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=pipeline.classes_)
     disp.plot(cmap=plt.cm.Blues, ax=ax, colorbar=True, values_format="d")
-    ax.set_title("SatPrior — Test Set Confusion Matrix", fontsize=13, pad=12)
+    ax.set_title("LinkWise — Test Set Confusion Matrix", fontsize=13, pad=12)
     plt.tight_layout()
     plt.savefig(config.CONFUSION_PLOT_PATH, dpi=160, bbox_inches="tight")
     plt.close()
@@ -195,7 +195,7 @@ def train_model():
     ax.set_yticks(range(len(sorted_idx)))
     ax.set_yticklabels([all_feature_names[i] for i in sorted_idx], fontsize=9)
     ax.set_xlabel("Gini Impurity Reduction (Feature Importance)", fontsize=10)
-    ax.set_title("SatPrior — Feature Importance Ranking", fontsize=13, pad=12)
+    ax.set_title("LinkWise — Feature Importance Ranking", fontsize=13, pad=12)
     ax.grid(axis="x", linestyle="--", alpha=0.5)
 
     # Add numeric labels to bars

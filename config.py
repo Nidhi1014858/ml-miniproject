@@ -1,5 +1,5 @@
 """
-SatPrior - Configuration Module
+LinkWise - Configuration Module
 Autonomous Satellite Data Prioritization Using Decision Tree Classification.
 
 This file provides centralized paths, feature specifications, allowed values,

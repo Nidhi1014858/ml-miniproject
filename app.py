@@ -1,6 +1,6 @@
 """
 app.py
-SatPrior Flask Web Application
+LinkWise Flask Web Application
 Provides the dashboard interface and prediction API for satellite telemetry data prioritization.
 """
 
@@ -50,7 +50,7 @@ except Exception as e:
 @app.route("/", methods=["GET"])
 def index():
     """
-    Renders the SatPrior mission dashboard with model insights.
+    Renders the LinkWise mission dashboard with model insights.
     """
     metrics = get_metrics_data()
     return render_template(
@@ -123,5 +123,5 @@ def api_metrics():
 
 
 if __name__ == "__main__":
-    print(f"Starting SatPrior Dashboard on http://127.0.0.1:5000 ...")
+    print(f"Starting LinkWise Dashboard on http://127.0.0.1:5000 ...")
     app.run(host="127.0.0.1", port=5000, debug=True)

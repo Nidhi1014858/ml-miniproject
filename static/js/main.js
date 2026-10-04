@@ -1,6 +1,6 @@
 /**
  * static/js/main.js
- * SatPrior - Frontend Client Logic
+ * LinkWise - Frontend Client Logic
  * Handles interactive form submission via fetch(), loading state animations,
  * priority badge visual formatting, and random packet synthesis.
  */
