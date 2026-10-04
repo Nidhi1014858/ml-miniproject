@@ -1,264 +1,270 @@
 """
-ml/predict.py
-Inference and rule explanation module for LinkWise.
-Provides reusable functions to predict transmission priority of satellite packets
-and generate human-readable decision explanations based on the trained Decision Tree.
+ml/predict.py  -  Uses the trained model to predict the priority of ONE packet.
+
+train.py  = studying (runs once, saves the model)
+predict.py = answering (runs every time someone clicks "Predict" on the website)
+
+MAIN FUNCTION:  predict_packet(packet)
+
+    Input  (a dictionary, e.g. from the website form):
+        {"data_type": "Housekeeping", "size_kb": 40, "battery_pct": 25,
+         "link_quality": "Good", "pass_time_min": 6.5, "sat_mode": "Normal"}
+
+    Output (a dictionary that app.py sends back to the website):
+        {"priority": "High",
+         "confidence": 0.95,
+         "path": ["Data type is not Fault alert (it is Housekeeping)", ...],
+         "probabilities": {"High": 0.95, "Medium": 0.05, "Low": 0.0}}
+
+HOW TO TEST THIS FILE ON ITS OWN (from the main project folder):
+    python -m ml.predict
 """
 
-import sys
-from pathlib import Path
-from typing import Dict, Any, Tuple
-import joblib
-import pandas as pd
-import numpy as np
+import joblib        # to load the saved model from model.pkl
+import pandas as pd  # to turn the packet into a one-row table
 
-# Add project root to sys.path
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-import config
-
-# Global cache for the loaded model pipeline
-_CACHED_PIPELINE = None
+import config                 # shared settings (allowed values, file paths)
+from ml.train import encode   # the SAME encoding used in training (very important!)
 
 
-def load_model(model_path: Path = config.MODEL_PATH):
+# ---------------------------------------------------------------------------
+# LOADING THE MODEL
+# ---------------------------------------------------------------------------
+
+_saved = None  # the model is kept here after loading, so we load the file only once
+
+
+def load_model():
+    """Loads model.pkl the first time it's needed, then reuses it (faster)."""
+    global _saved
+    if _saved is None:
+        # model.pkl contains: {"model": the tree, "feature_names": column order}
+        _saved = joblib.load(config.MODEL_PATH)
+    return _saved
+
+
+# The 3 number fields, with a friendly name and a unit for the explanation sentences.
+NUMBER_FIELDS = {
+    "size_kb": ("Packet size", " KB"),
+    "battery_pct": ("Battery", "%"),
+    "pass_time_min": ("Pass time left", " min"),
+}
+
+# The 3 text fields, with the values they are allowed to have (from config.py).
+CHOICE_FIELDS = {
+    "data_type": config.DATA_TYPES,
+    "link_quality": config.LINK_QUALITIES,
+    "sat_mode": config.SAT_MODES,
+}
+
+
+# ---------------------------------------------------------------------------
+# STEP 1: CHECK THE INPUT
+# ---------------------------------------------------------------------------
+
+def clean_packet(packet):
     """
-    Loads and caches the trained scikit-learn pipeline from disk.
+    Checks that the packet is valid and returns a cleaned copy.
+    If anything is wrong, it raises a ValueError with a clear message,
+    which app.py sends back to the website as an error.
     """
-    global _CACHED_PIPELINE
-    if _CACHED_PIPELINE is None:
-        if not model_path.exists():
-            raise FileNotFoundError(
-                f"Trained model not found at {model_path}. Please run ml/train.py first."
-            )
-        _CACHED_PIPELINE = joblib.load(model_path)
-    return _CACHED_PIPELINE
+    if not isinstance(packet, dict):
+        raise ValueError("Packet must be a JSON object")
 
-
-def validate_packet(packet: Dict[str, Any]) -> None:
-    """
-    Validates packet attributes against configuration rules.
-    Raises ValueError with descriptive messages if validation fails.
-    """
-    missing = [f for f in config.FEATURE_COLUMNS if f not in packet]
+    # Every one of the 6 fields must be present and not empty.
+    missing = [f for f in config.FEATURES if packet.get(f) in (None, "")]
     if missing:
-        raise ValueError(f"Missing required packet features: {missing}")
+        raise ValueError(f"Missing field(s): {', '.join(missing)}")
 
-    for cat_feature, allowed in config.ALLOWED_VALUES.items():
-        if cat_feature in packet and packet[cat_feature] not in allowed:
-            raise ValueError(
-                f"Invalid value '{packet[cat_feature]}' for '{cat_feature}'. Allowed: {allowed}"
-            )
+    clean = {}
 
-    try:
-        data_size = float(packet["data_size_kb"])
-        if data_size < config.NUMERICAL_BOUNDS["data_size_kb"]["min"] or data_size > config.NUMERICAL_BOUNDS["data_size_kb"]["max"]:
-            raise ValueError(
-                f"data_size_kb must be between {config.NUMERICAL_BOUNDS['data_size_kb']['min']} and {config.NUMERICAL_BOUNDS['data_size_kb']['max']} KB."
-            )
-    except (ValueError, TypeError) as e:
-        raise ValueError(f"Invalid data_size_kb: {e}")
+    # Text fields must be one of the allowed values (e.g. link must be Poor/Fair/Good).
+    for field, allowed in CHOICE_FIELDS.items():
+        if packet[field] not in allowed:
+            raise ValueError(f"{field} must be one of: {', '.join(allowed)}")
+        clean[field] = packet[field]
 
-    try:
-        battery = float(packet["battery_level"])
-        if battery < config.NUMERICAL_BOUNDS["battery_level"]["min"] or battery > config.NUMERICAL_BOUNDS["battery_level"]["max"]:
-            raise ValueError(
-                f"battery_level must be between {config.NUMERICAL_BOUNDS['battery_level']['min']}% and {config.NUMERICAL_BOUNDS['battery_level']['max']}%."
-            )
-    except (ValueError, TypeError) as e:
-        raise ValueError(f"Invalid battery_level: {e}")
+    # Number fields must really be numbers and must not be negative.
+    # (The website may send "35" as text, so float() converts it to the number 35.0.)
+    for field in NUMBER_FIELDS:
+        try:
+            value = float(packet[field])
+        except (TypeError, ValueError):
+            raise ValueError(f"{field} must be a number")
+        if value < 0:
+            raise ValueError(f"{field} cannot be negative")
+        clean[field] = value
+
+    if clean["battery_pct"] > 100:
+        raise ValueError("battery_pct cannot be more than 100")
+
+    return clean
 
 
-def predict_packet(packet: Dict[str, Any]) -> str:
+# ---------------------------------------------------------------------------
+# STEP 5: EXPLAIN THE PATH (turning the tree's questions into sentences)
+# ---------------------------------------------------------------------------
+
+def explain_path(model, X, feature_names, packet):
     """
-    Predicts the satellite transmission priority ('High', 'Medium', 'Low')
-    for an input telemetry packet.
+    Follows this packet down the tree and records every question the tree asked.
 
-    Parameters:
-        packet (dict): Dictionary with keys:
-            - data_type (str)
-            - urgency (str)
-            - data_size_kb (float/int)
-            - battery_level (float/int)
-            - link_quality (str)
+    The tree stores each question as:  "is <column> <= <threshold>?"
+      - answer YES -> the packet goes to the LEFT branch
+      - answer NO  -> the packet goes to the RIGHT branch
 
-    Returns:
-        str: Predicted priority class ('High', 'Medium', or 'Low')
+    If the tree asks about the same thing more than once (e.g. battery twice),
+    the answers are MERGED into one sentence, so the website shows a clean list.
     """
-    validate_packet(packet)
-    pipeline = load_model()
+    tree = model.tree_
+    facts = {}  # what we learned about each field, in the order the tree asked
 
-    # Create single-row DataFrame matching training feature columns
-    df = pd.DataFrame([{
-        "data_type": str(packet["data_type"]),
-        "urgency": str(packet["urgency"]),
-        "data_size_kb": float(packet["data_size_kb"]),
-        "battery_level": float(packet["battery_level"]),
-        "link_quality": str(packet["link_quality"]),
-    }])[config.FEATURE_COLUMNS]
+    # decision_path() gives the list of boxes (nodes) this packet passed through,
+    # from the top of the tree down to the final answer.
+    for node in model.decision_path(X).indices:
 
-    prediction = pipeline.predict(df)[0]
-    return str(prediction)
-
-
-def explain_prediction(packet: Dict[str, Any], predicted_priority: str = None) -> str:
-    """
-    Generates a clear human-readable explanation of why the Decision Tree
-    assigned the specific priority, based on the actual path traversed in the tree.
-
-    Parameters:
-        packet (dict): Telemetry packet feature dictionary.
-        predicted_priority (str, optional): The already-predicted class.
-
-    Returns:
-        str: Descriptive human-readable explanation sentence.
-    """
-    pipeline = load_model()
-    preprocessor = pipeline.named_steps["preprocessor"]
-    clf = pipeline.named_steps["classifier"]
-
-    # Preprocess the input packet
-    df = pd.DataFrame([{
-        "data_type": str(packet["data_type"]),
-        "urgency": str(packet["urgency"]),
-        "data_size_kb": float(packet["data_size_kb"]),
-        "battery_level": float(packet["battery_level"]),
-        "link_quality": str(packet["link_quality"]),
-    }])[config.FEATURE_COLUMNS]
-
-    if predicted_priority is None:
-        predicted_priority = str(pipeline.predict(df)[0])
-
-    X_trans = preprocessor.transform(df)
-
-    cat_feature_names = preprocessor.named_transformers_["cat"].get_feature_names_out(config.CATEGORICAL_FEATURES)
-    all_feature_names = list(cat_feature_names) + config.NUMERICAL_FEATURES
-
-    # Trace decision path in tree
-    node_indicator = clf.decision_path(X_trans)
-    node_index = node_indicator.indices
-
-    reasons = []
-    for node_id in node_index:
-        # Stop at leaf nodes
-        if clf.tree_.children_left[node_id] == clf.tree_.children_right[node_id]:
+        # A leaf (final answer box) has no question, so skip it.
+        if tree.children_left[node] == -1:
             continue
 
-        feat_idx = clf.tree_.feature[node_id]
-        thresh = clf.tree_.threshold[node_id]
-        feat_name = all_feature_names[feat_idx]
-        val = X_trans[0, feat_idx]
+        column = feature_names[tree.feature[node]]  # which column the question is about
+        threshold = tree.threshold[node]            # the number it compares against
+        went_right = X.iloc[0][column] > threshold  # True = answer was NO (value is bigger)
 
-        # Translate feature and threshold into domain language
-        if "urgency_High" in feat_name:
-            if val > thresh:
-                reasons.append("high urgency flag")
+        if column.startswith("data_type_"):
+            # One-hot column, e.g. "data_type_Fault alert" (1 = yes, 0 = no).
+            fact = facts.setdefault("data_type", {"is": None, "is_not": []})
+            type_name = column[len("data_type_"):]
+            if went_right:
+                fact["is"] = type_name            # value 1 -> it IS this type
             else:
-                reasons.append("non-urgent status")
-        elif "urgency_Low" in feat_name and val > thresh:
-            reasons.append("low urgency status")
-        elif "urgency_Medium" in feat_name and val > thresh:
-            reasons.append("moderate urgency")
+                fact["is_not"].append(type_name)  # value 0 -> it is NOT this type
 
-        elif "data_type_TT&C" in feat_name and val > thresh:
-            reasons.append("critical TT&C command packet type")
-        elif "data_type_SSTV" in feat_name and val > thresh:
-            reasons.append("heavy SSTV payload image type")
-        elif "data_type_Housekeeping" in feat_name and val > thresh:
-            reasons.append("routine housekeeping telemetry")
-        elif "data_type_Voice/Data" in feat_name and val > thresh:
-            reasons.append("payload voice/data stream")
+        elif column in ("link_quality", "sat_mode"):
+            # Ordered category stored as a number (e.g. Poor=0, Fair=1, Good=2).
+            # Keep track of which category numbers are still possible after each question.
+            names = CHOICE_FIELDS[column]
+            fact = facts.setdefault(column, {"possible": list(range(len(names)))})
+            fact["possible"] = [i for i in fact["possible"] if (i > threshold) == went_right]
 
-        elif "link_quality_Good" in feat_name:
-            if val > thresh:
-                reasons.append("good link quality window")
+        else:
+            # Plain number column (size, battery, pass time).
+            # Remember the lower limit ("more than") and upper limit ("at most").
+            # Later questions on the same column are always narrower, so we just overwrite.
+            fact = facts.setdefault(column, {"more_than": None, "at_most": None})
+            if went_right:
+                fact["more_than"] = threshold
             else:
-                reasons.append("suboptimal link quality")
-        elif "link_quality_Poor" in feat_name and val > thresh:
-            reasons.append("poor ground station link quality")
-        elif "link_quality_Fair" in feat_name and val > thresh:
-            reasons.append("fair link conditions")
+                fact["at_most"] = threshold
 
-        elif "battery_level" in feat_name:
-            if val <= thresh:
-                reasons.append(f"low battery level ({val:.0f}% <= {thresh:.0f}%)")
-            else:
-                reasons.append(f"healthy battery level ({val:.0f}% > {thresh:.0f}%)")
+    return [to_sentence(field, fact, packet) for field, fact in facts.items()]
 
-        elif "data_size_kb" in feat_name:
-            if val <= thresh:
-                reasons.append(f"compact packet size ({val:.0f} KB <= {thresh:.0f} KB)")
-            else:
-                reasons.append(f"large packet footprint ({val:.0f} KB > {thresh:.0f} KB)")
 
-    # Deduplicate while preserving order
-    unique_reasons = []
-    for r in reasons:
-        if r not in unique_reasons:
-            unique_reasons.append(r)
+def fmt(number):
+    """Shows numbers neatly: 40.0 -> '40', 22.5 -> '22.5'."""
+    return f"{number:g}"
 
-    # Format into a clean, human-friendly explanation sentence
-    dt = packet.get("data_type", "")
-    urg = packet.get("urgency", "")
-    link = packet.get("link_quality", "")
-    bat = packet.get("battery_level", "")
 
-    if len(unique_reasons) >= 2:
-        reasons_text = f"{unique_reasons[0].capitalize()} and {unique_reasons[1]}"
-    elif len(unique_reasons) == 1:
-        reasons_text = f"{unique_reasons[0].capitalize()}"
+def to_sentence(field, fact, packet):
+    """Turns what we learned about one field into one plain-English sentence."""
+
+    if field == "data_type":
+        if fact["is"]:
+            return f"Data type is {fact['is']}"
+        not_list = " or ".join(fact["is_not"])
+        return f"Data type is not {not_list} (it is {packet['data_type']})"
+
+    if field == "sat_mode":
+        return f"Satellite is in {packet['sat_mode']} mode"
+
+    if field == "link_quality":
+        possible = [config.LINK_QUALITIES[i] for i in fact["possible"]]
+        if len(possible) == 1:
+            return f"Link quality is {possible[0]}"
+        return f"Link quality is {' or '.join(possible)} (it is {packet['link_quality']})"
+
+    # Number fields
+    label, unit = NUMBER_FIELDS[field]
+    low, high = fact["more_than"], fact["at_most"]
+    if low is not None and high is not None:
+        limit = f"between {fmt(low)} and {fmt(high)}{unit}"
+    elif low is not None:
+        limit = f"more than {fmt(low)}{unit}"
     else:
-        reasons_text = f"{urg} urgency and {link.lower()} link quality"
-
-    if predicted_priority == "High":
-        return f"{reasons_text} guided the decision tree to assign High transmission priority for prompt downlink."
-    elif predicted_priority == "Low":
-        return f"{reasons_text} led the decision tree to defer transmission with Low priority to preserve satellite resources."
-    else:
-        return f"{reasons_text} placed the packet into standard Medium transmission priority in the on-board queue."
+        limit = f"at most {fmt(high)}{unit}"
+    return f"{label} is {fmt(packet[field])}{unit} ({limit})"
 
 
-def predict_and_explain(packet: Dict[str, Any]) -> Tuple[str, str]:
-    """
-    Convenience function returning both priority and explanation.
-    """
-    priority = predict_packet(packet)
-    explanation = explain_prediction(packet, priority)
-    return priority, explanation
+# ---------------------------------------------------------------------------
+# MAIN FUNCTION: used by app.py
+# ---------------------------------------------------------------------------
 
+def predict_packet(packet):
+    """Takes one packet (a dictionary) and returns its priority, confidence and path."""
+
+    # Step 1: check the input
+    clean = clean_packet(packet)
+
+    # Load the trained tree and the column order it was trained on
+    saved = load_model()
+    model, feature_names = saved["model"], saved["feature_names"]
+
+    # Step 2: turn the packet into a one-row table and encode it exactly like in training.
+    # reindex() makes sure the columns are in the SAME order the model was trained on.
+    X = encode(pd.DataFrame([clean])[config.FEATURES])
+    X = X.reindex(columns=feature_names, fill_value=0)
+
+    # Step 3: ask the model for its answer
+    priority = model.predict(X)[0]
+
+    # Step 4: confidence.
+    # predict_proba() looks at the final box (leaf) this packet landed in and gives the
+    # share of TRAINING packets in that box for each priority.
+    # e.g. 95 High + 5 Medium in the box -> High: 0.95, Medium: 0.05, Low: 0.0
+    probs = dict(zip(model.classes_, model.predict_proba(X)[0]))
+    probabilities = {label: round(float(probs.get(label, 0)), 3) for label in config.PRIORITIES}
+    confidence = probabilities[priority]  # how sure it is about the answer it gave
+
+    # Step 5: explain the path in plain sentences
+    path = explain_path(model, X, feature_names, clean)
+
+    return {
+        "priority": str(priority),
+        "confidence": confidence,
+        "path": path,
+        "probabilities": probabilities,
+    }
+
+
+# ---------------------------------------------------------------------------
+# QUICK TEST: runs only when you type  python -m ml.predict
+# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    # Self-test with sample packets
-    test_packets = [
-        {
-            "data_type": "TT&C",
-            "urgency": "High",
-            "data_size_kb": 25,
-            "battery_level": 85,
-            "link_quality": "Good",
-        },
-        {
-            "data_type": "SSTV",
-            "urgency": "Low",
-            "data_size_kb": 1850,
-            "battery_level": 28,
-            "link_quality": "Poor",
-        },
-        {
-            "data_type": "Housekeeping",
-            "urgency": "Medium",
-            "data_size_kb": 120,
-            "battery_level": 70,
-            "link_quality": "Fair",
-        },
+    examples = [
+        {"data_type": "Fault alert", "size_kb": 10, "battery_pct": 70,
+         "link_quality": "Poor", "pass_time_min": 3.0, "sat_mode": "Normal"},
+        {"data_type": "Housekeeping", "size_kb": 40, "battery_pct": 25,
+         "link_quality": "Good", "pass_time_min": 6.5, "sat_mode": "Normal"},
+        {"data_type": "SSTV image", "size_kb": 500, "battery_pct": 80,
+         "link_quality": "Good", "pass_time_min": 9.0, "sat_mode": "Normal"},
+        {"data_type": "Voice/Data", "size_kb": 300, "battery_pct": 40,
+         "link_quality": "Fair", "pass_time_min": 4.0, "sat_mode": "Safe"},
     ]
 
-    print("LinkWise - predict.py Self-Test:")
-    print("=" * 60)
-    for idx, pkt in enumerate(test_packets, 1):
-        p, expl = predict_and_explain(pkt)
-        print(f"Sample {idx}: {pkt}")
-        print(f"  -> Predicted Priority : {p}")
-        print(f"  -> Decision Path Expl : {expl}\n")
+    for packet in examples:
+        result = predict_packet(packet)
+        print("\nPacket:", packet)
+        print(f"  -> Priority: {result['priority']}   (confidence {result['confidence']:.0%})")
+        print("  -> All chances:", result["probabilities"])
+        print("  -> Why:")
+        for step in result["path"]:
+            print("       -", step)
+
+    # This one is invalid on purpose, to show the error checking works.
+    print("\nTesting a bad packet:")
+    try:
+        predict_packet({"data_type": "Banana", "size_kb": 10, "battery_pct": 50,
+                        "link_quality": "Good", "pass_time_min": 5, "sat_mode": "Normal"})
+    except ValueError as error:
+        print("  -> Error caught correctly:", error)
