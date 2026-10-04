@@ -1,0 +1,109 @@
+<!-- templates/_insights.html -->
+<section class="insights-section" id="model-insights">
+  <div class="section-header">
+    <div class="section-badge">Evaluation & Architecture</div>
+    <h2>Model Insights & Validation</h2>
+    <p class="section-subtitle">
+      Trained on SomaiyaSat synthetic telemetry dataset using scikit-learn's Decision Tree Classifier.
+    </p>
+  </div>
+
+  <!-- Key Metrics Row -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon">&#x2699;</div>
+      <div class="metric-info">
+        <span class="metric-label">Model Type</span>
+        <span class="metric-value">Decision Tree</span>
+        <span class="metric-sub">Criterion: Gini Impurity</span>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon">&#x1F4CA;</div>
+      <div class="metric-info">
+        <span class="metric-label">Test Accuracy</span>
+        <span class="metric-value highlight-accent">{{ (metrics.accuracy * 100) | round(1) }}%</span>
+        <span class="metric-sub">Stratified Holdout</span>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon">&#x1F4C2;</div>
+      <div class="metric-info">
+        <span class="metric-label">Dataset Split</span>
+        <span class="metric-value">{{ metrics.train_rows }} / {{ metrics.test_rows }}</span>
+        <span class="metric-sub">Train / Test Samples</span>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon">&#x1F333;</div>
+      <div class="metric-info">
+        <span class="metric-label">Max Depth</span>
+        <span class="metric-value">{{ metrics.max_depth }} Levels</span>
+        <span class="metric-sub">Interpretable & Pruned</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diagnostic Plots Row -->
+  <div class="plots-grid">
+    <!-- Decision Tree Plot Card -->
+    <div class="plot-card wide-card">
+      <div class="plot-card-header">
+        <div>
+          <h3>Decision Tree Architecture</h3>
+          <span class="plot-tag">Hierarchical Logic</span>
+        </div>
+        <a href="{{ url_for('static', filename='plots/tree.png') }}" target="_blank" class="plot-expand-btn" title="Open full resolution image in new tab">
+          &#x2922; View Full Tree
+        </a>
+      </div>
+      <div class="plot-image-wrapper tree-wrapper">
+        <img src="{{ url_for('static', filename='plots/tree.png') }}" alt="Decision Tree Visualization" class="plot-img" loading="lazy">
+      </div>
+      <p class="plot-caption">
+        Visual representation of binary splits based on telemetry packet attributes (urgency, battery, link quality, packet type).
+      </p>
+    </div>
+
+    <!-- Confusion Matrix Card -->
+    <div class="plot-card">
+      <div class="plot-card-header">
+        <div>
+          <h3>Confusion Matrix</h3>
+          <span class="plot-tag">Classification Accuracy</span>
+        </div>
+        <a href="{{ url_for('static', filename='plots/confusion.png') }}" target="_blank" class="plot-expand-btn" title="Open full resolution image">
+          &#x2922; Expand
+        </a>
+      </div>
+      <div class="plot-image-wrapper">
+        <img src="{{ url_for('static', filename='plots/confusion.png') }}" alt="Confusion Matrix Plot" class="plot-img" loading="lazy">
+      </div>
+      <p class="plot-caption">
+        Predicted vs. True transmission priorities across holdout validation data.
+      </p>
+    </div>
+
+    <!-- Feature Importance Card -->
+    <div class="plot-card">
+      <div class="plot-card-header">
+        <div>
+          <h3>Feature Importance</h3>
+          <span class="plot-tag">Gini Impurity Reduction</span>
+        </div>
+        <a href="{{ url_for('static', filename='plots/importance.png') }}" target="_blank" class="plot-expand-btn" title="Open full resolution image">
+          &#x2922; Expand
+        </a>
+      </div>
+      <div class="plot-image-wrapper">
+        <img src="{{ url_for('static', filename='plots/importance.png') }}" alt="Feature Importance Plot" class="plot-img" loading="lazy">
+      </div>
+      <p class="plot-caption">
+        Ranking of telemetry features by their contribution to priority decisions.
+      </p>
+    </div>
+  </div>
+</section>

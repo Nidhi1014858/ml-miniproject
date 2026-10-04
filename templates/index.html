@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SatPrior — Autonomous Satellite Data Prioritization</title>
+  <meta name="description" content="Autonomous Satellite Data Transmission Prioritization using Decision Tree Classification for SomaiyaSat.">
+  
+  <!-- Modern Clean Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <!-- Subtle Space Ambient Background -->
+  <div class="stars-bg"></div>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <div class="app-container">
+
+    <!-- Top Navigation Bar / Branding -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="project-title">SatPrior</span>
+          <span class="project-tagline">SomaiyaSat ML Telemetry Subsystem</span>
+        </div>
+      </div>
+      <div class="header-badges">
+        <span class="status-indicator">
+          <span class="pulse-dot"></span> ML Pipeline Online
+        </span>
+        <a href="#model-insights" class="nav-link">Model Insights</a>
+      </div>
+    </header>
+
+    <!-- Hero / Intro -->
+    <section class="hero-section">
+      <div class="badge-pill">&#x1F6F0;&#xFE0F; Decision Tree Classification System</div>
+      <h1 class="main-title">Autonomous Satellite Data Prioritization</h1>
+      <p class="hero-desc">
+        Classifies incoming SomaiyaSat packets into <strong>High</strong>, <strong>Medium</strong>, or <strong>Low</strong> transmission priority using machine learning. Evaluates packet type, urgency, battery reserve, payload size, and ground link quality to maximize scientific throughput and mission safety.
+      </p>
+    </section>
+
+    <!-- Main Content Workspace: Form & Result -->
+    <main class="workspace-grid">
+      
+      <!-- Telemetry Input Card -->
+      <section class="card panel-card input-panel">
+        <div class="card-header">
+          <div class="card-icon-badge">&#x1F4E1;</div>
+          <div>
+            <h2>Telemetry Packet Ingestion</h2>
+            <p class="card-subtitle">Configure packet parameters for on-board transmission scheduling</p>
+          </div>
+        </div>
+
+        <form id="packet-form" class="telemetry-form" novalidate>
+          
+          <!-- Data Type -->
+          <div class="form-group">
+            <label for="data_type">
+              <span class="label-title">Data Type</span>
+              <span class="label-hint">Telemetry or payload category</span>
+            </label>
+            <div class="select-wrapper">
+              <select id="data_type" name="data_type" required>
+                <option value="TT&C">TT&C (Telemetry, Tracking & Command)</option>
+                <option value="Housekeeping" selected>Housekeeping (Diagnostics & Health)</option>
+                <option value="SSTV">SSTV (Slow Scan TV / Camera Payload)</option>
+                <option value="Voice/Data">Voice/Data (Digital Transponder Stream)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Urgency -->
+          <div class="form-group">
+            <label for="urgency">
+              <span class="label-title">Urgency Level</span>
+              <span class="label-hint">Mission criticality flag</span>
+            </label>
+            <div class="select-wrapper">
+              <select id="urgency" name="urgency" required>
+                <option value="Low">Low (Routine Background Log)</option>
+                <option value="Medium" selected>Medium (Standard Downlink Queue)</option>
+                <option value="High">High (Immediate Action Required)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Two-column row for numbers -->
+          <div class="form-row-2">
+            <!-- Data Size -->
+            <div class="form-group">
+              <label for="data_size_kb">
+                <span class="label-title">Data Size (KB)</span>
+                <span class="label-hint">1 to 10,000 KB</span>
+              </label>
+              <div class="input-with-affix">
+                <input 
+                  type="number" 
+                  id="data_size_kb" 
+                  name="data_size_kb" 
+                  min="1" 
+                  max="10000" 
+                  value="120" 
+                  required
+                >
+                <span class="input-affix">KB</span>
+              </div>
+            </div>
+
+            <!-- Battery Level -->
+            <div class="form-group">
+              <label for="battery_level">
+                <span class="label-title">Battery Level (%)</span>
+                <span class="label-hint">0 to 100% capacity</span>
+              </label>
+              <div class="input-with-affix">
+                <input 
+                  type="number" 
+                  id="battery_level" 
+                  name="battery_level" 
+                  min="0" 
+                  max="100" 
+                  value="78" 
+                  required
+                >
+                <span class="input-affix">%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Link Quality -->
+          <div class="form-group">
+            <label for="link_quality">
+              <span class="label-title">Link Quality</span>
+              <span class="label-hint">Ground station RF signal state</span>
+            </label>
+            <div class="select-wrapper">
+              <select id="link_quality" name="link_quality" required>
+                <option value="Poor">Poor (High bit-error / weak elevation)</option>
+                <option value="Fair" selected>Fair (Moderate signal / standard window)</option>
+                <option value="Good">Good (Clear line-of-sight / zenith pass)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="form-actions">
+            <button type="submit" id="predict-btn" class="btn btn-primary">
+              <span class="btn-spinner" id="btn-spinner" style="display: none;"></span>
+              <span class="btn-icon">&#x26A1;</span>
+              <span class="btn-text">Predict Priority</span>
+            </button>
+            <button type="button" id="random-btn" class="btn btn-secondary">
+              <span class="btn-icon">&#x1F3B2;</span>
+              <span class="btn-text">Random Packet</span>
+            </button>
+          </div>
+
+          <!-- Inline Error Notification -->
+          <div id="error-box" class="alert-box alert-error" style="display: none;">
+            <span class="alert-icon">&#x26A0;&#xFE0F;</span>
+            <span id="error-message"></span>
+          </div>
+
+        </form>
+      </section>
+
+      <!-- Prediction Result Card -->
+      <section class="card panel-card result-panel">
+        <div class="card-header">
+          <div class="card-icon-badge">&#x1F680;</div>
+          <div>
+            <h2>Transmission Priority</h2>
+            <p class="card-subtitle">Decision Tree classification outcome and rationale</p>
+          </div>
+        </div>
+
+        <!-- Initial Placeholder State -->
+        <div id="result-placeholder" class="result-placeholder">
+          <div class="placeholder-icon">&#x1F52C;</div>
+          <h3>Ready for Packet Evaluation</h3>
+          <p>
+            Configure telemetry attributes on the left and click <strong>Predict Priority</strong>, or generate a <strong>Random Packet</strong> to observe the Decision Tree classifier in action.
+          </p>
+        </div>
+
+        <!-- Loading State -->
+        <div id="result-loading" class="result-loading" style="display: none;">
+          <div class="radar-spinner"></div>
+          <p>Evaluating telemetry against decision tree nodes...</p>
+        </div>
+
+        <!-- Active Result Display -->
+        <div id="result-display" class="result-display" style="display: none;">
+          
+          <div class="priority-banner-wrapper">
+            <span class="priority-header-label">Predicted Priority:</span>
+            <div id="priority-badge" class="priority-badge priority-medium">
+              <span class="badge-pulse"></span>
+              <span id="priority-value" class="priority-text">MEDIUM</span>
+            </div>
+          </div>
+
+          <!-- Decision Path & Explanation Section -->
+          <div class="decision-rationale-box">
+            <div class="rationale-header">
+              <span class="rationale-icon">&#x1F9E0;</span>
+              <h4>How the model decided</h4>
+            </div>
+            <p id="explanation-text" class="explanation-text">
+              Explanation will be populated here based on the decision tree path.
+            </p>
+          </div>
+
+          <!-- Telemetry Summary Pill Bar -->
+          <div class="packet-summary-box">
+            <div class="summary-label">Evaluated Packet Snapshot</div>
+            <div class="summary-chips" id="summary-chips">
+              <!-- Dynamically populated chips -->
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Model Insights Section (Included from _insights.html) -->
+    {% include '_insights.html' %}
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-content">
+        <p><strong>SatPrior</strong> &mdash; Autonomous Satellite Data Prioritization Using Decision Tree Classification.</p>
+        <p class="footer-meta">SomaiyaSat ML Lab Mini-Project &bull; Sem 5 &bull; Scikit-Learn DecisionTreeClassifier</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
