@@ -1,48 +1,95 @@
 <!-- templates/_insights.html -->
 <section class="insights-section" id="model-insights">
   <div class="section-header">
-    <div class="section-badge">Evaluation & Architecture</div>
-    <h2>Model Insights & Validation</h2>
+    <div class="section-badge">Evaluation &amp; Architecture</div>
+    <h2>How the Model Works</h2>
     <p class="section-subtitle">
-      Trained on SomaiyaSat synthetic telemetry dataset using scikit-learn's Decision Tree Classifier.
+      Trained on simulated satellite telemetry records using scikit-learn's Decision Tree Classifier.
+    </p>
+  </div>
+
+  <!-- Noise and Accuracy Explanation Box -->
+  <div class="decision-rationale-box" style="margin-bottom: 2rem;">
+    <div class="rationale-header">
+      <span class="rationale-icon">&#x2139;&#xFE0F;</span>
+      <h4>Realistic Data &amp; Expected Accuracy</h4>
+    </div>
+    <p class="explanation-text">
+      During data generation, exactly 6% of packet labels were randomly shifted by one step to imitate human operator discretion, queue preemption, and real-world transmission noise. Because of this intentional noise, an evaluation accuracy around 90% is expected, robust, and healthy&mdash;preventing the tree from memorizing unrealistic rules.
     </p>
   </div>
 
   <!-- Key Metrics Row -->
   <div class="metrics-grid">
-    <div class="metric-card">
-      <div class="metric-icon">&#x2699;</div>
-      <div class="metric-info">
-        <span class="metric-label">Model Type</span>
-        <span class="metric-value">Decision Tree</span>
-        <span class="metric-sub">Criterion: Gini Impurity</span>
-      </div>
-    </div>
-
+    <!-- Test Accuracy -->
     <div class="metric-card">
       <div class="metric-icon">&#x1F4CA;</div>
       <div class="metric-info">
         <span class="metric-label">Test Accuracy</span>
-        <span class="metric-value highlight-accent">{{ (metrics.accuracy * 100) | round(1) }}%</span>
-        <span class="metric-sub">Stratified Holdout</span>
+        <span class="metric-value highlight-accent">
+          {%- if metrics and metrics.accuracy is defined and metrics.accuracy is not none -%}
+            {{ (metrics.accuracy * 100) | round(1) }}%
+          {%- elif metrics and metrics.test_accuracy is defined and metrics.test_accuracy is not none -%}
+            {{ (metrics.test_accuracy * 100) | round(1) }}%
+          {%- else -%}
+            -
+          {%- endif -%}
+        </span>
+        <span class="metric-sub">Holdout Evaluation</span>
       </div>
     </div>
 
+    <!-- Training Rows -->
     <div class="metric-card">
-      <div class="metric-icon">&#x1F4C2;</div>
+      <div class="metric-icon">&#x1F4D1;</div>
       <div class="metric-info">
-        <span class="metric-label">Dataset Split</span>
-        <span class="metric-value">{{ metrics.train_rows }} / {{ metrics.test_rows }}</span>
-        <span class="metric-sub">Train / Test Samples</span>
+        <span class="metric-label">Training Rows</span>
+        <span class="metric-value">
+          {{ metrics.train_rows if metrics and metrics.train_rows is defined and metrics.train_rows is not none else "-" }}
+        </span>
+        <span class="metric-sub">80% Learning Split</span>
       </div>
     </div>
 
+    <!-- Test Rows -->
+    <div class="metric-card">
+      <div class="metric-icon">&#x1F9EA;</div>
+      <div class="metric-info">
+        <span class="metric-label">Test Rows</span>
+        <span class="metric-value">
+          {{ metrics.test_rows if metrics and metrics.test_rows is defined and metrics.test_rows is not none else "-" }}
+        </span>
+        <span class="metric-sub">20% Surprise Exam</span>
+      </div>
+    </div>
+
+    <!-- Tree Depth -->
     <div class="metric-card">
       <div class="metric-icon">&#x1F333;</div>
       <div class="metric-info">
-        <span class="metric-label">Max Depth</span>
-        <span class="metric-value">{{ metrics.max_depth }} Levels</span>
-        <span class="metric-sub">Interpretable & Pruned</span>
+        <span class="metric-label">Tree Depth</span>
+        <span class="metric-value">
+          {%- if metrics and metrics.tree_depth is defined and metrics.tree_depth is not none -%}
+            {{ metrics.tree_depth }}
+          {%- elif metrics and metrics.max_depth is defined and metrics.max_depth is not none -%}
+            {{ metrics.max_depth }}
+          {%- else -%}
+            -
+          {%- endif -%}
+        </span>
+        <span class="metric-sub">Max Question Levels</span>
+      </div>
+    </div>
+
+    <!-- Number of Leaves -->
+    <div class="metric-card">
+      <div class="metric-icon">&#x1F343;</div>
+      <div class="metric-info">
+        <span class="metric-label">Number of Leaves</span>
+        <span class="metric-value">
+          {{ metrics.num_leaves if metrics and metrics.num_leaves is defined and metrics.num_leaves is not none else "-" }}
+        </span>
+        <span class="metric-sub">Final Decision Rules</span>
       </div>
     </div>
   </div>
@@ -53,18 +100,18 @@
     <div class="plot-card wide-card">
       <div class="plot-card-header">
         <div>
-          <h3>Decision Tree Architecture</h3>
+          <h3>Decision Tree Rules</h3>
           <span class="plot-tag">Hierarchical Logic</span>
         </div>
         <a href="{{ url_for('static', filename='plots/tree.png') }}" target="_blank" class="plot-expand-btn" title="Open full resolution image in new tab">
           &#x2922; View Full Tree
         </a>
       </div>
-      <div class="plot-image-wrapper tree-wrapper">
+      <div class="plot-image-wrapper tree-wrapper" style="background: #111a2e;">
         <img src="{{ url_for('static', filename='plots/tree.png') }}" alt="Decision Tree Visualization" class="plot-img" loading="lazy">
       </div>
       <p class="plot-caption">
-        Visual representation of binary splits based on telemetry packet attributes (urgency, battery, link quality, packet type).
+        Follow the yes/no questions from top to bottom to see how each packet reaches its final priority.
       </p>
     </div>
 
@@ -73,17 +120,17 @@
       <div class="plot-card-header">
         <div>
           <h3>Confusion Matrix</h3>
-          <span class="plot-tag">Classification Accuracy</span>
+          <span class="plot-tag">Prediction Counts</span>
         </div>
         <a href="{{ url_for('static', filename='plots/confusion.png') }}" target="_blank" class="plot-expand-btn" title="Open full resolution image">
           &#x2922; Expand
         </a>
       </div>
-      <div class="plot-image-wrapper">
+      <div class="plot-image-wrapper" style="background: #111a2e;">
         <img src="{{ url_for('static', filename='plots/confusion.png') }}" alt="Confusion Matrix Plot" class="plot-img" loading="lazy">
       </div>
       <p class="plot-caption">
-        Predicted vs. True transmission priorities across holdout validation data.
+        Diagonal cells are correct predictions; everything else is a mistake.
       </p>
     </div>
 
@@ -92,17 +139,17 @@
       <div class="plot-card-header">
         <div>
           <h3>Feature Importance</h3>
-          <span class="plot-tag">Gini Impurity Reduction</span>
+          <span class="plot-tag">Decision Influence</span>
         </div>
         <a href="{{ url_for('static', filename='plots/importance.png') }}" target="_blank" class="plot-expand-btn" title="Open full resolution image">
           &#x2922; Expand
         </a>
       </div>
-      <div class="plot-image-wrapper">
+      <div class="plot-image-wrapper" style="background: #111a2e;">
         <img src="{{ url_for('static', filename='plots/importance.png') }}" alt="Feature Importance Plot" class="plot-img" loading="lazy">
       </div>
       <p class="plot-caption">
-        Ranking of telemetry features by their contribution to priority decisions.
+        Longer bars show which packet attributes had the strongest influence on the priority decision.
       </p>
     </div>
   </div>
