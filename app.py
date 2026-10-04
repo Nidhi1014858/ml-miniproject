@@ -1,127 +1,98 @@
 """
-app.py
-LinkWise Flask Web Application
-Provides the dashboard interface and prediction API for satellite telemetry data prioritization.
+app.py  -  The LinkWise web server (built with Flask).
+
+It is the "middle person" between the web page and the ML model:
+
+    Browser  --(packet)-->  app.py  -->  predict_packet() in ml/predict.py
+    Browser  <--(answer)--  app.py  <--  priority, confidence, path
+
+HOW TO RUN (from the main project folder, ml-miniproject/):
+    python app.py
+Then open  http://127.0.0.1:5000  in the browser.
+
+ROUTES (a route = a web address the server answers):
+    GET  /         -> sends the web page, filled with the model's scores
+    POST /predict  -> receives one packet, returns the model's prediction as JSON
 """
 
-import sys
 import json
-from pathlib import Path
-from flask import Flask, render_template, request, jsonify
+import os
 
-# Add project root to sys.path
-PROJECT_ROOT = Path(__file__).resolve().parent
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+from flask import Flask, jsonify, render_template, request
 
-import config
-from ml.predict import predict_and_explain, validate_packet, load_model
+import config                          # shared settings (allowed values, file paths)
+from ml.predict import predict_packet  # our prediction function
 
+# Create the web app. Flask automatically finds the templates/ and static/ folders.
 app = Flask(__name__)
 
 
-def get_metrics_data():
+def load_metrics():
     """
-    Helper to safely read saved metrics from model/metrics.json.
+    Reads the model's scores from model/metrics.json (created by ml/train.py).
+    Returns None if the model has not been trained yet.
     """
-    if config.METRICS_PATH.exists():
-        try:
-            with open(config.METRICS_PATH, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception as e:
-            app.logger.warning(f"Failed to read metrics file: {e}")
-    return {
-        "model_name": "DecisionTreeClassifier",
-        "accuracy": 0.7778,
-        "train_rows": 360,
-        "test_rows": 90,
-        "max_depth": config.MAX_TREE_DEPTH,
-        "feature_names": [],
-    }
+    if not os.path.exists(config.METRICS_PATH):
+        return None
+
+    with open(config.METRICS_PATH) as f:
+        metrics = json.load(f)
+
+    # The insights section of the page uses the names "accuracy" and "max_depth".
+    # train.py saves them as "test_accuracy" and "tree_depth", so we add copies
+    # under the names the page expects.
+    metrics["accuracy"] = metrics["test_accuracy"]
+    metrics["max_depth"] = metrics["tree_depth"]
+    return metrics
 
 
-# Pre-warm model load on startup (if already trained)
-try:
-    load_model()
-except Exception as e:
-    app.logger.info(f"Model will be loaded on demand: {e}")
+# ---------------------------------------------------------------------------
+# ROUTE 1: the web page
+# ---------------------------------------------------------------------------
+
+@app.route("/")
+def home():
+    metrics = load_metrics()
+    if metrics is None:
+        # Friendly message instead of a crash if someone forgot to train the model.
+        return "Model not trained yet. Run:  python -m ml.train", 503
+
+    # render_template() fills the HTML page with these values.
+    #   metrics -> accuracy, train/test rows, depth (shown in the insights section)
+    #   config  -> allowed values, so the page can build its dropdowns from them
+    return render_template("index.html", metrics=metrics, config=config)
 
 
-@app.route("/", methods=["GET"])
-def index():
-    """
-    Renders the LinkWise mission dashboard with model insights.
-    """
-    metrics = get_metrics_data()
-    return render_template(
-        "index.html",
-        metrics=metrics,
-        config=config,
-    )
-
+# ---------------------------------------------------------------------------
+# ROUTE 2: the prediction API
+# ---------------------------------------------------------------------------
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    """
-    Inference endpoint.
-    Accepts JSON packet attributes, validates input, calls Decision Tree predictor,
-    and returns priority class with decision explanation.
-    """
+    # Read the packet the browser sent (as JSON).
+    # silent=True means: if it is not valid JSON, give None instead of crashing.
+    packet = request.get_json(silent=True)
+
     try:
-        data = request.get_json(silent=True)
-        if not data:
-            data = request.form.to_dict()
+        result = predict_packet(packet)  # all checking + predicting happens in predict.py
 
-        if not data:
-            return jsonify({
-                "success": False,
-                "error": "No input payload received. Please provide packet telemetry JSON.",
-            }), 400
+    except ValueError as error:
+        # Bad input (missing field, unknown value, negative number...).
+        # 400 = "the request was wrong" (the user's mistake, not the server's).
+        return jsonify({"success": False, "error": str(error)}), 400
 
-        # Type conversion and normalization
-        packet = {
-            "data_type": str(data.get("data_type", "")).strip(),
-            "urgency": str(data.get("urgency", "")).strip(),
-            "data_size_kb": float(data.get("data_size_kb", 0)),
-            "battery_level": float(data.get("battery_level", 0)),
-            "link_quality": str(data.get("link_quality", "")).strip(),
-        }
+    except Exception as error:
+        # Anything unexpected. 500 = "something broke on the server".
+        app.logger.error(f"Prediction failed: {error}")
+        return jsonify({"success": False, "error": "Prediction failed on the server"}), 500
 
-        # Validate input against config
-        validate_packet(packet)
-
-        # Execute prediction and generate explanation
-        priority, explanation = predict_and_explain(packet)
-
-        return jsonify({
-            "success": True,
-            "priority": priority,
-            "explanation": explanation,
-            "packet": packet,
-        }), 200
-
-    except ValueError as val_err:
-        return jsonify({
-            "success": False,
-            "error": str(val_err),
-        }), 400
-    except Exception as err:
-        app.logger.error(f"Prediction error: {err}")
-        return jsonify({
-            "success": False,
-            "error": f"Internal prediction failure: {str(err)}",
-        }), 500
+    # Success: send back priority, confidence, path, probabilities
+    # plus the packet itself, so the page can show what was evaluated.
+    return jsonify({"success": True, **result, "packet": packet})
 
 
-@app.route("/api/metrics", methods=["GET"])
-def api_metrics():
-    """
-    Returns model training metrics and summary in JSON format.
-    """
-    metrics = get_metrics_data()
-    return jsonify(metrics), 200
-
-
+# This runs only when you start the server with:  python app.py
 if __name__ == "__main__":
-    print(f"Starting LinkWise Dashboard on http://127.0.0.1:5000 ...")
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    # debug=True: the server restarts by itself when you save a file,
+    # and shows detailed errors. Fine for a project demo.
+    app.run(debug=True)
