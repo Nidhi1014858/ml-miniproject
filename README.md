@@ -1,200 +1,109 @@
-# LinkWise: Autonomous Satellite Data Prioritization Using Decision Tree Classification
+# LinkWise
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![Framework](https://img.shields.io/badge/Framework-Flask-black.svg)](https://flask.palletsprojects.com/)
-[![ML](https://img.shields.io/badge/ML-scikit--learn-orange.svg)](https://scikit-learn.org/)
-[![License](https://img.shields.io/badge/License-Academic-green.svg)]()
-
-> **SomaiyaSat ML Lab Mini-Project (Semester 5)**  
-> An autonomous machine learning system that classifies incoming satellite telemetry and payload packets into **High**, **Medium**, or **Low** transmission priorities using a **Decision Tree Classifier**.
+Autonomous Satellite Downlink Packet Prioritization using Decision Tree Classification.
 
 ---
 
-## 1. Project Overview
+## What LinkWise Does
 
-In small satellite operations such as SomaiyaSat, communication pass windows with ground stations are brief (typically 8–12 minutes per pass), and on-board electrical power and downlink bandwidth are severely constrained. Downlinking bulky non-critical payloads during low-elevation passes or low-battery states risks packet drops, frame corruption, and satellite brownout.
-
-**LinkWise** solves this scheduling challenge through transparent, interpretable machine learning:
-- Ingests telemetry packet parameters (**Data Type**, **Urgency**, **Data Size**, **Battery Level**, and **Link Quality**).
-- Applies a pruned **Decision Tree Classifier** to classify transmission priority into **High**, **Medium**, or **Low**.
-- Traces the exact node traversal through the decision tree to generate human-readable explanations (e.g., *"High urgency flag and compact packet size guided the decision tree to assign High transmission priority"*).
-- Displays comprehensive model metrics, confusion matrix, feature importance, and tree visual diagrams on an interactive dashboard.
+During brief satellite communication passes (0.5 to 12 minutes), bandwidth and battery power are limited. **LinkWise** uses a Decision Tree Classifier to prioritize packets into **High**, **Medium**, or **Low** downlink priority so critical satellite data reaches ground station operators first.
 
 ---
 
-## 2. Key Features
+## Telemetry Inputs
 
-- **Domain-Realistic Telemetry Simulation**: Generates 450 synthetic satellite packets mirroring operational CubeSat constraints (TT&C commands, housekeeping telemetry, SSTV images, and amateur voice/data).
-- **Interpretable Decision Tree Classifier**: Uses a `DecisionTreeClassifier` with tuned depth (`max_depth=5`) to balance high accuracy (~78–82%) with human interpretability.
-- **Rule-Based Decision Path Explanation**: Traces the actual tree split nodes to explain *why* a priority was assigned, without relying on LLMs or external APIs.
-- **Interactive Flask Dashboard**: A responsive, space-themed mission control interface featuring real-time priority badges, loading radar indicators, and random packet synthesis.
-- **Embedded Model Insights**: Visualizes the decision tree architecture (`tree.png`), test confusion matrix (`confusion.png`), and Gini feature importance ranking (`importance.png`).
-- **Clean Architecture & Centralized Config**: All file paths, feature types, allowed values, and random seeds (`42`) are maintained in `config.py`.
+LinkWise evaluates 6 packet attributes:
 
----
-
-## 3. Technology Stack
-
-- **Core Language**: Python 3.10+
-- **Web Framework**: Flask
-- **Machine Learning**: scikit-learn (`DecisionTreeClassifier`, `ColumnTransformer`, `OneHotEncoder`)
-- **Data Manipulation**: pandas, numpy
-- **Visualization**: matplotlib (non-interactive Agg backend)
-- **Frontend**: Semantic HTML5, Vanilla CSS3 (orbital space theme), Vanilla JavaScript (ES6+ `fetch` API)
+1. **`data_type`**: Telemetry category — `Fault alert`, `Housekeeping`, `SSTV image`, or `Voice/Data`.
+2. **`size_kb`**: Data volume in kilobytes (1 to 800 KB).
+3. **`battery_pct`**: Satellite state-of-charge percentage (10 to 100%).
+4. **`link_quality`**: Radio frequency connection state — `Poor`, `Fair`, or `Good`.
+5. **`pass_time_min`**: Contact window remaining before the ground station goes out of view (0.5 to 12.0 minutes).
+6. **`sat_mode`**: Spacecraft operating state — `Normal` or `Safe`.
 
 ---
 
-## 4. Project Directory Structure
+## How Labels Were Made
 
-```text
-linkwise/
-├── README.md                 # Project documentation and user guide
-├── requirements.txt          # Python dependencies
-├── .gitignore                # Git ignore rules
-├── config.py                 # Central configuration and hyperparameters
-│
-├── data/
-│   ├── generate_data.py      # Synthetic satellite dataset generator
-│   └── satellite_data.csv    # Generated telemetry dataset (450 rows)
-│
-├── ml/
-│   ├── train.py              # ML training, evaluation, and plot generation
-│   └── predict.py            # Prediction pipeline and decision path explainer
-│
-├── model/
-│   ├── model.pkl             # Serialized trained scikit-learn pipeline
-│   └── metrics.json          # Evaluation metrics (accuracy, splits, reports)
-│
-├── app.py                    # Flask application and REST routes
-│
-├── templates/
-│   ├── index.html            # Main mission control dashboard
-│   └── _insights.html        # Reusable model insights and evaluation component
-│
-└── static/
-    ├── css/
-    │   └── style.css         # Space-themed responsive dashboard stylesheet
-    ├── js/
-    │   └── main.js           # Interactive form submission and random packet logic
-    └── plots/
-        ├── tree.png          # Visual decision tree diagram
-        ├── confusion.png     # Test set confusion matrix
-        └── importance.png    # Gini feature importance bar chart
-```
+The synthetic training dataset (1,500 rows) is generated using an operational mission-scoring rule:
+
+1. **Base Score**: `Fault alert` (75), `Housekeeping` (50), `SSTV image` (40), `Voice/Data` (30).
+2. **Safe Mode**: +20 boost for critical health and alerts; -20 penalty for non-essential payloads.
+3. **Low Battery**: +10 boost for Housekeeping when battery is below 30%; -15 penalty for SSTV and Voice/Data below 25%.
+4. **RF Link**: -10 penalty for Poor link, +5 boost for Good link.
+5. **Pass Feasibility**: -25 penalty if transmission cannot finish during the pass window (speeds: 1 KB/s Poor, 3 KB/s Fair, 6 KB/s Good).
+6. **Priority Cutoffs**: Score $\ge$ 60 $\rightarrow$ **High**, 35–59 $\rightarrow$ **Medium**, < 35 $\rightarrow$ **Low**.
+
+### Why 6% Label Noise Is Added
+Real-world satellite operations involve operator overrides, queue adjustments, and atmospheric interference. Adding 6% random label noise prevents the Decision Tree from memorizing deterministic thresholds and reflects realistic flight conditions with an expected ~90% accuracy.
 
 ---
 
-## 5. How the ML Pipeline Works
+## How to Run
 
-```text
-+-------------------------+
-|  satellite_data.csv     |
-+-------------------------+
-             |
-             v
-+-------------------------------------------------------+
-|  ColumnTransformer (OneHotEncoder + Passthrough)      |
-|  - data_type: [TT&C, Housekeeping, SSTV, Voice/Data]  |
-|  - urgency: [Low, Medium, High]                       |
-|  - link_quality: [Poor, Fair, Good]                   |
-|  - Numerical: data_size_kb, battery_level             |
-+-------------------------------------------------------+
-             |
-             v
-+-------------------------------------------------------+
-|  DecisionTreeClassifier (max_depth=5, seed=42)       |
-+-------------------------------------------------------+
-             |
-             v
-+-------------------------------------------------------+
-|  1. Evaluation: Accuracy, Precision, Recall, F1       |
-|  2. Serialization: model/model.pkl & metrics.json     |
-|  3. Plot Exports: tree.png, confusion.png, importance |
-+-------------------------------------------------------+
-```
+Run these commands in order from the project root:
 
-1. **Preprocessing**: Categorical features are encoded using `OneHotEncoder` with fixed categories, while numerical features (`data_size_kb`, `battery_level`) pass through directly.
-2. **Training**: The pipeline splits data 80/20 with stratification on `priority`, training a tree capped at `max_depth=5` to prevent overfitting.
-3. **Inference**: Given a new packet dictionary, `ml/predict.py` executes the scikit-learn pipeline and inspects `clf.decision_path(X)` to identify the primary split conditions that guided the packet to its leaf node.
-
----
-
-## 6. Installation & Setup
-
-### Step 1: Clone or Open the Workspace
 ```bash
-git clone https://github.com/Nidhi1014858/ml-miniproject.git
-cd ml-miniproject
-```
-
-### Step 2: Set Up Virtual Environment (Recommended)
-```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
-
-# macOS / Linux
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### Step 3: Install Required Packages
-```bash
+# 1. Install dependencies
 pip install -r requirements.txt
-```
 
----
-
-## 7. Execution Guide
-
-Run the following three commands in sequence:
-
-### 1. Generate the Telemetry Dataset
-```bash
+# 2. Generate simulated satellite dataset (1,500 rows)
 python data/generate_data.py
-```
-*Output: Synthesizes `data/satellite_data.csv` (450 rows) with realistic priority distributions.*
 
-### 2. Train and Evaluate the Decision Tree
-```bash
+# 3. Train Decision Tree and evaluate metrics
 python ml/train.py
-```
-*Output: Evaluates model performance, saves `model/model.pkl` and `model/metrics.json`, and exports all three plots to `static/plots/`.*
 
-### 3. Launch the Flask Web Application
-```bash
+# 4. Generate diagnostic visualization charts
+python ml/plots.py
+
+# 5. Start the web application
 python app.py
 ```
 
-### 4. Open in Browser
-Navigate to:
+Then open your browser and navigate to:
 ```text
 http://127.0.0.1:5000
 ```
 
 ---
 
-## 8. Example Prediction
+## Project Structure
 
-### Sample Packet Telemetry:
-| Field | Value | Reason |
-|---|---|---|
-| **Data Type** | `TT&C` | Critical Telemetry & Command packet |
-| **Urgency** | `High` | Immediate flight maneuver instruction |
-| **Data Size** | `25 KB` | Compact frame |
-| **Battery Level** | `85%` | Sufficient satellite power |
-| **Link Quality** | `Good` | Clear zenith ground pass |
-
-### Output:
-- **Predicted Priority**: <span style="color:#ef4444; font-weight:bold;">HIGH</span>
-- **Decision Path Explanation**:
-  > *"High urgency flag and compact packet size (25 KB <= 411 KB) guided the decision tree to assign High transmission priority for prompt downlink."*
+```text
+ml-miniproject/
+├── README.md               # Project guide and overview
+├── config.py               # Shared constants, paths, and allowed values
+├── app.py                  # Flask web server and /predict route
+├── requirements.txt        # Python package dependencies
+├── data/
+│   ├── DATASET.md          # Dataset specifications and scoring rules
+│   ├── generate_data.py    # Synthetic telemetry data generator
+│   ├── satellite_data.csv  # Full dataset (1,500 rows)
+│   └── sample_data.csv     # Sample dataset (50 rows)
+├── ml/
+│   ├── train.py            # Model training and evaluation
+│   ├── predict.py          # Prediction logic and decision path explainer
+│   └── plots.py            # Tree, confusion matrix, and importance plots
+├── model/
+│   ├── model.pkl           # Saved Decision Tree model artifact
+│   ├── metrics.json        # Test accuracy, depth, and split counts
+│   └── test_data.csv       # Holdout test set records
+├── templates/
+│   ├── index.html          # Main web dashboard interface
+│   └── _insights.html      # Model metrics and diagnostic charts section
+└── static/
+    ├── css/style.css       # Space-themed responsive stylesheet
+    ├── js/main.js          # Interactive frontend and fetch API logic
+    └── plots/              # Exported evaluation charts
+        ├── tree.png
+        ├── confusion.png
+        └── importance.png
+```
 
 ---
 
-## 9. Future Scope
+## Team
 
-1. **Dynamic Real-Time Satellite Telemetry Ingestion**: Connect to actual software-defined radio (SDR) or CubeSat ground station feeds via MQTT or WebSockets.
-2. **Multi-Constraint Optimization**: Incorporate ground station contact horizon timers (AOS/LOS duration) and orbital eclipse windows into the decision features.
-3. **Hardware Deployment**: Compile the trained decision tree rules into C/C++ header arrays for execution on resource-constrained on-board microcontrollers (e.g., STM32 / ARM Cortex-M).
-4. **Ensemble Benchmarking**: Compare performance against Random Forests and Gradient Boosted Trees while preserving local decision tree explainability.
+- **Nidhi**: Data generation and visual plots
+- **Sadhana**: Machine learning model and backend
+- **Apoorva**: Web frontend and UI design

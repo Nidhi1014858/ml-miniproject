@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LinkWise — Autonomous Satellite Data Prioritization</title>
-  <meta name="description" content="Autonomous Satellite Data Transmission Prioritization using Decision Tree Classification for SomaiyaSat.">
+  <title>LinkWise — Satellite Downlink Priority Classification</title>
+  <meta name="description" content="Autonomous Satellite Downlink Packet Prioritization using Decision Tree Classification for SomaiyaSat.">
   
-  <!-- Modern Clean Font -->
+  <!-- Plus Jakarta Sans Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -15,220 +15,280 @@
 </head>
 <body>
 
-  <!-- Subtle Space Ambient Background -->
-  <div class="stars-bg"></div>
-  <div class="glow-orb orb-1"></div>
-  <div class="glow-orb orb-2"></div>
+  <!-- Ambient background atmospheric glow orbs -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+  <div class="bg-glow bg-glow-4"></div>
 
-  <div class="app-container">
+  <!-- Master Translucent Frosted Glass App Shell -->
+  <div class="glass-app-container">
 
-    <!-- Top Navigation Bar / Branding -->
+    <!-- Top App Navigation & Brand Header -->
     <header class="app-header">
       <div class="brand">
-        <div class="brand-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
-          </svg>
-        </div>
-        <div class="brand-text">
-          <span class="project-title">LinkWise</span>
-          <span class="project-tagline">SomaiyaSat ML Telemetry Subsystem</span>
-        </div>
+        <div class="glowing-orb brand-orb" aria-hidden="true"></div>
+        <span class="brand-name">LinkWise</span>
       </div>
-      <div class="header-badges">
-        <span class="status-indicator">
-          <span class="pulse-dot"></span> ML Pipeline Online
-        </span>
-        <a href="#model-insights" class="nav-link">Model Insights</a>
+      <div class="header-right">
+        <div class="header-status-badge">
+          <span class="status-dot"></span>
+          <span class="status-text">ML Telemetry Pipeline Online</span>
+        </div>
+        <a href="#model-insights" class="nav-insights-btn">
+          <span>Model Insights</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
       </div>
     </header>
 
-    <!-- Hero / Intro -->
-    <section class="hero-section">
-      <div class="badge-pill">&#x1F6F0;&#xFE0F; Decision Tree Classification System</div>
-      <h1 class="main-title">Autonomous Satellite Data Prioritization</h1>
-      <p class="hero-desc">
-        Classifies incoming SomaiyaSat packets into <strong>High</strong>, <strong>Medium</strong>, or <strong>Low</strong> transmission priority using machine learning. Evaluates packet type, urgency, battery reserve, payload size, and ground link quality to maximize scientific throughput and mission safety.
+    <!-- Page Title & Editorial Mission Overview -->
+    <div class="page-title-section">
+      <div class="mission-tag">Satellite Telemetry Subsystem</div>
+      <h1 class="page-title">Downlink Priority</h1>
+      <p class="page-subtitle">
+        Decision Tree packet classification to optimize downlink bandwidth and prioritize critical mission telemetry during brief ground station contact passes.
       </p>
-    </section>
+    </div>
 
-    <!-- Main Content Workspace: Form & Result -->
-    <main class="workspace-grid">
-      
-      <!-- Telemetry Input Card -->
-      <section class="card panel-card input-panel">
+    <!-- Main Workspace Grid: Packet Details + Prediction Result -->
+    <main class="dashboard-grid">
+
+      <!-- LEFT CARD: Packet Details Form -->
+      <section class="glass-card card-form">
         <div class="card-header">
-          <div class="card-icon-badge">&#x1F4E1;</div>
-          <div>
-            <h2>Telemetry Packet Ingestion</h2>
-            <p class="card-subtitle">Configure packet parameters for on-board transmission scheduling</p>
+          <div class="card-title-group">
+            <span class="card-eyebrow">Telemetry Ingestion</span>
+            <h2 class="card-heading">Packet details</h2>
           </div>
+          <span class="card-badge">6 Features</span>
         </div>
 
-        <form id="packet-form" class="telemetry-form" novalidate>
+        <form id="packet-form" class="packet-form" novalidate>
           
-          <!-- Data Type -->
-          <div class="form-group">
-            <label for="data_type">
-              <span class="label-title">Data Type</span>
-              <span class="label-hint">Telemetry or payload category</span>
-            </label>
+          <!-- 1. Data Type Dropdown -->
+          <div class="form-field">
+            <label for="data_type" class="field-label">Data Type</label>
             <div class="select-wrapper">
-              <select id="data_type" name="data_type" required>
-                <option value="TT&C">TT&C (Telemetry, Tracking & Command)</option>
-                <option value="Housekeeping" selected>Housekeeping (Diagnostics & Health)</option>
-                <option value="SSTV">SSTV (Slow Scan TV / Camera Payload)</option>
-                <option value="Voice/Data">Voice/Data (Digital Transponder Stream)</option>
+              <select id="data_type" name="data_type" class="form-input custom-select" required>
+                {% for dt in config.DATA_TYPES %}
+                  <option value="{{ dt }}" {% if dt == 'Housekeeping' %}selected{% endif %}>{{ dt }}</option>
+                {% endfor %}
               </select>
             </div>
+            <span class="field-hint">Category of satellite telemetry or scientific payload</span>
           </div>
 
-          <!-- Urgency -->
-          <div class="form-group">
-            <label for="urgency">
-              <span class="label-title">Urgency Level</span>
-              <span class="label-hint">Mission criticality flag</span>
-            </label>
-            <div class="select-wrapper">
-              <select id="urgency" name="urgency" required>
-                <option value="Low">Low (Routine Background Log)</option>
-                <option value="Medium" selected>Medium (Standard Downlink Queue)</option>
-                <option value="High">High (Immediate Action Required)</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Two-column row for numbers -->
+          <!-- 2. Packet Size & Battery Level in 2-column layout -->
           <div class="form-row-2">
-            <!-- Data Size -->
-            <div class="form-group">
-              <label for="data_size_kb">
-                <span class="label-title">Data Size (KB)</span>
-                <span class="label-hint">1 to 10,000 KB</span>
-              </label>
+            <!-- size_kb -->
+            <div class="form-field">
+              <label for="size_kb" class="field-label">Size (KB)</label>
               <div class="input-with-affix">
                 <input 
                   type="number" 
-                  id="data_size_kb" 
-                  name="data_size_kb" 
+                  id="size_kb" 
+                  name="size_kb" 
                   min="1" 
-                  max="10000" 
-                  value="120" 
+                  max="800" 
+                  value="100" 
+                  class="form-input" 
                   required
                 >
-                <span class="input-affix">KB</span>
+                <span class="input-unit">KB</span>
               </div>
+              <span class="field-hint">Packet volume (1 to 800 KB)</span>
             </div>
 
-            <!-- Battery Level -->
-            <div class="form-group">
-              <label for="battery_level">
-                <span class="label-title">Battery Level (%)</span>
-                <span class="label-hint">0 to 100% capacity</span>
-              </label>
+            <!-- battery_pct -->
+            <div class="form-field">
+              <label for="battery_pct" class="field-label">Battery Level</label>
               <div class="input-with-affix">
                 <input 
                   type="number" 
-                  id="battery_level" 
-                  name="battery_level" 
-                  min="0" 
+                  id="battery_pct" 
+                  name="battery_pct" 
+                  min="10" 
                   max="100" 
-                  value="78" 
+                  value="80" 
+                  class="form-input" 
                   required
                 >
-                <span class="input-affix">%</span>
+                <span class="input-unit">%</span>
               </div>
+              <span class="field-hint">Current charge (10 to 100%)</span>
             </div>
           </div>
 
-          <!-- Link Quality -->
-          <div class="form-group">
-            <label for="link_quality">
-              <span class="label-title">Link Quality</span>
-              <span class="label-hint">Ground station RF signal state</span>
-            </label>
-            <div class="select-wrapper">
-              <select id="link_quality" name="link_quality" required>
-                <option value="Poor">Poor (High bit-error / weak elevation)</option>
-                <option value="Fair" selected>Fair (Moderate signal / standard window)</option>
-                <option value="Good">Good (Clear line-of-sight / zenith pass)</option>
-              </select>
+          <!-- 3. Link Quality Pill Toggles -->
+          <div class="form-field">
+            <span class="field-label">Link Quality</span>
+            <div class="pill-toggle-group" role="radiogroup" aria-label="Link Quality">
+              {% for lq in config.LINK_QUALITIES %}
+                <label class="pill-toggle-label">
+                  <input 
+                    type="radio" 
+                    name="link_quality" 
+                    id="link_quality_{{ loop.index }}" 
+                    value="{{ lq }}" 
+                    {% if lq == 'Good' %}checked{% endif %}
+                  >
+                  <span class="pill-toggle-btn">{{ lq }}</span>
+                </label>
+              {% endfor %}
+            </div>
+            <span class="field-hint">Ground station radio frequency signal condition</span>
+          </div>
+
+          <!-- 4. Pass Time & Satellite Mode in 2-column layout -->
+          <div class="form-row-2">
+            <!-- pass_time_min -->
+            <div class="form-field">
+              <label for="pass_time_min" class="field-label">Pass Time Left</label>
+              <div class="input-with-affix">
+                <input 
+                  type="number" 
+                  id="pass_time_min" 
+                  name="pass_time_min" 
+                  min="0.5" 
+                  max="12.0" 
+                  step="0.1" 
+                  value="6.0" 
+                  class="form-input" 
+                  required
+                >
+                <span class="input-unit">min</span>
+              </div>
+              <span class="field-hint">Remaining pass window (0.5 to 12.0 min)</span>
+            </div>
+
+            <!-- sat_mode Pill Toggles -->
+            <div class="form-field">
+              <span class="field-label">Satellite Mode</span>
+              <div class="pill-toggle-group" role="radiogroup" aria-label="Satellite Mode">
+                {% for sm in config.SAT_MODES %}
+                  <label class="pill-toggle-label">
+                    <input 
+                      type="radio" 
+                      name="sat_mode" 
+                      id="sat_mode_{{ loop.index }}" 
+                      value="{{ sm }}" 
+                      {% if sm == 'Normal' %}checked{% endif %}
+                    >
+                    <span class="pill-toggle-btn">{{ sm }}</span>
+                  </label>
+                {% endfor %}
+              </div>
+              <span class="field-hint">Spacecraft operating state</span>
             </div>
           </div>
 
-          <!-- Form Actions -->
+          <!-- Action Buttons -->
           <div class="form-actions">
-            <button type="submit" id="predict-btn" class="btn btn-primary">
-              <span class="btn-spinner" id="btn-spinner" style="display: none;"></span>
-              <span class="btn-icon">&#x26A1;</span>
-              <span class="btn-text">Predict Priority</span>
+            <button type="button" id="random-btn" class="pill-btn pill-btn-outline" title="Synthesize realistic telemetry values">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <circle cx="15.5" cy="15.5" r="1.5"></circle>
+                <circle cx="15.5" cy="8.5" r="1.5"></circle>
+                <circle cx="8.5" cy="15.5" r="1.5"></circle>
+              </svg>
+              <span>Random packet</span>
             </button>
-            <button type="button" id="random-btn" class="btn btn-secondary">
-              <span class="btn-icon">&#x1F3B2;</span>
-              <span class="btn-text">Random Packet</span>
+            <button type="submit" id="predict-btn" class="pill-btn pill-btn-coral">
+              <span class="btn-spinner" id="btn-spinner" style="display: none;"></span>
+              <svg id="predict-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              <span>Predict priority</span>
             </button>
           </div>
 
-          <!-- Inline Error Notification -->
-          <div id="error-box" class="alert-box alert-error" style="display: none;">
-            <span class="alert-icon">&#x26A0;&#xFE0F;</span>
+          <!-- Error Alert Banner -->
+          <div id="error-box" class="error-banner" style="display: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
             <span id="error-message"></span>
           </div>
 
         </form>
       </section>
 
-      <!-- Prediction Result Card -->
-      <section class="card panel-card result-panel">
-        <div class="card-header">
-          <div class="card-icon-badge">&#x1F680;</div>
-          <div>
-            <h2>Transmission Priority</h2>
-            <p class="card-subtitle">Decision Tree classification outcome and rationale</p>
-          </div>
-        </div>
-
-        <!-- Initial Placeholder State -->
-        <div id="result-placeholder" class="result-placeholder">
-          <div class="placeholder-icon">&#x1F52C;</div>
-          <h3>Ready for Packet Evaluation</h3>
-          <p>
-            Configure telemetry attributes on the left and click <strong>Predict Priority</strong>, or generate a <strong>Random Packet</strong> to observe the Decision Tree classifier in action.
+      <!-- RIGHT CARD: Result Card (Styled with inspiration right panel aesthetics) -->
+      <section class="glass-card card-result">
+        
+        <!-- Empty Initial State -->
+        <div id="result-placeholder" class="result-placeholder-view">
+          <div class="glowing-orb result-orb-large" aria-hidden="true"></div>
+          <h3 class="placeholder-title">Ready for Telemetry</h3>
+          <p class="placeholder-text">
+            Enter a packet and click Predict
           </p>
         </div>
 
         <!-- Loading State -->
-        <div id="result-loading" class="result-loading" style="display: none;">
-          <div class="radar-spinner"></div>
-          <p>Evaluating telemetry against decision tree nodes...</p>
+        <div id="result-loading" class="result-loading-view" style="display: none;">
+          <div class="glowing-orb result-orb-pulse" aria-hidden="true"></div>
+          <p class="loading-text">Evaluating packet against Decision Tree...</p>
         </div>
 
-        <!-- Active Result Display -->
-        <div id="result-display" class="result-display" style="display: none;">
+        <!-- Active Prediction State (Gentle fade-in) -->
+        <div id="result-display" class="result-display-view" style="display: none;">
           
-          <div class="priority-banner-wrapper">
-            <span class="priority-header-label">Predicted Priority:</span>
-            <div id="priority-badge" class="priority-badge priority-medium">
-              <span class="badge-pulse"></span>
-              <span id="priority-value" class="priority-text">MEDIUM</span>
+          <!-- Priority Badge Row -->
+          <div class="result-top-badge-row">
+            <span class="result-label">Predicted Priority</span>
+            <div id="priority-badge" class="priority-pill-badge priority-medium">
+              <span class="badge-dot"></span>
+              <span id="priority-value">MEDIUM</span>
             </div>
           </div>
 
-          <!-- Decision Path & Explanation Section -->
-          <div class="decision-rationale-box">
-            <div class="rationale-header">
-              <span class="rationale-icon">&#x1F9E0;</span>
-              <h4>How the model decided</h4>
+          <!-- Confidence percentage with soft gradient bar -->
+          <div class="confidence-card">
+            <div class="confidence-header">
+              <div class="confidence-title-group">
+                <span class="confidence-title">Model Confidence</span>
+                <span class="confidence-subtitle">Leaf node class probability</span>
+              </div>
+              <span id="confidence-value" class="confidence-pct">0%</span>
             </div>
-            <p id="explanation-text" class="explanation-text">
-              Explanation will be populated here based on the decision tree path.
-            </p>
+            <div class="confidence-track">
+              <div id="confidence-bar" class="confidence-fill" style="width: 0%;"></div>
+            </div>
           </div>
 
-          <!-- Telemetry Summary Pill Bar -->
-          <div class="packet-summary-box">
-            <div class="summary-label">Evaluated Packet Snapshot</div>
-            <div class="summary-chips" id="summary-chips">
+          <!-- How the tree decided (Reasoning Timeline) -->
+          <div class="tree-decision-card">
+            <div class="tree-card-header">
+              <div class="tree-icon-wrapper">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="5" r="3"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <path d="M7 15l5-3 5 3"></path>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <circle cx="18" cy="18" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <h4>How the tree decided</h4>
+                <span class="tree-header-sub">Decision node traversal</span>
+              </div>
+            </div>
+            <ol id="decision-path" class="decision-timeline">
+              <!-- Dynamically populated timeline nodes -->
+            </ol>
+          </div>
+
+          <!-- Small chips showing inputs sent -->
+          <div class="evaluated-chips-section">
+            <span class="chips-title">Evaluated Packet Snapshot</span>
+            <div id="summary-chips" class="chips-flex">
               <!-- Dynamically populated chips -->
             </div>
           </div>
@@ -239,14 +299,16 @@
 
     </main>
 
-    <!-- Model Insights Section (Included from _insights.html) -->
-    {% include '_insights.html' %}
+    <!-- Model Insights Section (Embedded from _insights.html) -->
+    <div class="insights-wrapper">
+      {% include '_insights.html' %}
+    </div>
 
-    <!-- Footer -->
+    <!-- Editorial Footer -->
     <footer class="app-footer">
-      <div class="footer-content">
-        <p><strong>LinkWise</strong> &mdash; Autonomous Satellite Data Prioritization Using Decision Tree Classification.</p>
-        <p class="footer-meta">SomaiyaSat ML Lab Mini-Project &bull; Sem 5 &bull; Scikit-Learn DecisionTreeClassifier</p>
+      <div class="footer-inner">
+        <p><strong>LinkWise</strong> &mdash; Autonomous Satellite Downlink Packet Prioritization</p>
+        <span class="footer-meta">SomaiyaSat ML Mini-Project &bull; Scikit-Learn DecisionTreeClassifier (max_depth=5)</span>
       </div>
     </footer>
 
