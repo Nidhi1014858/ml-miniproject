@@ -1,68 +1,43 @@
-"""
-LinkWise - Configuration Module
-Autonomous Satellite Data Prioritization Using Decision Tree Classification.
+# config.py - Shared configuration settings for the LinkWise project
 
-This file provides centralized paths, feature specifications, allowed values,
-and hyperparameter settings to maintain consistency across the project.
-"""
+# All columns present in the satellite telemetry dataset
+COLUMNS = ["data_type", "size_kb", "battery_pct", "link_quality", "pass_time_min", "sat_mode", "priority"]
 
-from pathlib import Path
+# Input feature columns used by machine learning models to make predictions
+FEATURES = [col for col in COLUMNS if col != "priority"]
 
-# ==============================================================================
-# Base Paths
-# ==============================================================================
-BASE_DIR = Path(__file__).resolve().parent
+# Target column that the machine learning model aims to predict
+TARGET = "priority"
 
-# Data paths
-DATA_DIR = BASE_DIR / "data"
-DATASET_PATH = DATA_DIR / "satellite_data.csv"
+# Allowed satellite transmission packet categories
+DATA_TYPES = ["Fault alert", "Housekeeping", "SSTV image", "Voice/Data"]
 
-# Model artifact paths
-MODEL_DIR = BASE_DIR / "model"
-MODEL_PATH = MODEL_DIR / "model.pkl"
-METRICS_PATH = MODEL_DIR / "metrics.json"
+# Ground station radio frequency link quality levels
+LINK_QUALITIES = ["Poor", "Fair", "Good"]
 
-# Static / plot paths
-STATIC_DIR = BASE_DIR / "static"
-PLOTS_DIR = STATIC_DIR / "plots"
-TREE_PLOT_PATH = PLOTS_DIR / "tree.png"
-CONFUSION_PLOT_PATH = PLOTS_DIR / "confusion.png"
-IMPORTANCE_PLOT_PATH = PLOTS_DIR / "importance.png"
+# Operational modes of the satellite (Normal operations vs Safe survival mode)
+SAT_MODES = ["Normal", "Safe"]
 
-# ==============================================================================
-# Feature & Target Definitions
-# ==============================================================================
-CATEGORICAL_FEATURES = ["data_type", "urgency", "link_quality"]
-NUMERICAL_FEATURES = ["data_size_kb", "battery_level"]
-FEATURE_COLUMNS = CATEGORICAL_FEATURES + NUMERICAL_FEATURES
+# Transmission priority classifications assigned to each packet
+PRIORITIES = ["High", "Medium", "Low"]
 
-TARGET_COLUMN = "priority"
-
-# Allowed values for categorical features
-ALLOWED_DATA_TYPES = ["TT&C", "Housekeeping", "SSTV", "Voice/Data"]
-ALLOWED_URGENCY_LEVELS = ["Low", "Medium", "High"]
-ALLOWED_LINK_QUALITIES = ["Poor", "Fair", "Good"]
-
-# Target priority classes (ordered from lowest to highest urgency)
-PRIORITY_CLASSES = ["Low", "Medium", "High"]
-
-ALLOWED_VALUES = {
-    "data_type": ALLOWED_DATA_TYPES,
-    "urgency": ALLOWED_URGENCY_LEVELS,
-    "link_quality": ALLOWED_LINK_QUALITIES,
-    "priority": PRIORITY_CLASSES,
-}
-
-# Numerical feature constraints for validation
-NUMERICAL_BOUNDS = {
-    "data_size_kb": {"min": 1, "max": 10000},
-    "battery_level": {"min": 0, "max": 100},
-}
-
-# ==============================================================================
-# Model Hyperparameters & Training Settings
-# ==============================================================================
+# Fixed random seed to ensure reproducible data generation and model training
 RANDOM_SEED = 42
-TEST_SIZE = 0.20
-MAX_TREE_DEPTH = 5
-CRITERION = "gini"
+
+# File path to the full synthetic satellite telemetry dataset (1500 rows)
+DATA_PATH = "data/satellite_data.csv"
+
+# File path to a small sample dataset (first 50 rows) for quick testing
+SAMPLE_PATH = "data/sample_data.csv"
+
+# File path where the trained Decision Tree model artifact will be saved
+MODEL_PATH = "model/model.pkl"
+
+# File path where model evaluation metrics and statistics are stored as JSON
+METRICS_PATH = "model/metrics.json"
+
+# File path to the holdout test dataset used for final model evaluation
+TEST_DATA_PATH = "model/test_data.csv"
+
+# Directory path where diagnostic visualization plots are saved
+PLOTS_DIR = "static/plots"

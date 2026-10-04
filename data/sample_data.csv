@@ -1,0 +1,51 @@
+data_type,size_kb,battery_pct,link_quality,pass_time_min,sat_mode,priority
+Voice/Data,267,88,Poor,5.7,Normal,Low
+Housekeeping,85,13,Fair,1.9,Safe,High
+Voice/Data,274,77,Good,7.0,Normal,Medium
+SSTV image,557,56,Fair,2.3,Normal,Low
+Fault alert,10,78,Poor,1.2,Normal,High
+Voice/Data,135,51,Fair,6.2,Normal,Low
+Voice/Data,148,24,Fair,8.0,Normal,Low
+Voice/Data,311,78,Poor,10.3,Normal,Low
+Fault alert,2,67,Good,9.5,Normal,High
+Housekeeping,17,52,Fair,10.4,Normal,Medium
+Housekeeping,46,43,Fair,9.2,Normal,Medium
+Voice/Data,321,41,Fair,8.6,Normal,Low
+SSTV image,594,53,Good,0.6,Normal,Low
+Voice/Data,257,33,Poor,7.7,Normal,Low
+Housekeeping,58,21,Poor,1.9,Safe,High
+Housekeeping,20,35,Fair,1.2,Normal,Medium
+SSTV image,399,11,Fair,2.3,Normal,Low
+Fault alert,2,48,Fair,10.0,Safe,High
+Voice/Data,316,31,Good,9.1,Normal,Medium
+SSTV image,651,25,Poor,11.4,Normal,Low
+Voice/Data,140,23,Poor,11.8,Normal,Low
+Housekeeping,36,99,Fair,10.8,Normal,Medium
+Voice/Data,161,29,Good,2.0,Safe,Low
+Voice/Data,362,39,Good,10.6,Normal,Medium
+Voice/Data,221,46,Good,10.1,Normal,Medium
+Housekeeping,79,18,Fair,10.5,Normal,High
+Housekeeping,50,38,Good,2.2,Normal,Medium
+Fault alert,14,32,Good,1.8,Normal,High
+Housekeeping,58,83,Poor,11.1,Normal,Low
+SSTV image,367,15,Fair,2.5,Normal,Low
+SSTV image,726,48,Good,4.7,Normal,Medium
+Voice/Data,298,81,Fair,5.7,Normal,Low
+Housekeeping,80,85,Good,1.9,Normal,Medium
+Housekeeping,96,56,Fair,0.7,Normal,Medium
+Housekeeping,32,30,Fair,11.9,Normal,Medium
+Housekeeping,18,40,Poor,10.6,Normal,Medium
+Fault alert,12,30,Good,11.0,Normal,High
+Housekeeping,39,70,Good,3.8,Normal,Medium
+Housekeeping,49,36,Poor,3.0,Normal,Medium
+SSTV image,341,67,Fair,5.4,Normal,Medium
+Housekeeping,46,69,Poor,5.7,Normal,Medium
+Voice/Data,188,95,Poor,0.6,Normal,Low
+SSTV image,410,43,Good,9.5,Normal,Medium
+Housekeeping,77,97,Fair,12.0,Normal,Medium
+Voice/Data,258,46,Fair,6.6,Normal,Medium
+Voice/Data,216,71,Fair,5.0,Normal,Low
+Housekeeping,20,70,Good,5.0,Normal,Medium
+Housekeeping,61,84,Fair,1.6,Normal,Medium
+SSTV image,305,52,Good,3.6,Normal,Medium
+Fault alert,7,82,Fair,6.3,Normal,High

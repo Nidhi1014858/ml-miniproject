@@ -1,451 +1,1501 @@
-data_type,urgency,data_size_kb,battery_level,link_quality,priority
-Voice/Data,Low,711,89,Fair,Low
-Housekeeping,High,72,82,Fair,High
-Voice/Data,Medium,283,33,Poor,Low
-SSTV,Low,1996,86,Fair,Low
-TT&C,Low,9,20,Good,Low
-Voice/Data,Low,823,39,Fair,Low
-Voice/Data,High,759,75,Fair,High
-Voice/Data,Medium,945,40,Poor,Low
-TT&C,High,51,77,Fair,High
-Housekeeping,Medium,195,89,Fair,Medium
-Housekeeping,Medium,52,20,Good,Low
-Voice/Data,Low,858,17,Good,Low
-SSTV,High,762,94,Good,High
-Voice/Data,Low,380,59,Good,Low
-Housekeeping,Medium,54,58,Good,Medium
-TT&C,Medium,33,54,Good,High
-SSTV,Medium,1910,51,Poor,Low
-TT&C,High,23,73,Poor,High
-Voice/Data,Low,802,64,Fair,Low
-SSTV,Medium,1632,28,Fair,Low
-Voice/Data,Medium,642,68,Poor,Low
-Housekeeping,Medium,208,71,Good,Medium
-Voice/Data,Low,478,24,Fair,Low
-Voice/Data,Low,406,47,Fair,Low
-Voice/Data,Low,945,82,Poor,Low
-TT&C,Low,43,67,Fair,Medium
-Housekeeping,Medium,146,26,Poor,Low
-TT&C,Medium,25,18,Good,Medium
-TT&C,Medium,20,64,Fair,High
-SSTV,Medium,781,54,Good,Medium
-SSTV,Medium,885,96,Fair,Low
-Voice/Data,Low,282,59,Fair,Low
-Housekeeping,Medium,171,94,Fair,Medium
-Housekeeping,Low,41,33,Good,Low
-Housekeeping,Low,149,53,Good,Low
-TT&C,Medium,71,26,Poor,Medium
-TT&C,Medium,58,63,Good,Medium
-Housekeeping,Low,106,31,Poor,Low
-TT&C,Medium,9,56,Good,High
-SSTV,Medium,2076,44,Poor,Medium
-Housekeeping,Medium,30,30,Fair,Low
-Voice/Data,Medium,685,23,Good,Low
-SSTV,Medium,1758,58,Poor,Low
-Housekeeping,Low,66,95,Fair,Low
-Voice/Data,High,734,31,Fair,Low
-Voice/Data,Medium,265,49,Poor,Low
-Housekeeping,Medium,72,34,Good,Low
-Housekeeping,Medium,184,83,Good,Medium
-SSTV,Medium,2359,50,Good,Low
-TT&C,Medium,23,97,Fair,High
-TT&C,Medium,69,35,Fair,High
-TT&C,High,68,21,Poor,High
-Voice/Data,High,758,64,Poor,High
-SSTV,Medium,723,70,Poor,Low
-SSTV,Medium,1033,99,Good,Medium
-Voice/Data,High,682,89,Good,High
-Housekeeping,Low,219,90,Good,Medium
-SSTV,High,2038,68,Fair,Low
-TT&C,Medium,34,45,Fair,High
-TT&C,Low,21,51,Fair,Medium
-SSTV,Low,2322,26,Fair,Low
-Housekeeping,High,82,51,Fair,High
-SSTV,Low,1117,45,Poor,Low
-Voice/Data,Low,920,18,Poor,Low
-SSTV,Low,1545,32,Good,Low
-SSTV,Low,965,60,Fair,Low
-SSTV,Low,460,46,Good,Low
-Housekeeping,Medium,111,99,Poor,Medium
-TT&C,Low,74,55,Fair,Medium
-Housekeeping,High,112,96,Poor,High
-TT&C,High,53,71,Fair,High
-Housekeeping,Medium,78,18,Poor,Low
-Voice/Data,Low,763,32,Poor,Low
-TT&C,Medium,59,74,Good,High
-TT&C,Low,47,61,Fair,Medium
-Housekeeping,Medium,176,40,Fair,Medium
-Housekeeping,High,139,59,Fair,High
-SSTV,High,1187,91,Fair,High
-SSTV,High,1888,48,Fair,Low
-Voice/Data,Low,813,18,Poor,Low
-SSTV,Medium,2090,41,Good,Low
-Housekeeping,Medium,70,94,Good,Medium
-Voice/Data,Medium,681,79,Good,Medium
-TT&C,Medium,5,86,Fair,High
-TT&C,Low,45,92,Poor,Medium
-TT&C,Low,44,24,Good,Low
-SSTV,Medium,1158,39,Fair,Low
-Housekeeping,Low,218,20,Poor,Low
-TT&C,Low,66,15,Fair,Low
-Housekeeping,High,37,85,Good,High
-TT&C,High,19,94,Fair,High
-SSTV,Medium,855,28,Good,Low
-Housekeeping,High,200,76,Good,High
-Housekeeping,High,128,60,Poor,High
-Housekeeping,Low,168,20,Good,Low
-SSTV,Medium,2029,92,Fair,Low
-Housekeeping,Medium,175,89,Fair,Medium
-TT&C,Low,11,63,Poor,Low
-TT&C,High,14,75,Good,High
-Voice/Data,Medium,448,48,Fair,Low
-Voice/Data,Medium,400,82,Poor,Low
-SSTV,Low,1906,52,Fair,Low
-Housekeeping,Low,59,99,Poor,Low
-Voice/Data,High,428,20,Poor,Low
-Voice/Data,Low,316,29,Fair,Low
-SSTV,Low,818,97,Fair,Low
-Housekeeping,Low,62,39,Good,Low
-Housekeeping,Medium,67,41,Fair,High
-TT&C,Medium,44,82,Good,High
-Voice/Data,Medium,460,31,Fair,Low
-Housekeeping,Low,112,58,Fair,Low
-TT&C,Low,38,39,Fair,Low
-Housekeeping,High,170,31,Fair,High
-SSTV,Medium,2130,96,Good,Low
-TT&C,Medium,41,31,Fair,Medium
-Voice/Data,Medium,653,23,Poor,Low
-Voice/Data,High,733,72,Fair,High
-SSTV,Low,1796,88,Good,Medium
-Housekeeping,Medium,55,25,Poor,Low
-SSTV,Medium,2366,75,Fair,Low
-SSTV,Low,771,60,Good,Medium
-SSTV,High,1253,85,Good,High
-TT&C,Medium,50,25,Good,Low
-Housekeeping,High,106,97,Fair,High
-TT&C,High,22,67,Fair,Medium
-Housekeeping,Medium,205,86,Fair,Medium
-Housekeeping,High,43,45,Good,High
-TT&C,Medium,22,95,Fair,High
-TT&C,High,74,68,Good,High
-SSTV,Low,1873,25,Fair,Low
-TT&C,Medium,11,93,Fair,High
-Voice/Data,Medium,746,82,Good,Medium
-SSTV,Low,2340,40,Fair,Low
-Housekeeping,Medium,48,61,Good,Medium
-SSTV,High,1257,47,Fair,Low
-TT&C,Medium,37,61,Fair,High
-Voice/Data,Low,228,97,Fair,Low
-Housekeeping,Low,68,91,Fair,Low
-Voice/Data,Low,264,33,Fair,Low
-TT&C,Low,17,97,Poor,Medium
-Housekeeping,High,106,52,Poor,High
-Housekeeping,Medium,118,74,Fair,Medium
-Voice/Data,Low,317,79,Fair,Low
-SSTV,Medium,1014,56,Fair,Low
-Housekeeping,Low,66,53,Poor,Low
-Housekeeping,Low,181,53,Fair,Low
-Housekeeping,Medium,70,88,Poor,High
-Housekeeping,Medium,202,47,Good,Medium
-Housekeeping,High,132,38,Good,High
-TT&C,Medium,61,45,Poor,High
-Voice/Data,Medium,648,31,Fair,Low
-Voice/Data,High,340,48,Poor,High
-TT&C,High,47,24,Fair,High
-SSTV,Medium,984,22,Poor,Low
-TT&C,High,13,76,Fair,High
-SSTV,High,946,21,Fair,Low
-Housekeeping,High,82,63,Good,High
-SSTV,Low,713,81,Poor,Low
-SSTV,Medium,496,76,Fair,Low
-Voice/Data,Medium,903,52,Good,Medium
-TT&C,Medium,40,31,Good,Medium
-Voice/Data,Medium,453,94,Fair,Medium
-TT&C,High,70,85,Fair,High
-TT&C,High,20,67,Fair,High
-SSTV,Low,1235,22,Fair,Low
-Housekeeping,Medium,190,17,Good,Low
-Voice/Data,Medium,644,41,Fair,Low
-Voice/Data,Low,451,28,Fair,Low
-Housekeeping,Low,78,88,Poor,Low
-Voice/Data,Low,149,32,Fair,Low
-Housekeeping,High,46,39,Good,High
-Housekeeping,Medium,60,97,Fair,Medium
-Housekeeping,High,179,84,Fair,High
-Voice/Data,Medium,650,33,Good,Low
-TT&C,High,35,47,Good,High
-TT&C,Medium,59,58,Fair,High
-Housekeeping,High,60,71,Fair,High
-Voice/Data,Low,295,94,Fair,Low
-Voice/Data,Medium,445,89,Fair,Medium
-SSTV,High,2238,98,Fair,Low
-Voice/Data,High,629,18,Poor,Low
-Voice/Data,High,826,35,Good,Low
-Housekeeping,Low,77,62,Good,Low
-Housekeeping,Medium,191,19,Good,Low
-Voice/Data,Low,180,45,Good,Low
-SSTV,Low,893,28,Good,Low
-Housekeeping,Medium,129,94,Good,Medium
-TT&C,Medium,8,20,Good,Medium
-SSTV,High,2123,27,Fair,Low
-Housekeeping,High,194,31,Fair,High
-Voice/Data,Medium,569,27,Poor,Low
-TT&C,High,26,63,Fair,High
-TT&C,Low,11,45,Fair,Medium
-Voice/Data,Low,633,92,Fair,Low
-TT&C,Medium,42,37,Fair,High
-TT&C,High,58,60,Fair,High
-SSTV,Low,1624,71,Poor,Low
-Voice/Data,Medium,226,68,Good,Medium
-TT&C,Medium,13,82,Good,High
-Housekeeping,Low,178,32,Poor,Low
-Voice/Data,Medium,251,58,Poor,Low
-Voice/Data,High,898,83,Fair,High
-Housekeeping,Medium,50,88,Good,Medium
-TT&C,Low,55,67,Good,Medium
-TT&C,High,73,70,Poor,High
-TT&C,Low,35,88,Good,Medium
-TT&C,High,8,68,Poor,High
-SSTV,Low,2159,95,Fair,Low
-TT&C,Medium,18,25,Good,Medium
-Housekeeping,Medium,130,44,Poor,Medium
-SSTV,Low,2369,24,Poor,Low
-SSTV,High,1902,22,Fair,High
-TT&C,Low,8,55,Fair,Medium
-Voice/Data,Low,801,34,Good,Low
-SSTV,Low,764,49,Good,Low
-SSTV,Medium,1911,52,Poor,Medium
-TT&C,High,48,67,Poor,High
-TT&C,High,25,95,Good,High
-Voice/Data,Low,471,87,Fair,Low
-Housekeeping,Medium,52,47,Good,Medium
-Housekeeping,Low,217,42,Fair,Low
-Housekeeping,Medium,75,80,Poor,Medium
-SSTV,High,1051,25,Good,Low
-Voice/Data,Medium,537,60,Poor,Medium
-Housekeeping,Medium,157,50,Fair,Medium
-Voice/Data,Medium,539,30,Fair,Low
-TT&C,High,40,67,Fair,High
-SSTV,Medium,1586,42,Fair,Low
-SSTV,Low,2122,30,Fair,Low
-TT&C,Medium,32,70,Good,Medium
-TT&C,Low,63,29,Good,Low
-Housekeeping,Low,179,72,Fair,Low
-Voice/Data,Low,917,28,Poor,Low
-SSTV,Medium,2230,51,Good,Low
-Voice/Data,Medium,782,83,Good,Medium
-Voice/Data,Low,324,34,Fair,Low
-Housekeeping,Medium,177,80,Fair,Medium
-Voice/Data,High,731,76,Fair,Medium
-TT&C,High,25,91,Poor,High
-TT&C,Medium,52,29,Fair,Medium
-Voice/Data,Low,329,75,Fair,Low
-Voice/Data,High,554,94,Good,High
-TT&C,Low,60,79,Good,Medium
-Housekeeping,Low,65,30,Good,Low
-SSTV,High,1107,84,Fair,High
-Voice/Data,Medium,780,24,Fair,Low
-SSTV,Medium,1334,65,Good,Medium
-Housekeeping,Medium,212,57,Good,Medium
-Housekeeping,Medium,31,60,Fair,Medium
-Housekeeping,Low,167,59,Good,Low
-SSTV,Low,2037,17,Poor,High
-Voice/Data,Low,881,58,Good,Low
-Housekeeping,Low,59,94,Poor,Low
-TT&C,High,73,52,Poor,High
-TT&C,Low,32,38,Fair,Low
-SSTV,Medium,1136,99,Poor,Low
-Voice/Data,High,415,23,Poor,Low
-TT&C,High,49,56,Poor,High
-TT&C,Medium,51,58,Fair,High
-SSTV,Medium,1374,55,Good,Medium
-TT&C,High,9,93,Poor,High
-Voice/Data,Medium,938,50,Fair,Medium
-Housekeeping,High,72,97,Good,High
-TT&C,High,11,20,Poor,High
-Voice/Data,High,615,77,Poor,High
-TT&C,Low,33,65,Good,Medium
-Housekeeping,Medium,146,35,Good,Medium
-TT&C,Low,66,34,Fair,Low
-TT&C,Medium,11,76,Good,High
-TT&C,High,24,69,Poor,High
-TT&C,Medium,41,66,Fair,High
-TT&C,Medium,60,19,Good,Medium
-TT&C,Low,47,65,Fair,Medium
-SSTV,High,1196,98,Good,High
-SSTV,Low,1639,16,Fair,Low
-Housekeeping,Low,216,54,Good,Low
-Housekeeping,Low,121,57,Fair,Low
-Housekeeping,Low,197,91,Fair,Low
-Voice/Data,Medium,767,39,Poor,Low
-Voice/Data,Medium,370,55,Poor,Low
-TT&C,Low,22,75,Good,Medium
-TT&C,Low,58,20,Poor,Low
-TT&C,Low,19,83,Poor,Medium
-TT&C,Medium,28,84,Poor,High
-SSTV,Low,909,76,Poor,Low
-Housekeeping,Medium,145,70,Good,Medium
-TT&C,Low,25,78,Fair,Medium
-Housekeeping,Low,155,81,Good,Medium
-Housekeeping,Medium,207,91,Poor,Medium
-TT&C,Medium,63,51,Fair,High
-Voice/Data,Low,906,53,Fair,Low
-TT&C,Low,6,69,Fair,Medium
-Voice/Data,High,498,31,Good,Low
-TT&C,Low,20,87,Good,Medium
-Voice/Data,Medium,881,80,Good,Medium
-Voice/Data,Medium,710,68,Poor,Low
-Voice/Data,Low,385,40,Poor,Low
-Voice/Data,Medium,587,44,Fair,Low
-Voice/Data,High,622,51,Fair,High
-SSTV,High,1416,71,Good,High
-Voice/Data,Low,513,81,Fair,Low
-TT&C,Low,8,72,Fair,Medium
-Housekeeping,Low,115,94,Good,Medium
-Housekeeping,Medium,96,96,Good,Medium
-Voice/Data,Medium,799,74,Poor,Low
-Housekeeping,Low,194,46,Poor,Low
-Housekeeping,Low,172,65,Fair,High
-SSTV,High,510,51,Fair,Low
-Housekeeping,Low,189,68,Fair,Low
-TT&C,Medium,32,84,Fair,Low
-Housekeeping,Medium,109,46,Good,Medium
-Housekeeping,Low,209,57,Good,Low
-TT&C,Low,65,18,Fair,Low
-Housekeeping,Low,39,77,Fair,Low
-Housekeeping,High,98,56,Fair,High
-Housekeeping,Low,172,54,Fair,Low
-Housekeeping,Low,132,60,Fair,Low
-SSTV,Low,952,33,Fair,Low
-Housekeeping,Low,129,65,Fair,Low
-Voice/Data,Medium,839,78,Poor,Low
-Voice/Data,Low,305,44,Poor,Low
-Housekeeping,Medium,171,26,Poor,Low
-Housekeeping,Medium,169,47,Good,Medium
-Housekeeping,High,198,31,Fair,High
-Voice/Data,Low,367,46,Poor,Low
-SSTV,High,871,68,Good,High
-Voice/Data,Medium,574,24,Fair,Low
-Housekeeping,Low,130,78,Fair,Low
-SSTV,High,1248,34,Good,Low
-Housekeeping,High,178,91,Poor,High
-SSTV,Low,2008,77,Poor,Low
-TT&C,High,22,38,Fair,High
-SSTV,Medium,2001,62,Poor,Low
-Voice/Data,Medium,311,24,Fair,Low
-TT&C,High,33,23,Poor,High
-SSTV,Medium,503,96,Poor,Low
-TT&C,High,28,83,Poor,High
-SSTV,Low,2319,28,Fair,Low
-TT&C,High,35,39,Poor,Low
-Voice/Data,Medium,709,31,Poor,Low
-TT&C,Low,12,48,Good,Medium
-Voice/Data,Medium,647,39,Fair,Low
-Voice/Data,Low,428,42,Fair,Low
-SSTV,Low,1900,59,Poor,Low
-Voice/Data,Low,890,31,Fair,Low
-Voice/Data,Low,561,90,Fair,Low
-Voice/Data,Low,205,76,Fair,Medium
-Housekeeping,Low,120,79,Poor,Low
-SSTV,Medium,690,29,Good,Low
-TT&C,Medium,36,75,Good,High
-SSTV,Medium,569,86,Poor,Low
-TT&C,Low,49,29,Poor,Low
-SSTV,High,1055,78,Poor,Low
-SSTV,Medium,842,45,Fair,Low
-Housekeeping,Low,33,81,Poor,Low
-Housekeeping,Low,198,55,Good,Low
-Voice/Data,Medium,814,83,Good,Medium
-Voice/Data,Low,793,27,Good,Low
-Housekeeping,Medium,41,48,Fair,Medium
-SSTV,High,1131,38,Good,Low
-Voice/Data,Low,926,36,Poor,Low
-TT&C,Low,45,41,Fair,Medium
-TT&C,High,13,47,Fair,High
-TT&C,Medium,14,25,Good,Medium
-SSTV,Low,963,75,Fair,Low
-Housekeeping,High,214,61,Good,High
-Voice/Data,High,260,85,Poor,High
-SSTV,Medium,2210,74,Good,Low
-Housekeeping,Medium,158,27,Fair,Low
-Voice/Data,Low,885,20,Fair,Low
-Voice/Data,Low,805,50,Good,Low
-Housekeeping,Medium,93,55,Fair,Medium
-Housekeeping,Low,187,35,Fair,Low
-Housekeeping,Medium,62,81,Fair,Medium
-TT&C,High,25,64,Poor,High
-TT&C,Low,19,78,Fair,Medium
-Voice/Data,Medium,230,24,Poor,Low
-Housekeeping,Low,47,84,Poor,Low
-Housekeeping,High,65,32,Good,High
-SSTV,Low,684,53,Fair,Medium
-SSTV,Medium,1191,52,Fair,Low
-Voice/Data,Medium,179,84,Fair,Medium
-Voice/Data,Medium,170,38,Fair,Low
-Housekeeping,Medium,218,35,Fair,Medium
-Housekeeping,Medium,46,43,Good,Medium
-Voice/Data,Medium,181,45,Good,Medium
-SSTV,High,508,30,Fair,Low
-Voice/Data,High,230,29,Fair,Low
-TT&C,Medium,41,34,Fair,Medium
-Voice/Data,Medium,806,54,Fair,Medium
-SSTV,Low,1883,44,Fair,Low
-TT&C,High,45,48,Fair,High
-SSTV,Medium,615,76,Fair,Low
-SSTV,Medium,1960,35,Fair,Low
-TT&C,Low,7,92,Fair,Medium
-Housekeeping,High,149,78,Fair,High
-Voice/Data,Medium,459,29,Poor,Low
-Housekeeping,Medium,197,41,Poor,Medium
-Housekeeping,Low,88,30,Good,Low
-Housekeeping,High,151,38,Fair,High
-Housekeeping,Low,113,46,Poor,Low
-Voice/Data,Low,553,26,Fair,Low
-Voice/Data,High,899,16,Good,Low
-TT&C,High,54,52,Fair,High
-Voice/Data,Low,464,74,Good,Low
-Voice/Data,Medium,491,40,Good,Low
-Housekeeping,Medium,163,88,Fair,Medium
-Voice/Data,High,407,46,Fair,High
-TT&C,Medium,16,91,Poor,High
-Voice/Data,Medium,508,35,Good,Low
-SSTV,Medium,583,60,Fair,Low
-SSTV,Medium,780,79,Good,Medium
-TT&C,High,34,20,Fair,High
-Voice/Data,Medium,781,94,Poor,Low
-TT&C,Low,59,46,Poor,Low
-TT&C,High,23,57,Fair,High
-TT&C,High,34,68,Fair,High
-Voice/Data,High,247,69,Poor,High
-TT&C,Low,57,17,Good,Low
-Voice/Data,Low,324,88,Good,Medium
-SSTV,Medium,2009,68,Fair,Low
-TT&C,Low,63,99,Fair,Medium
-TT&C,High,53,55,Poor,High
-TT&C,Medium,28,67,Good,High
-SSTV,Medium,2308,52,Fair,Low
-Voice/Data,High,689,90,Good,High
-TT&C,Medium,50,85,Fair,High
-Voice/Data,Low,830,92,Fair,Low
-TT&C,Medium,66,57,Fair,High
-Voice/Data,Medium,184,82,Poor,Low
-Voice/Data,Medium,851,45,Good,Medium
-Voice/Data,Medium,754,54,Fair,Medium
-SSTV,High,852,79,Fair,High
-Voice/Data,Medium,375,21,Good,Low
-TT&C,Low,57,75,Good,Medium
-TT&C,Medium,20,16,Good,Medium
-TT&C,Medium,36,64,Poor,High
-Housekeeping,Low,160,55,Fair,Low
-SSTV,Low,1718,54,Good,Medium
-SSTV,Medium,2224,57,Fair,Low
-Voice/Data,Low,212,56,Poor,Low
-TT&C,High,25,49,Good,High
-SSTV,Low,2370,53,Fair,Low
-TT&C,Low,44,63,Fair,Medium
-Housekeeping,High,77,79,Good,High
-SSTV,High,1015,61,Fair,High
-Voice/Data,Low,401,69,Fair,Low
-SSTV,Low,1530,86,Fair,Low
-TT&C,Low,24,99,Fair,Medium
-SSTV,Medium,1662,24,Poor,Low
+data_type,size_kb,battery_pct,link_quality,pass_time_min,sat_mode,priority
+Voice/Data,267,88,Poor,5.7,Normal,Low
+Housekeeping,85,13,Fair,1.9,Safe,High
+Voice/Data,274,77,Good,7.0,Normal,Medium
+SSTV image,557,56,Fair,2.3,Normal,Low
+Fault alert,10,78,Poor,1.2,Normal,High
+Voice/Data,135,51,Fair,6.2,Normal,Low
+Voice/Data,148,24,Fair,8.0,Normal,Low
+Voice/Data,311,78,Poor,10.3,Normal,Low
+Fault alert,2,67,Good,9.5,Normal,High
+Housekeeping,17,52,Fair,10.4,Normal,Medium
+Housekeeping,46,43,Fair,9.2,Normal,Medium
+Voice/Data,321,41,Fair,8.6,Normal,Low
+SSTV image,594,53,Good,0.6,Normal,Low
+Voice/Data,257,33,Poor,7.7,Normal,Low
+Housekeeping,58,21,Poor,1.9,Safe,High
+Housekeeping,20,35,Fair,1.2,Normal,Medium
+SSTV image,399,11,Fair,2.3,Normal,Low
+Fault alert,2,48,Fair,10.0,Safe,High
+Voice/Data,316,31,Good,9.1,Normal,Medium
+SSTV image,651,25,Poor,11.4,Normal,Low
+Voice/Data,140,23,Poor,11.8,Normal,Low
+Housekeeping,36,99,Fair,10.8,Normal,Medium
+Voice/Data,161,29,Good,2.0,Safe,Low
+Voice/Data,362,39,Good,10.6,Normal,Medium
+Voice/Data,221,46,Good,10.1,Normal,Medium
+Housekeeping,79,18,Fair,10.5,Normal,High
+Housekeeping,50,38,Good,2.2,Normal,Medium
+Fault alert,14,32,Good,1.8,Normal,High
+Housekeeping,58,83,Poor,11.1,Normal,Low
+SSTV image,367,15,Fair,2.5,Normal,Low
+SSTV image,726,48,Good,4.7,Normal,Medium
+Voice/Data,298,81,Fair,5.7,Normal,Low
+Housekeeping,80,85,Good,1.9,Normal,Medium
+Housekeeping,96,56,Fair,0.7,Normal,Medium
+Housekeeping,32,30,Fair,11.9,Normal,Medium
+Housekeeping,18,40,Poor,10.6,Normal,Medium
+Fault alert,12,30,Good,11.0,Normal,High
+Housekeeping,39,70,Good,3.8,Normal,Medium
+Housekeeping,49,36,Poor,3.0,Normal,Medium
+SSTV image,341,67,Fair,5.4,Normal,Medium
+Housekeeping,46,69,Poor,5.7,Normal,Medium
+Voice/Data,188,95,Poor,0.6,Normal,Low
+SSTV image,410,43,Good,9.5,Normal,Medium
+Housekeeping,77,97,Fair,12.0,Normal,Medium
+Voice/Data,258,46,Fair,6.6,Normal,Medium
+Voice/Data,216,71,Fair,5.0,Normal,Low
+Housekeeping,20,70,Good,5.0,Normal,Medium
+Housekeeping,61,84,Fair,1.6,Normal,Medium
+SSTV image,305,52,Good,3.6,Normal,Medium
+Fault alert,7,82,Fair,6.3,Normal,High
+Housekeeping,47,42,Poor,5.5,Normal,Medium
+Fault alert,3,54,Good,6.8,Normal,High
+Voice/Data,186,55,Poor,10.3,Normal,Medium
+SSTV image,360,74,Good,3.1,Normal,Medium
+SSTV image,710,66,Fair,0.8,Normal,Low
+Voice/Data,351,17,Good,0.9,Normal,Low
+Housekeeping,10,43,Good,2.0,Safe,High
+SSTV image,562,78,Good,7.1,Normal,Medium
+Fault alert,13,19,Poor,9.8,Normal,High
+Fault alert,8,49,Good,10.7,Safe,High
+SSTV image,481,37,Good,7.8,Safe,Low
+Housekeeping,81,17,Poor,5.1,Normal,High
+SSTV image,427,30,Fair,2.3,Safe,Low
+Voice/Data,72,44,Good,5.1,Safe,Low
+SSTV image,423,35,Poor,4.3,Normal,Low
+SSTV image,352,94,Good,10.5,Normal,Medium
+SSTV image,430,48,Good,6.1,Normal,Medium
+Housekeeping,30,30,Poor,3.1,Normal,Low
+Fault alert,3,42,Fair,3.8,Normal,Medium
+Housekeeping,99,57,Fair,2.1,Normal,Medium
+Housekeeping,21,72,Fair,11.1,Normal,Medium
+Housekeeping,74,94,Good,1.1,Normal,Medium
+Voice/Data,301,27,Poor,0.6,Normal,Low
+Housekeeping,66,97,Fair,2.6,Normal,Medium
+Fault alert,19,58,Good,9.8,Normal,High
+Housekeeping,10,21,Poor,6.5,Normal,High
+Housekeeping,37,94,Good,7.7,Normal,Medium
+SSTV image,310,41,Poor,4.6,Normal,Low
+SSTV image,546,35,Fair,1.3,Safe,Low
+Voice/Data,273,38,Poor,10.3,Safe,Low
+SSTV image,739,10,Good,2.7,Safe,Low
+Housekeeping,44,30,Good,0.9,Normal,Medium
+Voice/Data,132,72,Good,7.1,Normal,Medium
+Housekeeping,94,39,Good,1.5,Normal,Medium
+Fault alert,14,10,Good,1.6,Normal,High
+Fault alert,16,10,Good,9.7,Safe,Medium
+SSTV image,467,85,Fair,6.2,Normal,Medium
+Housekeeping,50,23,Good,3.3,Normal,High
+Housekeeping,45,19,Good,4.5,Normal,High
+SSTV image,650,61,Good,8.9,Normal,Medium
+Housekeeping,29,20,Poor,1.3,Normal,High
+SSTV image,786,69,Fair,1.8,Normal,Low
+Housekeeping,26,32,Good,7.6,Safe,High
+Housekeeping,51,69,Poor,7.5,Normal,Medium
+Housekeeping,38,54,Poor,11.7,Normal,Medium
+SSTV image,586,80,Good,4.8,Normal,Medium
+Housekeeping,71,68,Fair,1.2,Normal,Medium
+Fault alert,19,47,Poor,6.7,Normal,High
+Fault alert,16,11,Fair,7.8,Normal,High
+Voice/Data,137,34,Fair,2.1,Normal,Low
+Voice/Data,122,15,Good,6.9,Safe,Low
+SSTV image,732,11,Good,2.8,Normal,Low
+Housekeeping,54,34,Good,10.2,Normal,Medium
+Voice/Data,84,28,Good,10.1,Normal,Medium
+Voice/Data,339,16,Good,5.4,Normal,Low
+SSTV image,589,38,Fair,11.6,Normal,Low
+Housekeeping,12,30,Good,11.8,Safe,High
+Housekeeping,81,26,Poor,2.0,Normal,High
+Fault alert,13,34,Poor,4.7,Normal,High
+Voice/Data,265,11,Good,7.4,Normal,Low
+Housekeeping,88,14,Good,1.5,Normal,High
+Housekeeping,55,24,Fair,4.9,Normal,High
+Housekeeping,51,51,Good,3.5,Normal,Medium
+SSTV image,571,70,Fair,11.4,Normal,Medium
+Housekeeping,27,81,Fair,5.2,Normal,Medium
+Voice/Data,103,67,Fair,9.3,Normal,Low
+Voice/Data,346,66,Poor,4.9,Normal,Low
+SSTV image,329,95,Fair,2.0,Normal,Medium
+Housekeeping,55,20,Fair,10.4,Safe,High
+SSTV image,362,82,Fair,0.5,Normal,Low
+SSTV image,338,95,Poor,1.1,Normal,Low
+SSTV image,559,61,Good,4.7,Normal,Medium
+Fault alert,17,86,Good,8.4,Normal,High
+Housekeeping,50,22,Good,4.4,Normal,High
+Fault alert,3,89,Poor,1.3,Normal,High
+Housekeeping,32,61,Good,4.2,Normal,Medium
+Housekeeping,24,30,Good,3.3,Normal,Medium
+Fault alert,18,15,Fair,0.6,Normal,High
+Fault alert,7,75,Poor,6.7,Normal,Medium
+SSTV image,424,49,Fair,1.8,Normal,Low
+Housekeeping,16,38,Fair,3.8,Normal,Medium
+Voice/Data,206,26,Fair,7.9,Safe,Low
+SSTV image,749,100,Fair,8.8,Normal,Medium
+Housekeeping,47,48,Fair,3.5,Normal,Medium
+SSTV image,591,13,Good,4.3,Safe,Low
+Fault alert,4,35,Poor,3.3,Normal,High
+Voice/Data,100,23,Fair,11.5,Normal,Low
+Housekeeping,76,38,Good,2.7,Safe,High
+Voice/Data,73,82,Poor,2.6,Normal,Low
+Fault alert,9,86,Poor,5.6,Normal,High
+Housekeeping,38,67,Poor,2.7,Normal,Medium
+Housekeeping,11,79,Poor,2.3,Normal,Medium
+Voice/Data,236,47,Fair,1.6,Normal,Low
+SSTV image,779,67,Poor,7.9,Normal,Low
+Housekeeping,16,19,Fair,7.5,Normal,High
+Housekeeping,84,58,Good,8.0,Normal,Medium
+Housekeeping,59,60,Good,9.4,Normal,Medium
+SSTV image,634,12,Poor,4.3,Normal,Low
+Housekeeping,18,32,Fair,11.1,Safe,High
+Fault alert,18,75,Fair,8.9,Normal,High
+Voice/Data,54,43,Good,9.8,Normal,Medium
+Voice/Data,368,59,Good,8.8,Normal,Medium
+Fault alert,14,36,Poor,4.6,Normal,High
+SSTV image,402,34,Poor,3.8,Normal,Low
+Fault alert,1,15,Fair,5.4,Safe,High
+SSTV image,567,39,Good,1.6,Normal,Medium
+Housekeeping,17,83,Good,5.7,Normal,Medium
+SSTV image,565,95,Poor,1.0,Normal,Low
+SSTV image,664,67,Fair,0.5,Normal,Low
+Voice/Data,143,66,Poor,11.2,Normal,Medium
+Fault alert,5,65,Good,8.4,Normal,High
+Voice/Data,127,53,Good,7.0,Normal,Medium
+Housekeeping,30,48,Fair,4.4,Normal,Medium
+Fault alert,3,66,Poor,7.1,Normal,Medium
+SSTV image,350,42,Fair,10.8,Safe,Low
+Housekeeping,69,26,Fair,8.0,Safe,High
+Voice/Data,156,61,Good,7.4,Normal,Medium
+Voice/Data,324,52,Fair,5.8,Normal,Low
+Housekeeping,84,35,Good,4.5,Normal,Medium
+Voice/Data,317,21,Fair,8.5,Safe,Low
+Housekeeping,59,17,Poor,11.8,Normal,High
+SSTV image,390,50,Fair,5.4,Normal,Medium
+Housekeeping,94,74,Poor,5.0,Normal,Medium
+Voice/Data,122,72,Fair,5.4,Normal,Low
+Housekeeping,52,99,Good,5.4,Normal,Medium
+Fault alert,10,11,Poor,11.9,Safe,High
+Housekeeping,77,79,Poor,8.6,Normal,Medium
+Voice/Data,241,82,Poor,4.6,Normal,Low
+Voice/Data,330,27,Poor,4.8,Safe,Low
+SSTV image,752,35,Good,5.5,Normal,Medium
+Voice/Data,187,42,Good,0.9,Normal,Medium
+Voice/Data,357,72,Poor,6.6,Normal,Low
+SSTV image,301,88,Good,9.8,Normal,Low
+Housekeeping,93,68,Good,8.1,Normal,Medium
+Voice/Data,112,56,Good,2.8,Normal,Medium
+SSTV image,711,69,Fair,8.9,Normal,High
+Housekeeping,45,16,Fair,8.8,Normal,High
+Fault alert,20,65,Fair,3.5,Normal,High
+SSTV image,277,13,Good,7.7,Normal,Low
+Housekeeping,52,97,Good,7.5,Normal,Medium
+Voice/Data,366,90,Fair,10.2,Normal,Low
+Housekeeping,14,30,Poor,2.1,Safe,High
+Fault alert,6,44,Good,2.7,Normal,Medium
+Voice/Data,79,76,Good,6.1,Normal,Medium
+Housekeeping,39,68,Fair,1.0,Normal,Medium
+Housekeeping,45,74,Good,5.3,Normal,Medium
+SSTV image,571,56,Fair,9.6,Normal,Medium
+Voice/Data,140,31,Fair,2.2,Normal,Low
+Housekeeping,24,13,Fair,5.8,Safe,High
+Housekeeping,25,35,Good,11.9,Normal,Medium
+Voice/Data,379,31,Good,6.3,Safe,Low
+Voice/Data,384,27,Fair,6.2,Safe,Low
+SSTV image,333,56,Fair,6.9,Normal,Medium
+Fault alert,4,35,Fair,2.6,Normal,High
+Fault alert,2,95,Poor,2.2,Normal,High
+Housekeeping,97,25,Fair,8.3,Safe,High
+Fault alert,15,87,Poor,5.1,Normal,High
+SSTV image,657,45,Fair,3.8,Normal,Medium
+Fault alert,6,28,Poor,0.9,Safe,High
+SSTV image,585,64,Fair,10.2,Normal,Medium
+SSTV image,235,33,Good,0.9,Normal,Medium
+SSTV image,606,30,Poor,9.1,Normal,Low
+Housekeeping,62,25,Good,4.9,Safe,High
+Voice/Data,166,42,Good,7.4,Safe,Low
+SSTV image,626,23,Fair,3.3,Normal,Low
+SSTV image,588,49,Poor,2.3,Normal,Low
+Fault alert,9,71,Fair,6.6,Normal,High
+Fault alert,4,74,Fair,8.5,Normal,High
+Voice/Data,58,49,Fair,2.7,Normal,Low
+Housekeeping,95,17,Poor,5.5,Normal,High
+Housekeeping,35,11,Fair,5.6,Normal,High
+Housekeeping,37,52,Fair,3.0,Normal,Medium
+SSTV image,609,83,Fair,7.0,Normal,Medium
+Voice/Data,139,12,Good,2.2,Normal,Low
+Housekeeping,44,90,Poor,6.4,Normal,Medium
+Voice/Data,299,71,Fair,1.8,Normal,Low
+Fault alert,12,10,Good,6.1,Normal,High
+SSTV image,594,24,Fair,4.1,Safe,Low
+SSTV image,202,30,Good,5.7,Normal,Medium
+Fault alert,10,96,Fair,5.5,Normal,High
+Fault alert,10,32,Fair,10.9,Safe,High
+Housekeeping,67,39,Good,6.1,Normal,Medium
+Voice/Data,103,35,Fair,9.9,Normal,Low
+SSTV image,295,61,Poor,3.1,Normal,Low
+Voice/Data,317,10,Good,4.5,Safe,Low
+Voice/Data,286,33,Good,1.4,Normal,Medium
+Housekeeping,83,16,Good,5.3,Safe,High
+Voice/Data,144,66,Poor,8.2,Normal,Low
+Fault alert,20,70,Poor,10.1,Normal,High
+Fault alert,6,52,Good,7.0,Normal,High
+Voice/Data,278,22,Poor,7.9,Normal,Low
+Voice/Data,106,43,Poor,2.5,Normal,Low
+Housekeeping,93,86,Good,0.9,Normal,Medium
+SSTV image,399,18,Fair,9.6,Safe,Medium
+SSTV image,682,24,Poor,2.4,Normal,Low
+Voice/Data,166,20,Poor,1.5,Normal,Low
+SSTV image,675,84,Fair,11.3,Normal,Medium
+Housekeeping,51,20,Good,11.6,Normal,High
+Housekeeping,15,62,Good,7.6,Normal,Medium
+Housekeeping,27,100,Poor,4.9,Normal,Medium
+SSTV image,610,68,Poor,10.1,Normal,Low
+Voice/Data,117,47,Fair,2.9,Normal,Low
+Housekeeping,35,18,Fair,5.4,Safe,High
+Housekeeping,59,10,Fair,4.6,Normal,Medium
+Housekeeping,33,24,Good,11.0,Normal,High
+SSTV image,277,96,Fair,11.1,Normal,Medium
+Voice/Data,269,23,Fair,8.0,Normal,Low
+Fault alert,14,10,Good,1.8,Safe,High
+Fault alert,15,43,Poor,6.0,Safe,High
+SSTV image,767,27,Good,3.3,Safe,Low
+Fault alert,3,42,Fair,10.7,Normal,High
+Voice/Data,199,75,Fair,2.1,Normal,Low
+Housekeeping,31,57,Good,1.1,Normal,Medium
+Fault alert,19,93,Fair,8.6,Normal,High
+Voice/Data,239,52,Fair,5.7,Normal,Low
+Housekeeping,18,74,Fair,10.1,Normal,Medium
+Housekeeping,72,46,Good,1.4,Safe,Medium
+Housekeeping,13,52,Fair,9.7,Normal,Medium
+Fault alert,6,35,Poor,0.9,Normal,High
+Fault alert,15,98,Good,0.8,Normal,High
+Fault alert,11,30,Good,5.8,Normal,High
+Housekeeping,79,13,Fair,3.0,Normal,High
+Fault alert,12,62,Poor,7.3,Normal,High
+SSTV image,706,50,Fair,0.8,Safe,Low
+SSTV image,538,17,Poor,0.9,Normal,Low
+Housekeeping,15,87,Poor,8.9,Normal,Medium
+Housekeeping,16,85,Fair,2.9,Normal,High
+SSTV image,666,94,Poor,8.0,Normal,Low
+Voice/Data,63,48,Fair,9.1,Normal,Low
+Voice/Data,182,33,Good,1.2,Normal,Medium
+Fault alert,1,56,Fair,9.4,Normal,High
+Housekeeping,37,22,Good,3.6,Normal,High
+Housekeeping,64,86,Good,5.0,Normal,Medium
+Housekeeping,25,70,Fair,1.5,Normal,Medium
+SSTV image,480,53,Good,10.1,Normal,Medium
+Housekeeping,100,56,Good,6.9,Normal,Medium
+Fault alert,2,74,Fair,6.3,Normal,High
+Housekeeping,15,57,Good,11.6,Normal,Medium
+SSTV image,363,44,Poor,4.3,Safe,Low
+Fault alert,17,94,Good,10.7,Normal,High
+Voice/Data,192,96,Fair,8.8,Normal,Low
+Fault alert,13,66,Poor,11.2,Normal,High
+Voice/Data,61,77,Fair,10.9,Normal,Low
+Fault alert,15,38,Good,11.9,Normal,High
+Voice/Data,73,11,Fair,2.0,Safe,Low
+Voice/Data,299,46,Poor,9.7,Normal,Low
+Voice/Data,101,89,Poor,9.8,Normal,Low
+Voice/Data,351,22,Fair,7.9,Normal,Low
+Voice/Data,153,59,Good,3.7,Normal,Medium
+SSTV image,310,27,Good,11.6,Normal,High
+Voice/Data,168,49,Fair,2.9,Normal,Low
+Fault alert,1,23,Poor,6.2,Normal,High
+SSTV image,299,76,Poor,6.5,Normal,Low
+SSTV image,559,83,Fair,2.4,Normal,Low
+Voice/Data,155,79,Good,8.8,Normal,Medium
+Housekeeping,42,74,Good,1.5,Normal,Medium
+Housekeeping,83,31,Fair,8.5,Normal,Medium
+SSTV image,274,58,Fair,10.3,Normal,Medium
+Housekeeping,46,19,Fair,4.5,Normal,High
+Fault alert,4,44,Fair,8.7,Normal,High
+Housekeeping,53,56,Fair,2.3,Normal,Medium
+Housekeeping,40,70,Good,10.2,Normal,Medium
+Housekeeping,14,18,Fair,11.4,Normal,High
+Housekeeping,16,83,Good,2.3,Normal,Medium
+Housekeeping,87,51,Fair,8.5,Normal,Medium
+Housekeeping,15,90,Poor,6.3,Normal,Medium
+Housekeeping,81,58,Poor,6.6,Normal,Low
+SSTV image,750,59,Fair,8.6,Normal,Medium
+Housekeeping,52,73,Fair,6.1,Normal,High
+Voice/Data,159,84,Fair,7.4,Normal,Low
+Voice/Data,322,16,Good,3.2,Safe,Low
+Housekeeping,99,56,Fair,4.9,Normal,Medium
+Housekeeping,20,12,Good,10.5,Normal,High
+SSTV image,779,53,Good,1.8,Normal,Low
+Voice/Data,381,84,Fair,7.4,Normal,Low
+SSTV image,285,88,Fair,2.6,Normal,Medium
+Voice/Data,69,35,Poor,10.2,Normal,Low
+SSTV image,629,45,Fair,7.2,Normal,Medium
+SSTV image,246,32,Good,5.1,Safe,Low
+Housekeeping,64,46,Good,3.4,Normal,Medium
+SSTV image,238,26,Fair,5.5,Normal,Medium
+Housekeeping,72,22,Fair,11.5,Safe,High
+SSTV image,339,46,Good,6.4,Normal,Medium
+Voice/Data,83,57,Good,5.9,Normal,Medium
+Fault alert,2,93,Fair,9.1,Normal,High
+SSTV image,313,59,Good,4.9,Normal,Medium
+Fault alert,11,45,Poor,5.4,Normal,Medium
+SSTV image,246,70,Poor,4.4,Normal,Low
+Fault alert,17,80,Poor,2.2,Normal,High
+Voice/Data,262,49,Poor,8.7,Normal,Low
+Fault alert,6,54,Good,10.5,Normal,High
+Voice/Data,396,29,Fair,10.9,Normal,Low
+Voice/Data,281,88,Fair,10.6,Normal,Low
+SSTV image,603,45,Fair,5.7,Safe,Low
+Voice/Data,111,25,Fair,3.8,Normal,Low
+Voice/Data,299,41,Fair,7.8,Normal,Low
+Voice/Data,246,34,Poor,11.5,Normal,Low
+Housekeeping,99,93,Good,8.9,Normal,Medium
+SSTV image,487,15,Poor,6.2,Normal,Low
+Fault alert,14,28,Good,8.4,Normal,High
+SSTV image,405,38,Poor,9.4,Normal,Low
+Housekeeping,13,32,Good,11.1,Safe,High
+SSTV image,276,32,Good,9.3,Normal,Medium
+SSTV image,721,58,Poor,5.5,Normal,Low
+Housekeeping,77,77,Poor,3.6,Normal,Medium
+SSTV image,419,43,Good,6.2,Safe,Low
+Voice/Data,294,19,Fair,4.3,Normal,Low
+Voice/Data,51,22,Good,11.3,Normal,Low
+Housekeeping,13,18,Poor,6.3,Normal,High
+SSTV image,504,92,Fair,5.9,Normal,Medium
+Voice/Data,269,69,Fair,4.5,Normal,Low
+Fault alert,19,31,Good,7.9,Safe,High
+Fault alert,16,42,Fair,6.5,Safe,High
+Fault alert,6,63,Good,2.0,Normal,High
+SSTV image,689,31,Good,10.5,Normal,Medium
+Housekeeping,54,30,Poor,4.6,Safe,High
+Voice/Data,339,38,Fair,5.5,Safe,Low
+SSTV image,304,13,Poor,2.9,Normal,Low
+Housekeeping,12,65,Fair,6.9,Normal,Medium
+Voice/Data,70,55,Good,8.6,Normal,Medium
+Voice/Data,397,16,Fair,10.6,Normal,Low
+Housekeeping,17,33,Poor,1.1,Normal,Medium
+Housekeeping,95,28,Good,11.7,Safe,High
+Housekeeping,76,24,Fair,8.6,Safe,High
+Housekeeping,23,21,Fair,3.8,Safe,High
+Fault alert,18,69,Fair,2.9,Normal,High
+Voice/Data,100,46,Poor,3.9,Normal,Low
+Housekeeping,23,55,Good,10.6,Normal,Medium
+Housekeeping,62,82,Fair,3.9,Normal,High
+SSTV image,373,18,Fair,5.8,Normal,Low
+SSTV image,374,42,Poor,8.6,Normal,Medium
+Voice/Data,118,16,Fair,10.5,Normal,Low
+Voice/Data,263,94,Good,8.1,Normal,Medium
+Housekeeping,12,26,Fair,9.2,Normal,High
+Housekeeping,32,84,Good,2.5,Normal,Medium
+Voice/Data,244,27,Good,10.6,Normal,Medium
+SSTV image,492,39,Poor,3.7,Normal,Low
+Voice/Data,295,65,Good,2.0,Normal,Medium
+Fault alert,5,44,Fair,11.7,Safe,High
+Voice/Data,277,26,Good,2.8,Normal,Medium
+SSTV image,656,29,Poor,2.1,Normal,Low
+Fault alert,8,90,Fair,7.7,Normal,High
+SSTV image,354,39,Fair,4.2,Normal,Medium
+SSTV image,533,29,Fair,2.0,Normal,Low
+Fault alert,12,77,Good,7.4,Normal,High
+Housekeeping,18,18,Fair,9.2,Normal,High
+Voice/Data,248,88,Poor,9.6,Normal,Low
+Housekeeping,24,89,Fair,2.3,Normal,Medium
+Housekeeping,61,87,Good,6.9,Normal,Medium
+Housekeeping,94,36,Good,9.9,Normal,Low
+Housekeeping,58,20,Fair,2.4,Normal,High
+Voice/Data,317,48,Fair,2.9,Normal,Low
+Voice/Data,158,40,Poor,0.5,Normal,Low
+Fault alert,19,97,Good,6.5,Normal,High
+Voice/Data,335,67,Good,2.7,Normal,Medium
+Voice/Data,371,95,Fair,8.8,Normal,Low
+Housekeeping,77,78,Good,11.6,Normal,Medium
+Voice/Data,277,75,Poor,2.9,Normal,Low
+Fault alert,11,20,Good,8.0,Normal,High
+Voice/Data,375,12,Poor,2.9,Safe,Low
+SSTV image,709,14,Poor,0.7,Normal,Low
+SSTV image,450,63,Fair,9.2,Normal,Medium
+Fault alert,2,18,Fair,5.5,Safe,High
+Voice/Data,51,100,Good,11.4,Normal,Medium
+Fault alert,5,22,Fair,6.6,Normal,High
+Housekeeping,15,96,Good,2.3,Normal,Medium
+Fault alert,5,70,Good,5.7,Normal,High
+Voice/Data,88,19,Good,2.8,Normal,Low
+Housekeeping,99,15,Good,10.6,Normal,High
+Voice/Data,83,26,Fair,8.4,Safe,Low
+SSTV image,576,40,Fair,4.4,Normal,Medium
+Fault alert,8,38,Poor,6.6,Normal,High
+Fault alert,4,58,Fair,8.2,Normal,High
+Fault alert,15,21,Good,9.5,Normal,High
+SSTV image,783,21,Fair,1.4,Normal,Low
+Voice/Data,327,73,Fair,0.8,Normal,Low
+Housekeeping,98,100,Poor,1.8,Normal,High
+Voice/Data,257,34,Fair,5.0,Normal,Low
+Fault alert,14,94,Good,5.9,Normal,High
+Voice/Data,101,41,Fair,2.1,Normal,Low
+Voice/Data,349,40,Good,5.2,Normal,Medium
+Voice/Data,312,18,Good,5.6,Normal,Low
+SSTV image,352,48,Good,1.8,Normal,Medium
+Voice/Data,174,55,Fair,11.0,Normal,Low
+Fault alert,13,70,Good,7.4,Normal,High
+Housekeeping,11,24,Poor,5.0,Normal,High
+Fault alert,17,27,Fair,6.3,Normal,High
+SSTV image,368,49,Good,4.1,Normal,Medium
+SSTV image,245,16,Good,10.3,Normal,Low
+SSTV image,398,23,Poor,7.1,Normal,Low
+Voice/Data,343,67,Good,6.2,Normal,Medium
+Housekeeping,34,96,Poor,11.0,Normal,Medium
+SSTV image,524,62,Fair,10.1,Normal,Low
+Housekeeping,83,23,Good,9.8,Normal,High
+Housekeeping,13,100,Fair,3.1,Normal,Medium
+SSTV image,656,31,Good,2.3,Safe,Low
+Voice/Data,151,75,Fair,8.4,Normal,Low
+SSTV image,618,18,Good,5.9,Safe,Low
+Fault alert,4,62,Good,8.4,Normal,High
+SSTV image,283,13,Good,9.2,Safe,Low
+Fault alert,16,35,Poor,3.9,Safe,High
+Voice/Data,333,28,Good,3.8,Normal,Medium
+SSTV image,789,92,Poor,6.1,Normal,Low
+Housekeeping,71,12,Good,3.6,Safe,High
+Fault alert,10,36,Poor,8.2,Safe,High
+Housekeeping,27,15,Poor,9.1,Safe,High
+Voice/Data,153,72,Good,5.9,Normal,Medium
+Housekeeping,68,54,Poor,8.8,Normal,Medium
+Voice/Data,171,98,Fair,6.4,Normal,Low
+SSTV image,490,69,Good,8.7,Normal,Medium
+SSTV image,301,43,Poor,3.1,Normal,Low
+Fault alert,9,17,Poor,9.0,Normal,High
+Voice/Data,133,64,Fair,8.7,Normal,Low
+Housekeeping,20,50,Poor,3.6,Normal,Medium
+SSTV image,279,14,Poor,6.9,Normal,Low
+SSTV image,511,62,Poor,10.3,Normal,Low
+SSTV image,420,29,Fair,3.4,Normal,Medium
+Voice/Data,85,31,Fair,9.0,Normal,Low
+Fault alert,11,10,Poor,11.5,Normal,High
+SSTV image,298,43,Good,10.5,Normal,Medium
+Housekeeping,11,29,Good,5.1,Normal,High
+Housekeeping,22,12,Poor,7.5,Safe,High
+Fault alert,9,49,Fair,11.9,Normal,High
+Fault alert,20,30,Good,7.0,Normal,High
+Housekeeping,31,22,Fair,1.8,Normal,High
+Housekeeping,35,52,Fair,1.0,Normal,Medium
+Housekeeping,32,15,Fair,9.6,Normal,High
+SSTV image,413,50,Poor,5.4,Safe,Low
+SSTV image,631,52,Good,3.3,Normal,Medium
+Housekeeping,39,100,Good,4.5,Normal,Medium
+Housekeeping,69,46,Good,9.2,Safe,High
+Housekeeping,91,99,Poor,5.9,Normal,Medium
+SSTV image,768,32,Fair,10.5,Safe,Low
+Housekeeping,61,48,Poor,9.0,Normal,Medium
+Fault alert,15,75,Fair,11.7,Normal,High
+Housekeeping,93,13,Fair,10.7,Safe,High
+Housekeeping,81,86,Good,3.4,Normal,Medium
+Housekeeping,37,39,Poor,8.1,Normal,Medium
+SSTV image,279,10,Good,0.7,Safe,Low
+SSTV image,269,31,Poor,11.9,Normal,Low
+SSTV image,730,32,Poor,3.5,Normal,Low
+SSTV image,534,11,Good,8.1,Normal,Low
+SSTV image,378,70,Good,10.3,Normal,Medium
+Housekeeping,41,18,Fair,2.3,Normal,Medium
+Voice/Data,148,87,Fair,10.3,Normal,Low
+SSTV image,681,51,Poor,0.6,Normal,Low
+Housekeeping,65,75,Poor,5.6,Normal,Medium
+SSTV image,728,40,Fair,5.9,Normal,Medium
+Housekeeping,37,22,Fair,4.8,Normal,High
+SSTV image,484,26,Good,7.2,Normal,Low
+SSTV image,273,68,Poor,11.0,Normal,Low
+Voice/Data,390,75,Good,4.3,Normal,Medium
+Voice/Data,229,20,Good,7.2,Safe,Low
+SSTV image,532,42,Poor,10.6,Normal,Low
+SSTV image,448,95,Poor,9.4,Normal,Low
+Voice/Data,145,44,Fair,1.0,Safe,Low
+Housekeeping,96,47,Good,11.3,Normal,Medium
+Voice/Data,221,31,Good,1.0,Normal,Medium
+Housekeeping,71,37,Good,7.3,Normal,Medium
+Fault alert,1,58,Fair,7.1,Normal,High
+Fault alert,6,61,Poor,9.5,Normal,High
+Voice/Data,332,26,Fair,2.2,Normal,Medium
+Fault alert,2,15,Poor,2.6,Normal,High
+Housekeeping,19,55,Good,9.1,Normal,Medium
+Housekeeping,83,82,Poor,2.2,Normal,Medium
+Housekeeping,38,23,Fair,5.9,Normal,Medium
+Housekeeping,34,47,Fair,8.9,Normal,Medium
+SSTV image,539,24,Fair,8.0,Normal,Low
+Fault alert,4,32,Good,2.9,Normal,High
+Voice/Data,65,65,Fair,4.0,Normal,Medium
+Voice/Data,51,36,Good,11.6,Normal,Medium
+Housekeeping,17,34,Good,5.7,Normal,Medium
+Housekeeping,24,100,Good,1.0,Normal,Medium
+SSTV image,618,25,Good,3.0,Normal,Medium
+Fault alert,6,27,Good,4.4,Normal,High
+Housekeeping,16,94,Good,12.0,Normal,High
+Voice/Data,55,60,Fair,4.0,Normal,Low
+Voice/Data,217,13,Fair,0.8,Normal,Low
+Voice/Data,344,48,Fair,6.4,Normal,Low
+Housekeeping,40,61,Poor,1.5,Normal,Medium
+SSTV image,238,33,Poor,3.7,Normal,Low
+SSTV image,337,59,Good,11.9,Normal,Medium
+Housekeeping,55,69,Poor,8.6,Normal,Medium
+SSTV image,313,32,Fair,1.1,Normal,Low
+Fault alert,20,83,Good,5.7,Normal,High
+Housekeeping,79,51,Poor,2.5,Normal,Medium
+SSTV image,407,49,Good,1.9,Safe,Low
+Housekeeping,96,17,Poor,7.3,Normal,High
+Housekeeping,39,39,Good,6.3,Normal,Medium
+Voice/Data,99,75,Good,9.0,Normal,Medium
+Voice/Data,379,91,Poor,10.8,Normal,Low
+SSTV image,776,30,Poor,3.3,Normal,Low
+Voice/Data,159,99,Fair,11.1,Normal,Low
+Voice/Data,258,17,Fair,6.5,Safe,Low
+Fault alert,4,27,Poor,3.5,Safe,High
+Housekeeping,68,38,Good,10.2,Normal,Medium
+Housekeeping,72,48,Poor,0.9,Normal,Low
+Fault alert,15,92,Good,6.9,Normal,High
+Voice/Data,249,76,Poor,8.8,Normal,Low
+Housekeeping,74,82,Good,3.7,Normal,Medium
+Housekeeping,60,20,Poor,10.4,Safe,High
+Housekeeping,84,96,Fair,3.3,Normal,Medium
+Housekeeping,26,49,Fair,10.2,Normal,Medium
+Voice/Data,219,69,Poor,1.4,Normal,Low
+Fault alert,9,73,Good,2.3,Normal,High
+Housekeeping,58,70,Fair,4.9,Normal,Medium
+Housekeeping,22,34,Fair,10.3,Safe,High
+Housekeeping,39,53,Fair,2.2,Normal,Medium
+SSTV image,773,68,Good,10.6,Normal,Medium
+Housekeeping,19,92,Poor,3.1,Normal,Medium
+Fault alert,13,25,Poor,5.7,Safe,High
+Housekeeping,70,56,Poor,4.6,Normal,Medium
+Voice/Data,216,26,Fair,1.9,Normal,Medium
+SSTV image,220,42,Poor,11.4,Normal,Low
+SSTV image,220,80,Good,5.5,Normal,Medium
+SSTV image,365,36,Fair,8.4,Safe,Low
+Voice/Data,85,29,Good,7.1,Normal,Medium
+Fault alert,2,32,Fair,6.3,Safe,High
+Housekeeping,24,83,Fair,7.6,Normal,Medium
+SSTV image,314,21,Fair,10.8,Normal,Low
+Housekeeping,86,12,Fair,8.5,Safe,High
+Voice/Data,274,45,Fair,6.6,Normal,Low
+Housekeeping,12,69,Fair,7.9,Normal,Medium
+Voice/Data,270,22,Fair,7.5,Safe,Medium
+Voice/Data,97,84,Good,5.5,Normal,Medium
+SSTV image,453,87,Poor,7.7,Normal,Low
+Voice/Data,63,31,Fair,5.6,Safe,Low
+SSTV image,254,44,Poor,9.2,Normal,Medium
+Voice/Data,96,13,Fair,11.6,Normal,Low
+Housekeeping,49,84,Good,11.5,Normal,Medium
+Housekeeping,52,91,Poor,9.9,Normal,Medium
+SSTV image,411,50,Fair,7.4,Normal,Medium
+Fault alert,13,56,Fair,9.1,Normal,High
+Housekeeping,75,78,Poor,2.5,Normal,Medium
+Voice/Data,305,73,Good,6.0,Normal,Medium
+SSTV image,547,22,Fair,3.5,Normal,Low
+Housekeeping,59,71,Good,0.5,Normal,Medium
+Housekeeping,54,94,Fair,11.6,Normal,Medium
+Housekeeping,31,78,Good,10.4,Normal,Medium
+Fault alert,10,53,Fair,6.4,Normal,High
+Voice/Data,53,57,Fair,3.4,Normal,Low
+Housekeeping,97,20,Good,8.5,Safe,High
+Housekeeping,43,70,Fair,5.5,Normal,Medium
+SSTV image,654,31,Fair,9.7,Normal,Medium
+Fault alert,20,24,Good,12.0,Safe,High
+Housekeeping,55,34,Fair,4.5,Normal,Medium
+SSTV image,717,40,Good,3.3,Normal,Medium
+SSTV image,488,43,Good,3.6,Normal,Medium
+Voice/Data,96,17,Good,1.6,Normal,Low
+SSTV image,215,75,Good,5.0,Normal,Medium
+Housekeeping,22,50,Fair,0.7,Normal,Medium
+Voice/Data,380,96,Fair,1.8,Normal,Low
+Voice/Data,216,26,Poor,3.6,Normal,Low
+SSTV image,391,37,Good,2.3,Safe,Low
+Voice/Data,206,26,Good,8.9,Normal,Medium
+Voice/Data,139,59,Fair,1.7,Normal,Low
+Voice/Data,355,54,Poor,10.5,Normal,Low
+Fault alert,20,28,Fair,3.0,Safe,High
+SSTV image,251,69,Fair,1.7,Normal,Medium
+Housekeeping,75,85,Good,0.6,Normal,Medium
+SSTV image,401,38,Poor,8.7,Normal,Low
+SSTV image,228,87,Good,3.5,Normal,Medium
+Voice/Data,373,26,Good,6.4,Normal,Medium
+Voice/Data,71,36,Good,1.8,Normal,Medium
+Housekeeping,28,38,Poor,11.8,Normal,Medium
+SSTV image,215,49,Good,1.9,Safe,Low
+SSTV image,483,20,Good,5.2,Normal,Low
+Housekeeping,64,45,Good,10.3,Normal,Medium
+Fault alert,7,48,Poor,3.3,Normal,High
+Fault alert,2,82,Fair,3.6,Normal,High
+Voice/Data,90,54,Good,9.8,Normal,Medium
+Housekeeping,94,97,Fair,3.6,Normal,Medium
+Voice/Data,332,77,Fair,0.5,Normal,Low
+Housekeeping,95,74,Fair,5.4,Normal,Medium
+Voice/Data,236,78,Fair,0.6,Normal,Low
+Housekeeping,59,24,Poor,11.0,Normal,High
+Voice/Data,325,50,Fair,7.9,Normal,Low
+Fault alert,13,63,Poor,7.2,Normal,High
+SSTV image,462,28,Good,2.8,Normal,Medium
+Voice/Data,152,20,Good,8.5,Normal,Medium
+Voice/Data,220,22,Fair,8.3,Normal,Low
+Voice/Data,72,81,Poor,1.2,Normal,Low
+Fault alert,4,36,Poor,10.6,Safe,High
+Housekeeping,77,21,Fair,7.2,Safe,High
+Fault alert,18,77,Good,9.6,Normal,High
+Fault alert,3,73,Fair,3.5,Normal,High
+SSTV image,258,84,Poor,1.9,Normal,Low
+SSTV image,251,92,Poor,8.6,Normal,Low
+Voice/Data,327,90,Poor,9.6,Normal,Low
+Voice/Data,159,26,Good,4.9,Normal,Medium
+SSTV image,396,41,Good,0.8,Safe,Low
+Voice/Data,54,45,Fair,9.9,Normal,Low
+Fault alert,20,46,Fair,2.9,Normal,High
+Housekeeping,49,68,Good,4.4,Normal,Medium
+SSTV image,679,64,Fair,7.7,Normal,Medium
+Voice/Data,298,27,Good,1.6,Safe,Low
+Fault alert,3,100,Good,1.3,Normal,High
+SSTV image,681,17,Fair,0.8,Safe,Low
+SSTV image,530,18,Good,11.0,Normal,Low
+Fault alert,13,12,Fair,4.1,Normal,High
+Housekeeping,28,84,Good,8.1,Normal,Medium
+Voice/Data,347,47,Poor,11.9,Normal,Low
+SSTV image,759,49,Fair,8.2,Normal,Medium
+Housekeeping,46,69,Poor,6.5,Normal,Medium
+Voice/Data,82,49,Poor,6.5,Normal,Low
+Housekeeping,87,33,Poor,4.8,Safe,High
+Voice/Data,361,15,Fair,7.4,Normal,Low
+Housekeeping,56,24,Fair,11.5,Normal,High
+SSTV image,548,94,Fair,9.6,Normal,Medium
+Housekeeping,30,51,Fair,5.4,Normal,Medium
+Housekeeping,16,25,Good,4.3,Normal,High
+Voice/Data,381,43,Good,10.7,Normal,Medium
+Housekeeping,53,40,Poor,2.1,Normal,Medium
+Fault alert,6,34,Fair,10.3,Normal,High
+Housekeeping,73,22,Good,3.4,Safe,High
+SSTV image,215,76,Good,8.7,Normal,Medium
+Voice/Data,78,14,Fair,9.8,Safe,Low
+Voice/Data,135,38,Good,6.0,Normal,Medium
+Housekeeping,51,52,Poor,2.7,Normal,Medium
+Housekeeping,43,59,Fair,10.2,Normal,Medium
+Fault alert,4,90,Good,4.7,Normal,High
+SSTV image,411,94,Good,4.2,Normal,Medium
+Voice/Data,167,37,Good,6.4,Normal,Low
+SSTV image,515,59,Poor,5.5,Normal,Low
+SSTV image,538,12,Poor,8.4,Normal,Medium
+Housekeeping,90,66,Poor,2.1,Normal,Medium
+Voice/Data,333,23,Poor,5.5,Normal,Low
+Housekeeping,36,16,Poor,10.8,Normal,High
+Fault alert,19,71,Fair,0.9,Normal,High
+Housekeeping,57,17,Fair,5.8,Safe,High
+Fault alert,4,53,Good,8.1,Normal,High
+Housekeeping,40,14,Fair,10.7,Safe,High
+Fault alert,15,77,Poor,7.3,Normal,High
+Housekeeping,84,79,Good,10.0,Normal,Medium
+SSTV image,424,62,Poor,3.1,Normal,Low
+Housekeeping,24,86,Good,4.6,Normal,Medium
+Housekeeping,27,49,Poor,11.3,Normal,Medium
+Voice/Data,86,26,Fair,10.7,Normal,Medium
+Voice/Data,295,23,Good,6.9,Normal,Medium
+SSTV image,502,18,Fair,6.0,Safe,Low
+Housekeeping,51,28,Good,5.7,Normal,High
+Voice/Data,285,39,Good,1.2,Normal,Medium
+Housekeeping,85,29,Poor,10.8,Normal,High
+Housekeeping,82,63,Good,9.9,Normal,Medium
+Voice/Data,98,23,Good,5.7,Normal,Low
+SSTV image,554,66,Good,3.7,Normal,Medium
+SSTV image,730,40,Fair,4.4,Normal,Medium
+SSTV image,665,72,Fair,1.9,Normal,Low
+SSTV image,397,56,Good,8.8,Normal,Medium
+Housekeeping,45,92,Fair,6.9,Normal,Medium
+Housekeeping,91,50,Fair,3.2,Normal,Medium
+Housekeeping,12,22,Poor,7.7,Safe,High
+Housekeeping,57,34,Poor,11.8,Safe,High
+Voice/Data,90,69,Fair,1.9,Normal,Low
+Housekeeping,91,49,Poor,5.8,Normal,Medium
+SSTV image,223,60,Poor,6.2,Normal,Low
+Voice/Data,58,52,Poor,2.4,Normal,Low
+Voice/Data,165,37,Good,6.6,Normal,Medium
+Housekeeping,28,38,Poor,7.5,Normal,Low
+Housekeeping,55,92,Poor,2.3,Normal,Medium
+Voice/Data,155,37,Fair,2.3,Safe,Low
+SSTV image,414,18,Poor,10.3,Normal,Low
+Voice/Data,248,49,Good,4.1,Safe,Low
+Voice/Data,246,74,Good,7.7,Normal,Medium
+Voice/Data,378,12,Fair,7.7,Safe,Low
+Housekeeping,53,76,Fair,10.2,Normal,Medium
+SSTV image,539,63,Fair,9.0,Normal,Low
+Fault alert,14,47,Poor,10.2,Safe,High
+SSTV image,304,30,Fair,7.7,Safe,Low
+Voice/Data,284,57,Poor,5.7,Normal,Low
+SSTV image,718,38,Poor,5.0,Normal,Low
+Housekeeping,38,39,Fair,4.9,Normal,Medium
+Fault alert,4,66,Poor,5.3,Normal,High
+Voice/Data,171,85,Poor,2.0,Normal,Low
+Fault alert,6,46,Fair,5.4,Safe,High
+Fault alert,12,80,Fair,5.0,Normal,High
+Housekeeping,88,65,Poor,0.9,Normal,Low
+Fault alert,12,55,Poor,3.7,Normal,High
+Housekeeping,21,40,Poor,9.1,Normal,Medium
+SSTV image,389,79,Poor,7.1,Normal,Low
+Housekeeping,72,38,Good,9.8,Normal,Medium
+Fault alert,7,34,Good,6.7,Normal,High
+Fault alert,12,88,Fair,10.3,Normal,High
+Housekeeping,73,34,Fair,9.7,Safe,High
+Fault alert,7,42,Good,1.6,Normal,High
+SSTV image,589,45,Good,11.7,Safe,Low
+Housekeeping,46,97,Poor,0.7,Normal,Low
+Housekeeping,22,38,Poor,7.4,Normal,Medium
+Housekeeping,43,57,Fair,9.6,Normal,Low
+Housekeeping,50,54,Fair,4.3,Normal,Medium
+Fault alert,1,73,Poor,7.4,Normal,High
+Fault alert,18,96,Fair,4.7,Normal,High
+Voice/Data,235,59,Fair,1.2,Normal,Low
+Fault alert,1,82,Fair,0.6,Normal,High
+SSTV image,721,64,Fair,1.6,Normal,Low
+Housekeeping,87,90,Good,1.6,Normal,Medium
+Housekeeping,11,46,Fair,7.5,Normal,Medium
+Housekeeping,24,45,Poor,6.5,Normal,Medium
+Voice/Data,177,48,Poor,5.7,Normal,Low
+Voice/Data,228,100,Good,8.5,Normal,Medium
+Housekeeping,76,65,Fair,0.7,Normal,Medium
+Housekeeping,48,23,Poor,3.6,Normal,High
+Housekeeping,65,13,Fair,9.4,Normal,High
+Housekeeping,10,57,Good,11.0,Normal,High
+SSTV image,595,43,Good,5.5,Safe,Low
+Housekeeping,93,53,Good,1.4,Normal,Medium
+Housekeeping,57,32,Good,9.7,Safe,Medium
+Voice/Data,209,82,Fair,10.7,Normal,Low
+Fault alert,6,56,Fair,5.3,Normal,High
+Housekeeping,96,92,Poor,3.3,Normal,Medium
+SSTV image,219,68,Good,1.0,Normal,Medium
+Housekeeping,36,39,Fair,7.3,Safe,High
+Fault alert,3,81,Poor,11.0,Normal,High
+Fault alert,18,67,Good,8.3,Normal,High
+Voice/Data,219,14,Fair,4.1,Normal,Low
+Fault alert,19,48,Poor,7.9,Normal,High
+Housekeeping,70,22,Fair,10.1,Normal,High
+Fault alert,12,56,Good,6.0,Normal,High
+Fault alert,11,23,Good,9.9,Normal,High
+SSTV image,321,30,Fair,5.0,Safe,Low
+Housekeeping,61,41,Good,4.5,Normal,Medium
+SSTV image,611,11,Good,7.2,Normal,Low
+SSTV image,780,21,Good,5.8,Normal,Low
+Voice/Data,242,55,Good,11.7,Normal,Medium
+Fault alert,19,13,Fair,6.4,Safe,High
+Voice/Data,381,87,Good,4.9,Normal,Medium
+SSTV image,514,79,Fair,5.0,Normal,Medium
+Housekeeping,49,74,Good,6.8,Normal,Medium
+Voice/Data,100,17,Poor,4.6,Safe,Low
+Voice/Data,144,82,Good,8.8,Normal,Medium
+Housekeeping,89,67,Good,4.9,Normal,Medium
+Voice/Data,98,45,Fair,4.9,Normal,Medium
+Housekeeping,46,10,Good,7.6,Normal,High
+SSTV image,619,58,Fair,1.2,Normal,Low
+Voice/Data,134,82,Poor,8.0,Normal,Low
+Housekeeping,98,13,Poor,6.3,Normal,High
+Voice/Data,277,12,Good,5.7,Safe,Medium
+Housekeeping,12,44,Fair,8.8,Normal,Medium
+Voice/Data,136,56,Fair,9.2,Normal,Low
+SSTV image,645,53,Good,10.2,Normal,Medium
+Housekeeping,88,27,Fair,4.8,Safe,High
+Housekeeping,94,33,Fair,4.3,Normal,Medium
+Housekeeping,87,15,Good,8.7,Normal,High
+Fault alert,2,12,Good,7.2,Normal,High
+Fault alert,15,18,Good,7.8,Normal,High
+Housekeeping,20,72,Fair,6.9,Normal,Medium
+Fault alert,2,81,Good,9.4,Normal,High
+Housekeeping,72,49,Poor,2.7,Normal,Medium
+SSTV image,487,17,Fair,6.9,Normal,Low
+SSTV image,589,47,Poor,2.3,Normal,Low
+SSTV image,711,50,Fair,5.2,Safe,Low
+Housekeeping,16,32,Good,8.1,Normal,Medium
+Voice/Data,235,54,Good,6.2,Normal,Medium
+SSTV image,701,58,Fair,4.9,Normal,Medium
+Fault alert,9,40,Poor,10.7,Normal,High
+Fault alert,11,49,Good,9.4,Normal,Medium
+SSTV image,499,52,Good,6.6,Normal,Medium
+Housekeeping,92,53,Fair,11.4,Normal,Medium
+SSTV image,229,75,Poor,5.4,Normal,Low
+Voice/Data,358,33,Fair,9.6,Safe,Medium
+Fault alert,17,12,Fair,2.4,Safe,High
+Fault alert,17,10,Fair,3.8,Normal,High
+Voice/Data,194,47,Fair,4.4,Normal,Low
+SSTV image,510,92,Good,1.7,Normal,Medium
+Fault alert,8,13,Fair,6.3,Normal,High
+Voice/Data,138,16,Fair,2.7,Normal,Low
+Voice/Data,357,71,Poor,7.8,Normal,Low
+SSTV image,504,51,Good,2.7,Normal,Medium
+SSTV image,634,30,Fair,1.9,Normal,Low
+Housekeeping,19,18,Fair,11.6,Safe,High
+Fault alert,16,70,Poor,8.1,Normal,High
+SSTV image,595,57,Good,11.3,Normal,Medium
+Housekeeping,100,68,Good,6.1,Normal,Medium
+SSTV image,280,35,Poor,0.9,Normal,Low
+Voice/Data,239,57,Poor,7.1,Normal,Low
+Fault alert,11,45,Poor,6.9,Safe,High
+SSTV image,523,38,Good,0.7,Normal,Medium
+Housekeeping,14,46,Good,10.4,Normal,Medium
+Voice/Data,216,24,Fair,7.6,Normal,Low
+Housekeeping,37,68,Fair,9.1,Normal,Medium
+SSTV image,571,12,Good,6.2,Normal,Low
+SSTV image,339,32,Good,7.6,Normal,Medium
+Housekeeping,49,74,Poor,3.5,Normal,Medium
+SSTV image,572,11,Poor,11.7,Normal,Low
+SSTV image,238,100,Fair,5.1,Normal,High
+SSTV image,672,46,Good,2.4,Normal,Medium
+Voice/Data,301,26,Good,1.1,Safe,Medium
+Voice/Data,70,58,Good,7.8,Normal,Medium
+Housekeeping,15,68,Good,11.8,Normal,Medium
+SSTV image,711,51,Fair,10.8,Normal,Medium
+Fault alert,6,90,Fair,8.6,Normal,High
+Voice/Data,352,97,Poor,11.9,Normal,Low
+SSTV image,500,28,Good,8.8,Normal,Medium
+Housekeeping,41,74,Fair,4.4,Normal,Medium
+Fault alert,6,37,Fair,7.4,Normal,High
+Voice/Data,281,100,Poor,1.4,Normal,Low
+Housekeeping,19,20,Good,3.0,Safe,High
+SSTV image,441,36,Good,5.3,Normal,Medium
+Fault alert,7,74,Good,2.8,Normal,High
+Voice/Data,104,81,Poor,11.5,Normal,Low
+Housekeeping,42,21,Good,11.9,Normal,High
+Housekeeping,58,32,Good,4.8,Safe,High
+Voice/Data,287,41,Good,8.7,Normal,Medium
+Voice/Data,80,65,Good,5.2,Normal,Medium
+Housekeeping,89,60,Good,2.1,Normal,Medium
+Housekeeping,89,99,Good,4.4,Normal,Medium
+SSTV image,615,94,Fair,3.2,Normal,Low
+Voice/Data,374,69,Fair,4.3,Normal,Low
+Housekeeping,48,37,Fair,3.0,Safe,High
+SSTV image,693,91,Good,1.8,Normal,Low
+SSTV image,637,26,Good,3.0,Normal,Medium
+SSTV image,538,76,Poor,10.9,Normal,Low
+Voice/Data,113,80,Poor,1.5,Normal,Low
+SSTV image,535,15,Good,4.2,Safe,Medium
+Fault alert,19,90,Good,6.6,Normal,High
+Voice/Data,395,73,Good,4.6,Normal,Medium
+Voice/Data,207,41,Fair,6.5,Normal,Low
+Voice/Data,137,54,Good,1.0,Normal,Medium
+Fault alert,15,54,Good,8.0,Normal,High
+Housekeeping,16,93,Fair,7.0,Normal,Medium
+SSTV image,290,98,Poor,8.3,Normal,Low
+Fault alert,12,83,Good,7.0,Normal,High
+Voice/Data,397,69,Poor,5.5,Normal,Low
+Housekeeping,39,19,Fair,4.5,Normal,High
+SSTV image,466,93,Good,3.1,Normal,Medium
+Voice/Data,163,22,Good,6.3,Normal,Low
+Housekeeping,50,16,Fair,0.8,Safe,High
+Housekeeping,10,16,Good,4.3,Normal,High
+SSTV image,557,96,Poor,8.3,Normal,Low
+SSTV image,558,54,Good,1.8,Normal,Medium
+Housekeeping,38,31,Poor,1.2,Normal,Medium
+SSTV image,358,17,Good,8.0,Normal,Low
+Voice/Data,317,47,Good,5.1,Normal,Medium
+Housekeeping,27,75,Poor,9.7,Normal,Medium
+Housekeeping,14,100,Poor,11.3,Normal,Medium
+Housekeeping,13,60,Good,11.5,Normal,Medium
+Housekeeping,90,34,Poor,5.4,Safe,High
+Fault alert,8,86,Poor,3.5,Normal,Medium
+Housekeeping,19,92,Fair,7.5,Normal,Medium
+SSTV image,728,35,Good,7.7,Normal,Medium
+Housekeeping,23,100,Fair,7.7,Normal,Medium
+Voice/Data,168,57,Fair,4.2,Normal,Low
+Housekeeping,11,94,Good,1.2,Normal,Medium
+Fault alert,14,20,Fair,2.9,Normal,High
+Voice/Data,295,18,Fair,2.3,Normal,Low
+Voice/Data,315,46,Fair,1.9,Safe,Low
+Housekeeping,33,71,Fair,11.2,Normal,Medium
+Housekeeping,39,25,Fair,0.7,Normal,High
+Housekeeping,95,91,Good,7.4,Normal,Medium
+SSTV image,693,19,Poor,11.4,Normal,Low
+Housekeeping,13,72,Good,4.6,Normal,Medium
+Housekeeping,72,28,Poor,6.6,Normal,Medium
+Fault alert,17,16,Fair,8.5,Normal,Medium
+Housekeeping,60,43,Poor,4.1,Safe,High
+Voice/Data,274,87,Fair,6.0,Normal,Low
+SSTV image,200,19,Good,9.9,Normal,Low
+Housekeeping,12,18,Fair,9.1,Normal,High
+Fault alert,1,65,Poor,9.8,Normal,High
+Housekeeping,24,12,Poor,11.9,Normal,High
+Housekeeping,100,40,Good,4.8,Safe,High
+Voice/Data,272,93,Fair,9.1,Normal,Medium
+Voice/Data,324,40,Good,7.4,Safe,Low
+Voice/Data,153,30,Fair,8.2,Normal,Low
+Voice/Data,379,27,Poor,9.0,Normal,Low
+Voice/Data,119,71,Good,9.1,Normal,Medium
+Voice/Data,366,15,Fair,10.7,Normal,Low
+Fault alert,1,58,Poor,4.5,Normal,High
+Fault alert,1,50,Good,8.0,Normal,High
+Housekeeping,17,77,Poor,3.7,Normal,Medium
+SSTV image,675,18,Fair,7.3,Safe,Low
+Fault alert,6,79,Fair,9.1,Normal,High
+Voice/Data,208,73,Fair,9.6,Normal,Low
+SSTV image,483,31,Good,5.3,Normal,Medium
+SSTV image,674,42,Poor,6.4,Normal,Low
+Housekeeping,41,12,Good,4.3,Safe,High
+Housekeeping,10,50,Good,2.4,Normal,Medium
+Housekeeping,45,33,Good,3.5,Normal,Medium
+Voice/Data,151,20,Good,11.0,Normal,Low
+SSTV image,639,60,Good,4.1,Normal,Medium
+SSTV image,651,61,Good,11.7,Normal,Medium
+Housekeeping,18,17,Fair,3.3,Normal,High
+Housekeeping,82,26,Fair,8.8,Normal,High
+Housekeeping,16,17,Good,7.1,Normal,High
+Voice/Data,267,71,Fair,8.5,Normal,Low
+Voice/Data,186,40,Good,7.9,Normal,Medium
+Housekeeping,37,12,Poor,8.6,Safe,High
+Voice/Data,219,27,Good,10.9,Normal,Medium
+Fault alert,7,98,Poor,7.0,Normal,High
+Voice/Data,328,33,Good,1.3,Normal,Medium
+Fault alert,20,72,Poor,3.6,Normal,High
+Housekeeping,84,29,Poor,8.6,Safe,High
+Voice/Data,204,26,Good,6.2,Normal,Medium
+Housekeeping,55,37,Good,6.8,Normal,Medium
+Housekeeping,50,11,Good,7.4,Normal,High
+Housekeeping,82,77,Good,4.9,Normal,Medium
+Housekeeping,60,40,Fair,9.4,Normal,Medium
+SSTV image,481,55,Good,8.8,Normal,Medium
+Voice/Data,193,23,Fair,8.7,Normal,Low
+Voice/Data,181,85,Fair,8.7,Normal,Low
+Housekeeping,60,29,Fair,10.7,Normal,High
+SSTV image,614,61,Poor,7.3,Normal,Low
+Housekeeping,49,89,Fair,11.6,Normal,Medium
+Housekeeping,83,74,Good,1.9,Normal,Medium
+Housekeeping,85,64,Poor,7.8,Normal,Medium
+Voice/Data,200,90,Good,8.7,Normal,Medium
+Voice/Data,369,26,Fair,6.0,Normal,Low
+Voice/Data,110,97,Poor,3.8,Normal,Low
+SSTV image,760,60,Good,6.8,Normal,Medium
+Housekeeping,36,47,Poor,4.7,Normal,Medium
+SSTV image,539,33,Poor,11.0,Normal,Low
+SSTV image,370,40,Good,4.6,Safe,Low
+Housekeeping,50,98,Poor,2.5,Normal,Low
+Fault alert,7,72,Poor,7.1,Normal,High
+Fault alert,15,12,Good,5.1,Normal,High
+Voice/Data,78,52,Poor,1.6,Normal,Medium
+Housekeeping,86,76,Good,7.0,Normal,Medium
+Voice/Data,367,46,Good,6.7,Normal,Medium
+Housekeeping,61,80,Poor,2.5,Normal,Medium
+SSTV image,528,74,Fair,7.4,Normal,Medium
+Housekeeping,73,16,Poor,7.0,Normal,High
+Housekeeping,28,60,Good,9.4,Normal,Low
+Fault alert,15,17,Poor,4.7,Safe,Medium
+Fault alert,5,54,Good,3.4,Normal,Medium
+Voice/Data,287,44,Poor,11.4,Normal,Low
+Housekeeping,37,83,Good,7.0,Normal,Medium
+SSTV image,648,89,Poor,0.8,Normal,Low
+Housekeeping,81,51,Poor,9.9,Normal,Medium
+Housekeeping,28,58,Fair,2.8,Normal,Medium
+SSTV image,571,66,Fair,9.5,Normal,Medium
+Housekeeping,55,36,Good,8.6,Safe,High
+Voice/Data,153,67,Poor,11.6,Normal,Low
+Voice/Data,256,81,Poor,11.6,Normal,Low
+SSTV image,796,99,Fair,3.7,Normal,Low
+Housekeeping,10,85,Fair,9.3,Normal,Medium
+Housekeeping,97,22,Good,4.1,Normal,High
+Voice/Data,350,53,Good,7.7,Normal,Medium
+Housekeeping,58,51,Good,7.4,Normal,Medium
+Fault alert,13,56,Poor,1.1,Normal,High
+Housekeeping,43,58,Fair,0.6,Normal,Medium
+Voice/Data,95,75,Good,1.2,Normal,Medium
+SSTV image,543,27,Fair,2.0,Safe,Low
+Voice/Data,336,33,Good,3.5,Normal,Medium
+Voice/Data,131,51,Poor,10.9,Normal,Low
+Housekeeping,75,45,Fair,6.5,Safe,High
+Voice/Data,312,22,Good,9.7,Safe,Low
+Housekeeping,79,11,Fair,10.1,Normal,High
+SSTV image,404,98,Good,9.0,Normal,Medium
+Fault alert,8,27,Fair,5.0,Normal,High
+Voice/Data,196,64,Poor,10.4,Normal,Low
+Housekeeping,87,82,Fair,9.0,Normal,Medium
+Fault alert,19,34,Poor,9.0,Normal,High
+Housekeeping,47,40,Fair,10.9,Normal,Medium
+Fault alert,20,21,Poor,7.4,Safe,High
+Housekeeping,61,23,Good,6.6,Normal,High
+SSTV image,431,23,Good,10.7,Normal,Medium
+Housekeeping,10,26,Fair,5.7,Normal,Medium
+Voice/Data,264,28,Poor,9.8,Safe,Low
+Housekeeping,68,31,Fair,1.1,Safe,High
+SSTV image,781,11,Good,0.5,Normal,Low
+Housekeeping,75,87,Fair,6.6,Normal,Medium
+SSTV image,217,71,Poor,1.3,Normal,Low
+SSTV image,540,16,Fair,11.7,Normal,Medium
+Housekeeping,77,86,Fair,0.6,Normal,Medium
+Voice/Data,224,12,Fair,8.8,Normal,Low
+Housekeeping,49,61,Poor,3.3,Normal,Medium
+Housekeeping,83,52,Good,11.6,Normal,Medium
+SSTV image,567,55,Poor,4.9,Normal,Low
+Voice/Data,289,97,Poor,0.8,Normal,Low
+Fault alert,10,94,Poor,0.8,Normal,High
+Housekeeping,35,35,Fair,6.9,Normal,Medium
+Voice/Data,232,62,Fair,11.8,Normal,Low
+SSTV image,776,97,Poor,11.8,Normal,Low
+Voice/Data,261,76,Fair,4.4,Normal,Low
+SSTV image,625,90,Good,6.1,Normal,Medium
+SSTV image,274,27,Fair,1.7,Safe,Low
+Housekeeping,99,35,Good,6.5,Normal,High
+Voice/Data,135,30,Fair,7.4,Safe,Low
+Housekeeping,98,43,Poor,3.4,Safe,High
+SSTV image,467,94,Good,7.5,Normal,Medium
+Housekeeping,93,72,Good,10.8,Normal,Low
+SSTV image,735,74,Fair,0.5,Normal,Low
+SSTV image,653,56,Good,3.1,Normal,Low
+SSTV image,750,39,Fair,2.9,Normal,Low
+Voice/Data,263,48,Fair,1.9,Normal,Low
+Housekeeping,87,30,Good,2.4,Safe,High
+SSTV image,303,84,Good,7.7,Normal,Low
+Housekeeping,16,60,Fair,1.7,Normal,Medium
+Housekeeping,59,82,Good,9.0,Normal,Medium
+Housekeeping,83,12,Fair,10.7,Normal,High
+Fault alert,16,78,Poor,11.2,Normal,High
+Fault alert,11,56,Good,8.1,Normal,High
+SSTV image,513,100,Fair,2.8,Normal,Low
+SSTV image,566,52,Fair,1.5,Normal,Low
+SSTV image,721,53,Fair,3.2,Normal,Low
+Fault alert,17,21,Fair,11.6,Normal,High
+Housekeeping,19,83,Fair,11.6,Normal,High
+Housekeeping,64,38,Good,4.9,Safe,High
+Voice/Data,183,88,Good,4.2,Normal,Medium
+Voice/Data,330,18,Good,6.4,Normal,Low
+Housekeeping,56,29,Fair,3.9,Normal,Medium
+SSTV image,795,89,Fair,11.8,Normal,Medium
+Fault alert,9,13,Poor,3.0,Normal,High
+Housekeeping,71,56,Fair,4.7,Normal,Medium
+Fault alert,3,26,Poor,5.4,Safe,High
+Housekeeping,94,95,Good,1.9,Normal,Medium
+SSTV image,292,87,Good,4.9,Normal,Medium
+Voice/Data,182,91,Fair,10.4,Normal,Low
+Housekeeping,86,36,Fair,2.1,Normal,Medium
+SSTV image,781,63,Good,7.2,Normal,Medium
+SSTV image,491,73,Poor,5.2,Normal,Low
+Voice/Data,220,98,Good,2.5,Normal,Medium
+SSTV image,229,10,Fair,0.6,Normal,Low
+Housekeeping,99,98,Poor,3.6,Normal,Medium
+SSTV image,209,42,Poor,1.2,Normal,Low
+Housekeeping,12,21,Good,4.8,Normal,High
+Voice/Data,216,66,Poor,9.8,Normal,Low
+Housekeeping,10,81,Good,8.8,Normal,Medium
+SSTV image,298,21,Poor,11.4,Normal,Low
+Fault alert,13,13,Poor,5.4,Normal,High
+Housekeeping,74,46,Good,8.6,Safe,Medium
+Voice/Data,154,94,Poor,8.2,Normal,Low
+SSTV image,677,24,Poor,3.0,Normal,Low
+Housekeeping,65,92,Fair,4.0,Normal,Medium
+Voice/Data,130,92,Good,6.6,Normal,Medium
+Voice/Data,300,100,Fair,9.7,Normal,Low
+Housekeeping,63,29,Poor,5.8,Normal,High
+SSTV image,688,62,Good,3.1,Normal,Medium
+Housekeeping,24,50,Good,11.9,Safe,High
+SSTV image,338,92,Good,1.8,Normal,Medium
+Housekeeping,37,34,Good,11.5,Safe,High
+Housekeeping,41,27,Good,9.8,Normal,High
+Voice/Data,361,17,Fair,10.1,Normal,Low
+Voice/Data,307,33,Fair,9.6,Normal,Medium
+Voice/Data,240,15,Good,2.9,Normal,Low
+Voice/Data,239,27,Good,7.8,Normal,Medium
+SSTV image,732,16,Good,9.2,Normal,Low
+Voice/Data,206,79,Fair,9.1,Normal,Low
+Voice/Data,129,63,Fair,3.6,Normal,Low
+Housekeeping,22,57,Fair,2.6,Normal,Medium
+Housekeeping,40,83,Good,4.3,Normal,Medium
+Housekeeping,69,47,Fair,6.0,Normal,Medium
+SSTV image,483,26,Good,7.1,Safe,Low
+Housekeeping,48,28,Fair,10.1,Normal,High
+Housekeeping,53,50,Poor,9.3,Normal,Medium
+SSTV image,785,25,Fair,8.3,Normal,Medium
+Housekeeping,100,34,Good,3.5,Safe,High
+Housekeeping,24,100,Good,6.0,Normal,Medium
+Voice/Data,90,58,Fair,4.4,Normal,Low
+Voice/Data,135,22,Fair,3.2,Safe,Low
+Housekeeping,87,38,Fair,0.6,Safe,High
+Fault alert,10,84,Fair,4.4,Normal,High
+Housekeeping,88,52,Poor,3.4,Normal,Medium
+Voice/Data,277,32,Good,7.1,Normal,Medium
+Voice/Data,244,74,Good,1.2,Normal,Medium
+Fault alert,6,27,Fair,3.6,Normal,High
+Voice/Data,170,100,Fair,1.0,Normal,Low
+Fault alert,3,38,Poor,7.9,Normal,High
+Housekeeping,57,41,Fair,7.0,Normal,Medium
+Voice/Data,148,76,Fair,4.4,Normal,Low
+Housekeeping,36,11,Good,2.2,Normal,High
+Housekeeping,13,18,Poor,11.5,Safe,High
+Housekeeping,82,21,Good,7.2,Normal,High
+SSTV image,764,45,Fair,8.3,Normal,Medium
+Voice/Data,224,60,Good,6.6,Normal,Medium
+Voice/Data,238,26,Good,9.8,Normal,Medium
+Fault alert,19,41,Poor,10.8,Normal,High
+Fault alert,11,80,Fair,4.9,Normal,High
+Voice/Data,268,48,Good,8.4,Safe,Low
+Housekeeping,48,11,Good,3.1,Normal,High
+Voice/Data,230,35,Poor,8.0,Safe,Low
+SSTV image,513,11,Fair,5.1,Safe,Low
+Fault alert,15,31,Fair,0.6,Safe,High
+Voice/Data,262,90,Good,11.5,Normal,Low
+Housekeeping,55,42,Good,10.5,Safe,High
+Housekeeping,16,31,Poor,3.8,Normal,Medium
+SSTV image,743,33,Good,12.0,Normal,Medium
+SSTV image,733,81,Good,4.1,Normal,Medium
+SSTV image,310,84,Good,5.8,Normal,High
+SSTV image,376,35,Poor,10.3,Normal,Low
+Voice/Data,391,10,Fair,4.0,Normal,Low
+Voice/Data,162,50,Fair,5.7,Normal,Medium
+SSTV image,688,66,Poor,8.2,Normal,Low
+Fault alert,16,28,Fair,2.0,Safe,High
+SSTV image,717,95,Poor,5.4,Normal,Low
+Voice/Data,55,84,Poor,4.1,Normal,Low
+Housekeeping,53,81,Good,8.3,Normal,Medium
+Housekeeping,61,11,Fair,2.1,Normal,High
+Housekeeping,86,87,Good,3.2,Normal,Medium
+Fault alert,5,78,Poor,8.7,Normal,High
+SSTV image,384,46,Fair,2.3,Normal,Medium
+Housekeeping,26,63,Fair,5.4,Normal,Medium
+Voice/Data,317,85,Good,8.7,Normal,Medium
+Voice/Data,400,92,Good,9.3,Normal,High
+Voice/Data,99,32,Fair,1.6,Safe,Low
+Housekeeping,31,13,Good,10.3,Normal,High
+Housekeeping,37,35,Poor,8.8,Safe,High
+SSTV image,734,71,Fair,4.4,Normal,Medium
+Voice/Data,206,15,Poor,9.3,Normal,Low
+Housekeeping,35,84,Fair,8.9,Normal,Medium
+Voice/Data,163,28,Poor,7.4,Normal,Low
+Fault alert,12,46,Good,6.9,Safe,High
+Voice/Data,185,60,Fair,8.9,Normal,Low
+Fault alert,3,39,Fair,12.0,Normal,High
+Housekeeping,84,15,Fair,7.2,Normal,High
+SSTV image,453,11,Fair,9.8,Normal,Low
+Fault alert,6,40,Poor,9.1,Safe,High
+Fault alert,15,44,Good,10.3,Normal,High
+Fault alert,15,86,Good,11.5,Normal,High
+Housekeeping,24,30,Poor,2.7,Normal,Medium
+Voice/Data,75,93,Good,2.4,Normal,Medium
+Fault alert,1,95,Fair,7.2,Normal,High
+SSTV image,660,19,Poor,5.7,Normal,Low
+Voice/Data,269,68,Fair,7.1,Normal,Low
+Housekeeping,82,95,Poor,9.7,Normal,Medium
+Fault alert,13,39,Poor,11.2,Normal,High
+Voice/Data,190,16,Good,5.3,Normal,Low
+Voice/Data,256,45,Fair,8.8,Safe,Low
+SSTV image,634,53,Good,2.8,Normal,Medium
+Voice/Data,189,12,Good,6.6,Normal,Low
+Fault alert,19,86,Good,0.8,Normal,High
+Housekeeping,91,71,Good,6.3,Normal,Medium
+SSTV image,681,16,Good,6.8,Normal,Low
+Housekeeping,100,33,Fair,9.0,Normal,Medium
+Voice/Data,187,11,Fair,8.0,Normal,Low
+SSTV image,268,96,Fair,4.6,Normal,Medium
+Voice/Data,219,12,Good,0.6,Normal,Low
+Housekeeping,77,82,Poor,1.8,Normal,Medium
+Housekeeping,80,56,Fair,11.7,Normal,Medium
+Housekeeping,45,63,Good,11.1,Normal,Medium
+Housekeeping,36,83,Fair,4.2,Normal,Medium
+Voice/Data,206,91,Good,3.5,Normal,Medium
+Fault alert,17,15,Fair,5.5,Safe,High
+Fault alert,2,11,Poor,8.4,Normal,High
+Housekeeping,39,21,Fair,4.6,Normal,High
+Housekeeping,30,72,Fair,1.3,Normal,Medium
+Voice/Data,332,61,Poor,5.1,Normal,Low
+Housekeeping,52,17,Poor,3.5,Normal,High
+Voice/Data,80,31,Poor,4.2,Normal,Low
+Fault alert,6,58,Good,2.4,Normal,High
+SSTV image,226,76,Good,8.1,Normal,Medium
+Housekeeping,53,24,Fair,6.6,Safe,High
+Housekeeping,100,96,Poor,3.6,Normal,Medium
+Voice/Data,249,50,Fair,6.9,Safe,Low
+Voice/Data,355,41,Good,6.2,Safe,Low
+Voice/Data,310,28,Good,9.7,Safe,Low
+Housekeeping,90,89,Fair,11.5,Normal,Medium
+Housekeeping,38,76,Poor,2.0,Normal,Medium
+SSTV image,771,57,Good,10.7,Normal,Medium
+Housekeeping,31,50,Good,8.6,Normal,Medium
+SSTV image,463,44,Poor,8.5,Safe,Low
+SSTV image,609,60,Good,4.8,Normal,Medium
+SSTV image,372,26,Poor,4.5,Normal,Low
+Voice/Data,142,100,Poor,0.6,Normal,Low
+SSTV image,278,16,Good,11.8,Normal,Low
+Fault alert,1,73,Fair,7.5,Normal,High
+Fault alert,11,69,Fair,5.1,Normal,High
+SSTV image,793,34,Good,6.8,Safe,Low
+Housekeeping,30,14,Good,1.0,Normal,High
+Housekeeping,50,54,Poor,2.5,Normal,Medium
+Housekeeping,95,91,Good,7.7,Normal,Low
+Voice/Data,321,19,Good,6.4,Safe,Low
+Voice/Data,51,72,Fair,9.6,Normal,Low
+SSTV image,500,88,Good,8.1,Normal,Medium
+Housekeeping,23,96,Good,7.4,Normal,Medium
+Housekeeping,32,31,Poor,9.9,Safe,High
+SSTV image,348,38,Poor,1.3,Normal,Low
+Housekeeping,65,73,Good,8.4,Normal,Medium
+SSTV image,319,29,Good,8.7,Safe,Low
+SSTV image,351,67,Poor,3.7,Normal,Low
+Fault alert,5,77,Poor,2.7,Normal,High
+Fault alert,8,74,Good,3.0,Normal,High
+Housekeeping,69,32,Poor,2.8,Normal,Medium
+Voice/Data,190,78,Poor,6.5,Normal,Medium
+SSTV image,396,59,Good,2.1,Normal,Medium
+Housekeeping,57,94,Good,8.1,Normal,Medium
+Voice/Data,265,70,Good,1.7,Normal,Medium
+Housekeeping,11,91,Good,0.8,Normal,Medium
+Housekeeping,91,99,Fair,4.2,Normal,Medium
+Voice/Data,371,100,Good,2.7,Normal,Medium
+Fault alert,13,40,Fair,11.9,Safe,High
+Housekeeping,62,64,Fair,4.0,Normal,Medium
+SSTV image,617,20,Good,3.1,Normal,Low
+Housekeeping,50,45,Good,2.8,Normal,Medium
+SSTV image,419,53,Good,4.8,Normal,Medium
+Housekeeping,42,81,Poor,7.5,Normal,Medium
+Fault alert,4,63,Good,9.5,Normal,High
+Housekeeping,86,49,Good,4.7,Normal,Medium
+Housekeeping,39,23,Good,7.7,Normal,High
+Housekeeping,35,75,Good,6.0,Normal,Medium
+Fault alert,20,49,Fair,10.2,Normal,High
+Voice/Data,227,13,Good,7.0,Normal,Low
+Housekeeping,66,35,Good,3.8,Normal,Medium
+Housekeeping,32,90,Good,8.6,Normal,Medium
+Fault alert,6,20,Good,9.9,Normal,High
+Housekeeping,76,46,Good,5.9,Normal,Medium
+Housekeeping,51,56,Poor,11.9,Normal,Medium
+SSTV image,288,17,Poor,10.6,Normal,Low
+Housekeeping,86,25,Good,2.8,Normal,High
+Voice/Data,191,95,Good,9.5,Normal,Medium
+Voice/Data,284,63,Good,7.4,Normal,Medium
+Fault alert,7,29,Poor,6.7,Normal,High
+Fault alert,12,25,Fair,6.4,Normal,High
+Fault alert,16,48,Good,10.3,Normal,High
+SSTV image,731,75,Good,7.5,Normal,Medium
+Fault alert,5,39,Poor,6.7,Safe,High
+Voice/Data,286,27,Good,1.1,Normal,Medium
+Voice/Data,371,39,Poor,5.7,Safe,Medium
+Voice/Data,275,91,Fair,10.9,Normal,Low
+SSTV image,285,30,Poor,8.7,Normal,Low
+Voice/Data,116,12,Poor,1.1,Normal,Low
+Fault alert,5,97,Poor,10.7,Normal,High
+Housekeeping,19,31,Good,10.0,Safe,High
+Housekeeping,78,80,Good,6.8,Normal,Medium
+Voice/Data,388,39,Good,0.8,Normal,Low
+SSTV image,510,37,Fair,7.0,Normal,Medium
+Voice/Data,260,19,Fair,1.1,Safe,Low
+Housekeeping,80,29,Fair,4.2,Normal,High
+Voice/Data,195,52,Good,7.7,Normal,Medium
+Housekeeping,52,19,Fair,11.0,Normal,High
+Housekeeping,63,44,Good,4.6,Safe,High
+Voice/Data,156,56,Good,10.4,Normal,Medium
+Housekeeping,15,93,Good,11.1,Normal,Medium
+Housekeeping,61,30,Poor,0.7,Safe,Medium
+SSTV image,694,37,Fair,3.3,Normal,Low
+Fault alert,2,56,Poor,8.7,Normal,High
+Housekeeping,29,24,Poor,9.2,Normal,High
+Housekeeping,33,84,Good,5.0,Normal,Medium
+Fault alert,17,75,Fair,8.1,Normal,High
+Voice/Data,227,23,Good,7.5,Normal,Low
+SSTV image,521,62,Poor,9.0,Normal,Low
+Housekeeping,68,58,Good,8.8,Normal,Medium
+Housekeeping,35,28,Good,1.5,Normal,High
+Housekeeping,74,21,Fair,2.3,Normal,High
+SSTV image,218,79,Good,2.0,Normal,Medium
+Voice/Data,89,34,Poor,11.2,Normal,Medium
+Voice/Data,336,57,Good,11.0,Normal,Medium
+Housekeeping,69,32,Good,9.7,Normal,Medium
+Housekeeping,26,69,Good,1.8,Normal,Medium
+Housekeeping,49,12,Good,7.1,Safe,High
+SSTV image,231,42,Fair,2.7,Normal,Medium
+Housekeeping,71,59,Good,4.7,Normal,Medium
+SSTV image,654,49,Good,3.6,Normal,Medium
+SSTV image,367,65,Poor,10.0,Normal,Low
+Housekeeping,41,17,Poor,2.2,Safe,High
+Housekeeping,31,50,Good,7.9,Normal,Medium
+Housekeeping,45,78,Good,11.8,Normal,Medium
+Fault alert,6,40,Fair,8.4,Normal,High
+Housekeeping,32,24,Good,1.4,Normal,High
+SSTV image,458,87,Good,10.9,Normal,Medium
+Housekeeping,88,80,Fair,7.9,Normal,Medium
+Housekeeping,79,37,Fair,5.7,Safe,High
+SSTV image,378,82,Good,8.1,Normal,Medium
+Voice/Data,380,80,Good,10.6,Normal,Medium
+Housekeeping,29,77,Fair,6.0,Normal,Medium
+Voice/Data,369,56,Fair,6.6,Normal,Low
+Voice/Data,158,11,Good,5.7,Normal,Low
+SSTV image,524,64,Good,1.3,Normal,Low
+SSTV image,322,34,Good,9.6,Normal,Medium
+Fault alert,16,80,Poor,2.0,Normal,High
+Voice/Data,161,52,Good,5.0,Normal,Medium
+Housekeeping,89,92,Fair,4.9,Normal,Medium
+Voice/Data,79,34,Poor,3.7,Safe,Low
+SSTV image,501,60,Good,5.1,Normal,Medium
+Fault alert,4,93,Good,7.6,Normal,High
+Fault alert,18,53,Fair,4.1,Normal,High
+SSTV image,450,44,Good,2.5,Normal,Medium
+SSTV image,605,43,Fair,10.5,Normal,Medium
+Fault alert,18,89,Poor,11.7,Normal,High
+SSTV image,521,78,Fair,5.8,Normal,Low
+Voice/Data,70,16,Fair,4.3,Safe,Low
+Housekeeping,30,54,Good,1.0,Normal,Medium
+Housekeeping,29,43,Good,0.9,Normal,Medium
+Fault alert,19,68,Good,5.0,Normal,Medium
+Voice/Data,368,12,Poor,11.2,Safe,Low
+Housekeeping,53,39,Fair,8.9,Safe,High
+Voice/Data,362,77,Poor,4.5,Normal,Low
+Housekeeping,32,30,Good,11.6,Normal,Medium
+SSTV image,608,23,Poor,5.4,Normal,Low
+Housekeeping,45,67,Fair,3.7,Normal,Medium
+Housekeeping,31,33,Good,5.4,Normal,Medium
+Voice/Data,137,95,Good,2.9,Normal,Medium
+Housekeeping,48,80,Fair,10.7,Normal,Medium
+SSTV image,404,96,Fair,4.7,Normal,Medium
+Voice/Data,124,58,Good,8.1,Normal,Medium
+Voice/Data,167,95,Fair,5.0,Normal,Low
+Voice/Data,95,11,Poor,10.9,Normal,Low
+Housekeeping,98,36,Good,7.9,Normal,Medium
+SSTV image,428,10,Fair,6.1,Normal,Low
+Voice/Data,87,71,Fair,2.0,Normal,Low
+Housekeeping,62,56,Poor,10.9,Normal,Medium
+Fault alert,18,36,Fair,6.8,Normal,High
+Voice/Data,176,37,Fair,3.8,Normal,Low
+Housekeeping,86,68,Fair,10.6,Normal,Medium
+SSTV image,567,26,Fair,1.1,Normal,Low
+Voice/Data,309,56,Fair,4.1,Normal,Low
+SSTV image,378,65,Good,6.7,Normal,Medium
+Housekeeping,13,31,Good,4.4,Normal,Medium
+Housekeeping,41,30,Poor,6.0,Normal,Medium
+Housekeeping,94,42,Poor,3.5,Normal,Medium
+Fault alert,16,63,Good,2.0,Normal,High
+Voice/Data,325,33,Good,0.9,Normal,Low
+Voice/Data,358,44,Good,2.3,Normal,Medium
+Housekeeping,43,59,Poor,11.5,Normal,Medium
+Housekeeping,39,26,Fair,7.1,Normal,High
+Voice/Data,374,61,Poor,6.1,Normal,Low
+Fault alert,12,15,Good,4.9,Safe,High
+SSTV image,379,22,Fair,8.6,Normal,Low
+Housekeeping,35,31,Fair,2.1,Normal,Medium
+SSTV image,727,36,Fair,3.7,Normal,Low
+Housekeeping,14,12,Fair,8.0,Normal,High
+SSTV image,237,97,Good,6.0,Normal,Medium
+Housekeeping,77,38,Poor,9.4,Normal,Medium
+SSTV image,200,83,Good,10.8,Normal,Medium
+Fault alert,4,92,Good,10.0,Normal,Medium
+Housekeeping,100,82,Good,2.6,Normal,Medium
+SSTV image,455,85,Fair,1.6,Normal,Low
+Housekeeping,76,19,Good,2.4,Normal,High
+Fault alert,10,43,Good,9.5,Normal,High
+Housekeeping,18,40,Poor,11.0,Safe,High
+Housekeeping,26,62,Poor,11.1,Normal,Medium
+Fault alert,16,10,Good,3.9,Normal,High
+Voice/Data,83,61,Fair,10.2,Normal,Low
+Housekeeping,64,83,Poor,6.7,Normal,Medium
+Voice/Data,172,85,Poor,10.0,Normal,Medium
+Voice/Data,179,44,Poor,6.8,Normal,Low
+Fault alert,20,31,Fair,2.2,Normal,High
+SSTV image,564,38,Good,1.4,Normal,Low
+Voice/Data,265,36,Poor,11.5,Normal,Low
+SSTV image,410,41,Good,5.4,Normal,Medium
+Housekeeping,44,37,Fair,4.5,Normal,Medium
+Housekeeping,72,51,Fair,4.6,Normal,Medium
+Fault alert,1,13,Poor,4.9,Normal,High
+SSTV image,342,35,Good,11.4,Normal,Medium
+Voice/Data,260,38,Good,1.2,Normal,Medium
+Voice/Data,268,23,Fair,1.9,Normal,Low
+Fault alert,2,89,Poor,9.6,Normal,High
+SSTV image,673,71,Fair,6.8,Normal,Medium
+Housekeeping,59,47,Poor,2.0,Safe,High
+Voice/Data,133,61,Good,0.9,Normal,Medium
+Fault alert,16,19,Poor,3.1,Normal,High
+Voice/Data,397,92,Good,3.5,Normal,Medium
+Voice/Data,198,28,Fair,0.7,Safe,Low
+Fault alert,6,72,Fair,3.0,Normal,High
+Fault alert,6,44,Good,9.0,Normal,High
+Voice/Data,258,30,Poor,10.3,Safe,Low
+Housekeeping,14,54,Good,10.8,Normal,Medium
+SSTV image,490,21,Poor,5.0,Safe,Medium
+Voice/Data,58,60,Good,4.2,Normal,Medium
+SSTV image,223,76,Fair,12.0,Normal,Medium
+Housekeeping,49,11,Poor,9.3,Normal,High
+Housekeeping,77,21,Good,6.7,Normal,High
+Fault alert,18,44,Poor,3.4,Safe,High
+Voice/Data,80,61,Poor,4.2,Normal,Low
+Housekeeping,32,49,Good,6.4,Safe,High
+Housekeeping,48,65,Fair,6.7,Normal,Medium
+Housekeeping,62,69,Good,0.7,Normal,Medium
+Voice/Data,396,46,Good,11.5,Safe,Low
+Fault alert,14,70,Good,7.1,Normal,High
+Voice/Data,238,23,Fair,7.3,Safe,Low
+SSTV image,236,58,Poor,2.9,Normal,Low
+Voice/Data,78,31,Good,9.3,Normal,Medium
+Voice/Data,103,40,Poor,9.0,Normal,Low
+Voice/Data,281,71,Fair,1.6,Normal,Medium
+Voice/Data,166,23,Fair,7.3,Normal,Low
+Fault alert,5,71,Fair,8.1,Normal,High
+Voice/Data,285,63,Fair,10.1,Normal,Low
+SSTV image,690,38,Good,2.9,Normal,Medium
+SSTV image,463,11,Good,10.6,Safe,Low
+Voice/Data,359,74,Good,5.8,Normal,Medium
+Voice/Data,307,85,Fair,1.6,Normal,Low
+SSTV image,630,39,Fair,1.7,Safe,Low
+Housekeeping,88,48,Poor,2.8,Normal,Medium
+Housekeeping,26,69,Good,3.8,Normal,Medium
+Housekeeping,79,47,Fair,6.2,Normal,Medium
+Housekeeping,97,42,Fair,9.1,Normal,Low
+Housekeeping,100,39,Poor,2.6,Normal,Medium
+Fault alert,12,29,Good,11.9,Normal,High
+Fault alert,16,98,Good,2.4,Normal,High
+Voice/Data,361,70,Good,7.4,Normal,Medium
+Housekeeping,87,25,Poor,11.2,Normal,High
+Voice/Data,365,88,Good,10.1,Normal,Medium
+SSTV image,700,23,Poor,8.0,Normal,Low
+Fault alert,8,64,Fair,8.7,Normal,High
+Housekeeping,76,16,Poor,2.0,Safe,High
+Housekeeping,47,42,Fair,0.6,Normal,Medium
+Voice/Data,331,69,Fair,5.5,Normal,Low
+Housekeeping,83,100,Poor,1.5,Normal,Medium
+SSTV image,761,100,Fair,4.6,Normal,Medium
+Voice/Data,256,91,Good,3.1,Normal,Medium
+Voice/Data,216,31,Good,11.0,Normal,Medium
+Housekeeping,25,13,Good,10.6,Safe,High
+Fault alert,13,92,Fair,9.9,Normal,High
+Housekeeping,61,94,Poor,8.7,Normal,Medium
+Fault alert,11,35,Good,2.3,Normal,High
+Housekeeping,71,11,Poor,1.1,Normal,Medium
+SSTV image,711,68,Fair,8.0,Normal,Medium
+Voice/Data,102,16,Poor,7.9,Normal,Low
+SSTV image,459,13,Good,4.7,Normal,Low
+SSTV image,634,48,Fair,5.9,Safe,Low
+Housekeeping,84,30,Good,6.1,Safe,High
+Voice/Data,323,20,Fair,3.3,Normal,Low
+SSTV image,680,69,Fair,4.1,Normal,High
+Voice/Data,350,43,Fair,5.3,Normal,Low
+Voice/Data,387,31,Poor,7.4,Safe,Low
+Housekeeping,65,91,Fair,11.5,Normal,Medium
+Fault alert,5,31,Good,6.7,Normal,High
+Housekeeping,61,68,Fair,8.9,Normal,Medium
+Housekeeping,74,85,Poor,9.8,Normal,Medium
+Voice/Data,85,48,Good,1.8,Normal,Medium
+Housekeeping,78,49,Fair,8.0,Safe,High
+Voice/Data,241,50,Poor,6.0,Normal,Low
+SSTV image,762,28,Poor,7.1,Safe,Low
+Housekeeping,29,90,Fair,0.9,Normal,High
+Housekeeping,92,67,Fair,10.9,Normal,Medium
+SSTV image,469,89,Good,11.5,Normal,Medium
+SSTV image,544,81,Poor,0.5,Normal,Low
+Housekeeping,70,74,Good,2.9,Normal,Medium
+Housekeeping,62,31,Fair,2.6,Normal,Medium
+SSTV image,743,46,Good,9.5,Normal,Medium
+Housekeeping,25,88,Good,7.4,Normal,Medium
+Voice/Data,306,66,Fair,2.5,Normal,Low
+Housekeeping,98,35,Poor,9.9,Normal,Medium
+Fault alert,5,39,Fair,4.6,Normal,High
+Housekeeping,33,41,Good,5.8,Safe,High
+SSTV image,485,26,Good,5.0,Normal,Medium
+SSTV image,635,20,Poor,6.5,Normal,Low
+Housekeeping,97,79,Good,6.0,Normal,Medium
+Voice/Data,329,36,Fair,3.7,Normal,Low
+Housekeeping,82,79,Poor,5.4,Normal,Medium
+Housekeeping,50,31,Good,10.9,Safe,High
+Housekeeping,68,100,Fair,6.3,Normal,Medium
+Fault alert,5,57,Fair,11.0,Normal,High
+SSTV image,478,88,Good,6.8,Normal,Medium
+Housekeeping,27,87,Fair,9.3,Normal,Medium
+SSTV image,216,29,Good,3.9,Normal,Medium
+Fault alert,18,100,Fair,9.6,Normal,High
+Voice/Data,332,77,Poor,3.5,Normal,Low
+Housekeeping,56,19,Fair,0.7,Normal,High
+Voice/Data,55,10,Good,2.3,Normal,Low
+Housekeeping,18,34,Fair,0.7,Normal,Medium
+Fault alert,3,11,Poor,11.4,Normal,High
+Voice/Data,301,42,Good,12.0,Normal,Medium
+SSTV image,322,100,Good,9.3,Normal,Medium
+Voice/Data,137,53,Good,1.7,Normal,Medium
+Housekeeping,88,12,Fair,10.8,Normal,High
+SSTV image,726,54,Fair,9.1,Normal,Medium
+Voice/Data,317,29,Fair,4.3,Normal,Low
+SSTV image,386,87,Good,6.3,Normal,Medium
+Housekeeping,62,13,Good,8.1,Safe,High
+SSTV image,320,80,Good,0.8,Normal,Low
